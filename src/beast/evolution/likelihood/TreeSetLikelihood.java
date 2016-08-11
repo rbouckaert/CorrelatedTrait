@@ -100,7 +100,8 @@ public class TreeSetLikelihood extends Distribution {
 		}
 	
 	}
-	private Node removeTaxa(Set<String> taxaToInclude, Node node, int [] internalNodeNr) {
+	
+	protected Node removeTaxa(Set<String> taxaToInclude, Node node, int [] internalNodeNr) {
 		if (node.isLeaf()) {
 			if (taxaToInclude.contains(node.getID())) {
 				return null;
@@ -132,7 +133,7 @@ public class TreeSetLikelihood extends Distribution {
 
 
 	/** change numbers of tip nodes to match those in names **/
-	private void relabel(String [] names, Node node) {
+	protected void relabel(String [] names, Node node) {
 		if (node.isLeaf()) {
 			if (node.getID() != null) {
 				int nr = indexOf(names, node.getID());
@@ -145,7 +146,7 @@ public class TreeSetLikelihood extends Distribution {
 		}
 	}
 
-	private int indexOf(String[] names, String id) {
+	protected int indexOf(String[] names, String id) {
 		for (int i = 0; i < names.length; i++) {
 			if (names[i].equals(id)) {
 				return i;
