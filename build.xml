@@ -18,6 +18,7 @@
 	<property name="srcBeast2" location="${beast2path}/src" />
 	<property name="beast2classpath" location="${beast2path}/build" />
 	<property name="Add_on_dir" value="${release_dir}/add-on" />
+	<property name="buildBeastClassic" location="../beast-classic/build"/>
 	<property name="version" value="0.3.2" />
 
     <import file="${beast2path}/build.xml" />
@@ -33,6 +34,8 @@
         <fileset dir="${libBeast2}" includes="beagle.jar"/>
         <fileset dir="${libBeast2}" includes="jam.jar"/>
         <fileset dir="${libBeast2}" includes="colt.jar"/>
+        <fileset dir="../beast-classic/lib" includes="mtj.jar"/>	
+        <pathelement path="${buildBeastClassic}"/>
         <pathelement path="${beast2classpath}"/>
 	</path>
 
@@ -98,6 +101,7 @@
 			<fileset dir="${buildTreeSetAnalyser}">
 				<include name="**/*.class" />
 			</fileset>
+			<fileset dir="${buildBeastClassic}">
 				<include name="**/*.class"/>
 			</fileset>
 			<fileset dir="${beast2classpath}">
@@ -176,8 +180,10 @@
 		<mkdir dir="${Add_on_dir}/lib" />
 		<mkdir dir="${Add_on_dir}/examples" />
 		<mkdir dir="${Add_on_dir}/templates" />
+		<!--
 		<mkdir dir="${Add_on_dir}/js" />
-
+		-->
+		
 		<copy todir="${Add_on_dir}">
 			<fileset file="version.xml"/>
 		</copy>
@@ -190,6 +196,7 @@
 		<copy todir="${Add_on_dir}">
 			<fileset dir="${distTreeSetAnalyser}" includes="TreeSetAnalyser.src.jar" />
 		</copy>
+		<!--
 		<copy todir="${Add_on_dir}/templates">
 			<fileset file="templates/TreeSetAnalyser.xml" />
 		</copy>
@@ -198,6 +205,7 @@
 				<include name="**/*" />
 			</fileset>
         </copy>
+		-->
 
 		<jar jarfile="${distTreeSetAnalyser}/TreeSetAnalyser.addon.v${version}.zip">
 			<fileset dir="${Add_on_dir}">
