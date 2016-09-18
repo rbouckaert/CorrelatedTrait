@@ -240,8 +240,29 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 
 	@Override
 	public void init(PrintStream out) {
-		for (int i = 0; i < 8; i++) {
-			out.print("rate_"+i+"\t");
+		
+		CompoundDataType datatype = datatypeInput.get();
+		if (datatype == null && alignmentInput.get() != null) {
+			datatype = (CompoundDataType) alignmentInput.get().getDataType();
+		}
+		
+		for (int k = 0; k < rateMatrix.length; ++k) {
+			int[] kAsComponentIndices = CompoundDataType.compoundState2componentStates(shape, k);
+			for (int c = 0; c < shape.length; ++c) {
+				int[] lAsComponentIndices = kAsComponentIndices.clone();
+				for (int i = 0; i < shape[c]; ++i) {
+					if (i != kAsComponentIndices[c]) {
+						lAsComponentIndices[c] = i;
+						int l = CompoundDataType.componentState2compoundState(shape, lAsComponentIndices);
+						if (datatype == null) {
+							out.print("rate_" + k + "->" + l + "\t");
+						} else {
+							out.print("rate_"+datatype.getCode(k) + "->" + datatype.getCode(l) + "\t");
+						}
+						//System.err.println(next + ": " + k + " " + l + " " + rateMatrix[k][l]);
+					}
+				}
+			}
 		}
 	}
 
@@ -258,23 +279,16 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 					if (i != kAsComponentIndices[c]) {
 						lAsComponentIndices[c] = i;
 						int l = CompoundDataType.componentState2compoundState(shape, lAsComponentIndices);
-						rateMatrix[k][l] = ratesInput.get().getArrayValue(next);
+						double rate = ratesInput.get().getArrayValue(next);
+						out.print(rate+"\t");
 						//System.err.println(next + ": " + k + " " + l + " " + rateMatrix[k][l]);
 						++next;
 					}
 				}
 			}
 		}
-			out.print(rateMatrix[0][1]+"\t");
-			out.print(rateMatrix[0][2]+"\t");
-			out.print(rateMatrix[1][0]+"\t");
-			out.print(rateMatrix[1][3]+"\t");
-			out.print(rateMatrix[2][0]+"\t");
-			out.print(rateMatrix[2][3]+"\t");
-			out.print(rateMatrix[3][1]+"\t");
-			out.print(rateMatrix[3][2]+"\t");
 	}
-
+	
 	@Override
 	public void close(PrintStream out) {
 	}
