@@ -27,6 +27,7 @@ import beast.core.Function;
 import beast.core.Input;
 import beast.core.Loggable;
 import beast.core.parameter.IntegerParameter;
+import beast.evolution.substitutionmodel.ComplexSubstitutionModel;
 
 @Description("Specifies transition probability matrix for a collection of multiple characters."
 		+ " At every infinitesimal time step, only one component can change values, so some transition rates are 0, the others arbitrary"
