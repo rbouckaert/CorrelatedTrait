@@ -59,8 +59,8 @@ Same as testTreeSetAnalysis2.xml, except sequences are reordered
             </prior>
         </distribution>
         <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
-          <distribution id="treeSetLikelihood.dna" spec="tsa.TreeSetLikelihood" treeSetFile="examples/dna.trees">
-            <treeLikelihood id="treeLikelihood.dna" spec="ThreadedTreeLikelihood" data="@dna" tree="@Tree.t:dna">
+          <distribution id="treeSetLikelihood.dna" spec="TreeSetLikelihood" treeSetFile="examples/dna.trees">
+            <treeLikelihood id="treeLikelihood.dna" spec="TreeLikelihood" data="@dna" tree="@Tree.t:dna">
                 <siteModel id="SiteModel.s:dna" spec="SiteModel">
                     <parameter id="mutationRate.s:dna" estimate="false" name="mutationRate">1.0</parameter>
                     <parameter id="gammaShape.s:dna" estimate="false" name="shape">1.0</parameter>

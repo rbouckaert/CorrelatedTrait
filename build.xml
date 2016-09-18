@@ -19,7 +19,9 @@
 	<property name="beast2classpath" location="${beast2path}/build" />
 	<property name="Add_on_dir" value="${release_dir}/add-on" />
 	<property name="buildBeastClassic" location="../beast-classic/build"/>
-	<property name="version" value="0.3.2" />
+	<property name="buildBeastLabs" location="../BEASTLabs/build"/>
+	<property name="version" value="0.0.1" />
+
 
     <import file="${beast2path}/build.xml" />
 
@@ -36,6 +38,7 @@
         <fileset dir="${libBeast2}" includes="colt.jar"/>
         <fileset dir="../beast-classic/lib" includes="mtj.jar"/>	
         <pathelement path="${buildBeastClassic}"/>
+        <pathelement path="${buildBeastLabs}"/>
         <pathelement path="${beast2classpath}"/>
 	</path>
 
@@ -80,9 +83,9 @@
 		       fork="true"
 		       memoryinitialsize="256m"
 		       memorymaximumsize="256m">
-			<include name="beast/**/**" />
+			<include name="**/**" />
 			<!-- compile JUnit test classes -->
-			<include name="test/beast/**" />
+			<include name="test/**" />
 		</javac>
 		<echo message="Successfully compiled." />
 	</target>
@@ -187,9 +190,11 @@
 		<copy todir="${Add_on_dir}">
 			<fileset file="version.xml"/>
 		</copy>
+		<!--
 		<copy todir="${Add_on_dir}/examples">
 			<fileset dir="examples" />
 		</copy>
+		-->
 		<copy todir="${Add_on_dir}/lib">
 			<fileset dir="${distTreeSetAnalyser}" includes="TreeSetAnalyser.addon.jar" />
 		</copy>

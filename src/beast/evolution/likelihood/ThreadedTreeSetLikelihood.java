@@ -11,6 +11,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.sun.jmx.snmp.tasks.ThreadService;
+
 import beast.app.BeastMCMC;
 import beast.core.BEASTInterface;
 import beast.core.Distribution;
@@ -35,7 +37,7 @@ public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
     double [] treeLogP;
     
     /** private list of likelihoods, to notify framework of TreeLikelihoods being created in initAndValidate() **/
-    final private Input<List<TreeLikelihood>> likelihoodsInput = new Input<>("*","",new ArrayList<>());
+    final public Input<List<TreeLikelihood>> likelihoodsInput = new Input<>("*","",new ArrayList<>());
 	
 	class MyTreeLikelihood extends TreeLikelihood {
 		@Override
@@ -103,11 +105,15 @@ public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
         logP = 0;
         
         try {
-			pool.invokeAll(likelihoodCallers);
-		} catch (InterruptedException e) {
+            if (threadCount == 1) {
+            	likelihoodCallers.get(0).call();
+            } else {
+				pool.invokeAll(likelihoodCallers);
+            }
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-        
+
         int n = trees.size();
         // take average over P from treeLogP
         double max = treeLogP[0];
