@@ -1,32 +1,18 @@
 package beast.evolution.likelihood;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Random;
-import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.sun.jmx.snmp.tasks.ThreadService;
 
 import beast.app.BeastMCMC;
 import beast.core.BEASTInterface;
-import beast.core.Distribution;
 import beast.core.Input;
-import beast.core.State;
-import beast.core.Input.Validate;
-import beast.core.util.Log;
 import beast.evolution.alignment.Alignment;
-import beast.evolution.alignment.FilteredAlignment;
-import beast.evolution.likelihood.ThreadedTreeLikelihood.TreeLikelihoodCaller;
 import beast.evolution.substitutionmodel.SubstitutionModel;
-import beast.evolution.tree.Node;
 import beast.evolution.tree.Tree;
-import beast.util.NexusParser;
 
 public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
 	
