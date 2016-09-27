@@ -41,14 +41,14 @@ public class TSASummary extends Runnable {
 			if (label.startsWith(prefix)) {
 				String label0 = label.substring(prefix.length());
 				switch (label0) {
-				case "0,0->0,1": rates[0] = analyser.getMean(label); break;
-				case "0,1->0,0": rates[1] = analyser.getMean(label); break;
-				case "1,0->1,1": rates[2] = analyser.getMean(label); break;
-				case "1,1->1,0": rates[3] = analyser.getMean(label); break;
-				case "0,0->1,0": rates[4] = analyser.getMean(label); break;
-				case "1,0->0,0": rates[5] = analyser.getMean(label); break;
-				case "0,1->1,1": rates[6] = analyser.getMean(label); break;
-				case "1,1->0,1": rates[7] = analyser.getMean(label); break;
+				case "0,0->1,0": rates[0] = analyser.getMean(label); break;
+				case "1,0->0,0": rates[1] = analyser.getMean(label); break;
+				case "0,1->1,1": rates[2] = analyser.getMean(label); break;
+				case "1,1->0,1": rates[3] = analyser.getMean(label); break;
+				case "0,0->0,1": rates[4] = analyser.getMean(label); break;
+				case "0,1->0,0": rates[5] = analyser.getMean(label); break;
+				case "1,0->1,1": rates[6] = analyser.getMean(label); break;
+				case "1,1->1,0": rates[7] = analyser.getMean(label); break;
 				}
 			}
 		}
