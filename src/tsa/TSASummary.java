@@ -16,7 +16,7 @@ import beast.util.LogAnalyser;
 
 @Description("Produces a summary for an analysis using the Correlated-character substitution model")
 public class TSASummary extends Runnable {
-	public Input<LogFile> traceFileInput = new Input<>("file","trace log file containing output of a bModelTest analysis", Validate.REQUIRED);
+	public Input<LogFile> traceFileInput = new Input<>("file","trace log file containing output of a TreeSetAnalyser analysis", Validate.REQUIRED);
 	public Input<String> prefixInput = new Input<>("prefix", "prefix of the entry in the log file containing the substitution model trace (default 'rate_')" , "rate_");
 	public Input<Integer> burninInput = new Input<>("burnin", "percentage of the log file to disregard as burn-in (default 10)" , 10);
 
