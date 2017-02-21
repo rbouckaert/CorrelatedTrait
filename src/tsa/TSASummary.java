@@ -111,7 +111,7 @@ public class TSASummary extends Runnable {
 					 "<html>\n" + 
 					 "<body>\n" + 
 					 "\n" + 
-					 "<h1>TreeSetAnalyser</h1>\n" + 
+					 "<h1>TreeSetAnalyser "+ file.getName() +"</h1>\n" + 
 					 "\n" +
 					 svg +
 					 " \n" +
