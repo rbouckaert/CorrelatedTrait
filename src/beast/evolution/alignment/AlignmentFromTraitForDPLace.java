@@ -4,7 +4,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import beast.core.Input;
 import beast.core.Input.Validate;
@@ -15,7 +20,8 @@ public class AlignmentFromTraitForDPLace extends AlignmentFromTrait {
 	final public Input<String> code1Input = new Input<>("code1", "comma separated list of codes to be mapped to 1 for first feature", "1");
 	final public Input<String> code2Input = new Input<>("code2", "comma separated list of codes to be mapped to 1 for second feature", "1");
 
-	
+	Map<String, Integer> data = new HashMap<>();
+
 	@Override
 	public void initAndValidate() {
 		List<String> tabu = new ArrayList<>();
@@ -37,7 +43,6 @@ public class AlignmentFromTraitForDPLace extends AlignmentFromTrait {
 		}
 		
 		
-		Map<String, Integer> data = new HashMap<>();
 		try {
 			File file = fileInput.get();
 	        BufferedReader fin = new BufferedReader(new FileReader(file));
@@ -50,13 +55,13 @@ public class AlignmentFromTraitForDPLace extends AlignmentFromTrait {
 	        int col2 = -1;
 	        int iso = -1;
 	        for (int i = 0; i < strs.length; i++) {
-	        	if (strs[i].startsWith("Code:")) {
+	        	if (strs[i].startsWith("Code")) {
 	        		if (col1 >= 0) 
 	        			col2 = i;
 	        		else 
 	        			col1 = i;
 	        	}
-	        	if (strs[i].startsWith("ISO code")) {
+	        	if (strs[i].matches("ISO.code")) {
 	        		iso = i;
 	        	}
 	        }
@@ -157,13 +162,13 @@ public class AlignmentFromTraitForDPLace extends AlignmentFromTrait {
 	}
 
 
-	private String[] split(String str) {
+	static String[] split(String str) {
 		List<String> strs = new ArrayList<>();
 		int i = 0;
 		String str2 = "";
 		while (i < str.length()) {
 			char c = str.charAt(i);
-			if (c == ',') {
+			if (c == ',' || c== '\t') {
 				strs.add(str2);
 				str2 = "";
 			} else if (c == '"') {
@@ -191,4 +196,6 @@ public class AlignmentFromTraitForDPLace extends AlignmentFromTrait {
 		}
 		return false;
 	}
+
+	
 }

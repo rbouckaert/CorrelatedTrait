@@ -49,6 +49,15 @@ public class TSASummary extends Runnable {
 				case "0,1->0,0": rates[5] = analyser.getMean(label); break;
 				case "1,0->1,1": rates[6] = analyser.getMean(label); break;
 				case "1,1->1,0": rates[7] = analyser.getMean(label); break;
+
+				case "00->10": rates[0] = analyser.getMean(label); break;
+				case "10->00": rates[1] = analyser.getMean(label); break;
+				case "01->11": rates[2] = analyser.getMean(label); break;
+				case "11->01": rates[3] = analyser.getMean(label); break;
+				case "00->01": rates[4] = analyser.getMean(label); break;
+				case "01->00": rates[5] = analyser.getMean(label); break;
+				case "10->11": rates[6] = analyser.getMean(label); break;
+				case "11->10": rates[7] = analyser.getMean(label); break;
 				}
 			}
 		}
