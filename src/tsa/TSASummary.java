@@ -19,6 +19,7 @@ public class TSASummary extends Runnable {
 	public Input<LogFile> traceFileInput = new Input<>("file","trace log file containing output of a TreeSetAnalyser analysis", Validate.REQUIRED);
 	public Input<String> prefixInput = new Input<>("prefix", "prefix of the entry in the log file containing the substitution model trace (default 'rate_')" , "rate_");
 	public Input<Integer> burninInput = new Input<>("burnin", "percentage of the log file to disregard as burn-in (default 10)" , 10);
+	public Input<String> iconInput = new Input<>("icons", "comma separated list to specify icons for first dimension, second dimension and both" , "");
 
 	@Override
 	public void initAndValidate() {
@@ -32,6 +33,8 @@ public class TSASummary extends Runnable {
 		if (burnin < 0) {
 			burnin = 0;
 		}
+		
+		String [] icons = iconInput.get().split(",");
 		
 		LogAnalyser analyser = new LogAnalyser(file.getAbsolutePath(), burnin, false, true);
 		
@@ -63,7 +66,7 @@ public class TSASummary extends Runnable {
 		}
 		
 		String svg = 				 
-				"<svg width='400' height='400'>\n" +
+				"<svg width='400' height='400'  xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>\n" +
 				 " <defs>\n" +
 				 "    <radialGradient id='grad1' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>\n" +
 				 "      <stop offset='0%' style='stop-color:rgb(255,255,255);\n" +
@@ -85,10 +88,12 @@ public class TSASummary extends Runnable {
 				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M325,80 Q300,200 325,290'></path>  \n" +
 				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M375,318 Q400,200 375,110'></path>  \n" +
 				 "\n" + 
+			     (icons.length < 3 ?
 				 "   <circle cx='50' cy='50' r='40' stroke='black' stroke-width='4' fill='url(#grad1)' />\n" + 
 				 "   <circle cx='350' cy='50' r='40' stroke='black' stroke-width='4' fill='url(#grad1)' />\n" + 
 				 "   <circle cx='50' cy='350' r='40' stroke='black' stroke-width='4' fill='url(#grad1)' />\n" + 
-				 "   <circle cx='350' cy='350' r='40' stroke='black' stroke-width='4' fill='url(#grad1)' />\n" + 
+				 "   <circle cx='350' cy='350' r='40' stroke='black' stroke-width='4' fill='url(#grad1)' />\n"
+				 : "") +	
 				 "\n" + 
 				 "	<text x='25' y='62' font-family='Verdana' font-size='35'>00</text>\n" + 
 				 "	<text x='325' y='62' font-family='Verdana' font-size='35'>01</text>\n" + 
@@ -103,6 +108,12 @@ public class TSASummary extends Runnable {
 				 "	<text x='200' y='125' text-anchor='middle' font-size='35'>" + format(rates[5])+ "</text>\n" + 
 				 "	<text x='200' y='300' text-anchor='middle' font-size='35'>" + format(rates[6])+ "</text>\n" + 
 				 "	<text x='200' y='375' text-anchor='middle' font-size='35'>" + format(rates[7])+ "</text>\n" + 
+			     (icons.length == 3 ?
+					"  <image x='0' y='302' width='100' height='100' xlink:href='" + icons[0] + "'/>\n" +
+					"  <image x='305' y='2' width='100' height='100' xlink:href='" + icons[1] + "'/>\n" +
+					"  <image x='305' y='302' width='100' height='100' xlink:href='" + icons[2] + "'/>\n"
+					: ""					
+				 ) +
 				 "\n" + 
 				 "Sorry, your browser does not support inline SVG.\n" + 
 				 "</svg> \n";
