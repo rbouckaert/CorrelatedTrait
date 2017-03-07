@@ -66,7 +66,7 @@ public class TSASummary extends Runnable {
 		}
 		
 		String svg = 				 
-				"<svg width='400' height='400'  xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>\n" +
+				"<svg width='450' height='450'  xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>\n" +
 				 " <defs>\n" +
 				 "    <radialGradient id='grad1' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>\n" +
 				 "      <stop offset='0%' style='stop-color:rgb(255,255,255);\n" +
@@ -78,15 +78,15 @@ public class TSASummary extends Runnable {
 				 "        <path d='M 0 0 L 20 10 L 0 20 z' fill='black'/>\n" +
 				 "      </marker>\n" +
 				 "    </defs>    \n" +
-				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M80,25 Q200,0 290,25'></path>  \n" +
-				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M318,75 Q200,100 110,75'></path>  \n" +
-				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M80,325 Q200,300 290,325'></path>  \n" +
-				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M318,375 Q200,400 110,375'></path>  \n" +
+				 "  <path marker-end='url(#head)' stroke-width='" + arrowWidth(rates[4])+"' fill='none' stroke='black' d='M80,25 Q200,0 290,25'></path>  \n" +
+				 "  <path marker-end='url(#head)' stroke-width='" + arrowWidth(rates[5])+"' fill='none' stroke='black' d='M318,75 Q200,100 110,75'></path>  \n" +
+				 "  <path marker-end='url(#head)' stroke-width='" + arrowWidth(rates[6])+"' fill='none' stroke='black' d='M80,325 Q200,300 290,325'></path>  \n" +
+				 "  <path marker-end='url(#head)' stroke-width='" + arrowWidth(rates[7])+"' fill='none' stroke='black' d='M318,375 Q200,400 110,375'></path>  \n" +
 				 "\n" +
-				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M25,80 Q0,200 25,290'></path>  \n" +
-				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M75,318 Q100,200 75,110'></path>  \n" +
-				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M325,80 Q300,200 325,290'></path>  \n" +
-				 "  <path marker-end='url(#head)' stroke-width='5' fill='none' stroke='black' d='M375,318 Q400,200 375,110'></path>  \n" +
+				 "  <path marker-end='url(#head)' stroke-width='" + arrowWidth(rates[0])+"' fill='none' stroke='black' d='M25,80 Q0,200 25,290'></path>  \n" +
+				 "  <path marker-end='url(#head)' stroke-width='" + arrowWidth(rates[1])+"' fill='none' stroke='black' d='M75,318 Q100,200 75,110'></path>  \n" +
+				 "  <path marker-end='url(#head)' stroke-width='" + arrowWidth(rates[2])+"' fill='none' stroke='black' d='M325,80 Q300,200 325,290'></path>  \n" +
+				 "  <path marker-end='url(#head)' stroke-width='" + arrowWidth(rates[3])+"' fill='none' stroke='black' d='M375,318 Q400,200 375,110'></path>  \n" +
 				 "\n" + 
 			     (icons.length < 3 ?
 				 "   <circle cx='50' cy='50' r='40' stroke='black' stroke-width='4' fill='url(#grad1)' />\n" + 
@@ -150,6 +150,14 @@ public class TSASummary extends Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	double arrowWidth(double rate) {
+		double width = 30 * rate / 8.0;
+		if (width < 0.5) {
+			width = 0.5;
+		}
+		return width;
 	}
 	
 	String format(double d) {
