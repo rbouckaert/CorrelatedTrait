@@ -56,6 +56,14 @@ public class Selector extends CalculationNode implements Loggable, Function {
 	protected IntegerParameter entries;
 	protected Integer maxIndex;
 
+
+	public Selector() {		
+	}
+	
+	public Selector(IntegerParameter indices, RealParameter parameters, IntegerParameter groupings) {
+		initByName("groupings", indices, "parameters", parameters, "entry", groupings);
+	}
+
 	@Override
 	public void initAndValidate() {
 		try {

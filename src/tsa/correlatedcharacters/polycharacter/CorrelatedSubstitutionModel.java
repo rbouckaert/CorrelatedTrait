@@ -27,7 +27,10 @@ import beast.core.Function;
 import beast.core.Input;
 import beast.core.Loggable;
 import beast.core.parameter.IntegerParameter;
+import beast.core.parameter.RealParameter;
 import beast.evolution.substitutionmodel.ComplexSubstitutionModel;
+import beast.evolution.substitutionmodel.Frequencies;
+import tsa.parameterclone.selector.Selector;
 
 @Description("Specifies transition probability matrix for a collection of multiple characters."
 		+ " At every infinitesimal time step, only one component can change values, so some transition rates are 0, the others arbitrary"
@@ -50,7 +53,17 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 			"corresponding alignment to derive parameter dimensions from");
 
 	protected Integer[] shape;
+	
+	Function rates;
 	protected int nonzeroTransitions = 0;
+
+	public CorrelatedSubstitutionModel() {}
+	public CorrelatedSubstitutionModel(IntegerParameter shape, CompoundAlignment characters, Selector rates, Frequencies freqs) {
+		initByName("shape", shape,
+				"alignment", characters,
+				"rates", rates,
+				"frequencies", freqs);
+	}
 
 	@Override
 	public void initAndValidate() {
@@ -115,7 +128,7 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 		rateMatrix = new double[nrOfStates][nrOfStates];
 		relativeRates = new double[ratesInput.get().getDimension()];
 		storedRelativeRates = new double[ratesInput.get().getDimension()];
-
+		rates = ratesInput.get();
 	} // initAndValidate
 
 	public Integer[] getShape() {
@@ -133,22 +146,14 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 
 		double[] fFreqs = frequencies.getFreqs();
 
-		int next = 0;
-		for (int k = 0; k < rateMatrix.length; ++k) {
-			int[] kAsComponentIndices = CompoundDataType.compoundState2componentStates(shape, k);
-			for (int c = 0; c < shape.length; ++c) {
-				int[] lAsComponentIndices = kAsComponentIndices.clone();
-				for (int i = 0; i < shape[c]; ++i) {
-					if (i != kAsComponentIndices[c]) {
-						lAsComponentIndices[c] = i;
-						int l = CompoundDataType.componentState2compoundState(shape, lAsComponentIndices);
-						rateMatrix[k][l] = ratesInput.get().getArrayValue(next);
-						//System.err.println(next + ": " + k + " " + l + " " + rateMatrix[k][l]);
-						++next;
-					}
-				}
-			}
-		}
+		rateMatrix[0][1] = this.rates.getArrayValue(0);
+		rateMatrix[0][2] = this.rates.getArrayValue(1);
+		rateMatrix[1][0] = this.rates.getArrayValue(2);
+		rateMatrix[1][3] = this.rates.getArrayValue(3);
+		rateMatrix[2][0] = this.rates.getArrayValue(4);
+		rateMatrix[2][3] = this.rates.getArrayValue(5);
+		rateMatrix[3][1] = this.rates.getArrayValue(6);
+		rateMatrix[3][2] = this.rates.getArrayValue(7);
 
 		// bring in frequencies
 		for (int i = 0; i < nrOfStates; i++) {
@@ -240,52 +245,20 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 
 	@Override
 	public void init(PrintStream out) {
-		
-		CompoundDataType datatype = datatypeInput.get();
-		if (datatype == null && alignmentInput.get() != null) {
-			datatype = (CompoundDataType) alignmentInput.get().getDataType();
-		}
-		
-		for (int k = 0; k < rateMatrix.length; ++k) {
-			int[] kAsComponentIndices = CompoundDataType.compoundState2componentStates(shape, k);
-			for (int c = 0; c < shape.length; ++c) {
-				int[] lAsComponentIndices = kAsComponentIndices.clone();
-				for (int i = 0; i < shape[c]; ++i) {
-					if (i != kAsComponentIndices[c]) {
-						lAsComponentIndices[c] = i;
-						int l = CompoundDataType.componentState2compoundState(shape, lAsComponentIndices);
-						if (datatype == null) {
-							out.print("rate_" + k + "->" + l + "\t");
-						} else {
-							out.print("rate_"+datatype.getCode(k) + "->" + datatype.getCode(l) + "\t");
-						}
-						//System.err.println(next + ": " + k + " " + l + " " + rateMatrix[k][l]);
-					}
-				}
-			}
-		}
+		out.print("rate_00->01\t");
+		out.print("rate_00->10\t");
+		out.print("rate_01->00\t");
+		out.print("rate_01->11\t");
+		out.print("rate_10->00\t");
+		out.print("rate_10->11\t");
+		out.print("rate_11->01\t");
+		out.print("rate_11->10\t");
 	}
 
 	@Override
 	public void log(int sample, PrintStream out) {
-		double [][] rateMatrix = new double[4][4];
-
-		int next = 0;
-		for (int k = 0; k < rateMatrix.length; ++k) {
-			int[] kAsComponentIndices = CompoundDataType.compoundState2componentStates(shape, k);
-			for (int c = 0; c < shape.length; ++c) {
-				int[] lAsComponentIndices = kAsComponentIndices.clone();
-				for (int i = 0; i < shape[c]; ++i) {
-					if (i != kAsComponentIndices[c]) {
-						lAsComponentIndices[c] = i;
-						int l = CompoundDataType.componentState2compoundState(shape, lAsComponentIndices);
-						double rate = ratesInput.get().getArrayValue(next);
-						out.print(rate+"\t");
-						//System.err.println(next + ": " + k + " " + l + " " + rateMatrix[k][l]);
-						++next;
-					}
-				}
-			}
+		for (int i = 0; i < 8; i++) {
+			out.print(this.rates.getArrayValue(i) + "\t");
 		}
 	}
 	

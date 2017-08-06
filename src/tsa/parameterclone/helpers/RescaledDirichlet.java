@@ -17,6 +17,11 @@ public class RescaledDirichlet extends ParametricDistribution {
 	public Input<IntegerParameter> nInput = new Input<IntegerParameter>(
 			"sizes", "stores how many indices are pointing to each x");
 
+	public RescaledDirichlet() {}
+	public RescaledDirichlet(IntegerParameter sizes) {
+		initByName("sizes", sizes);
+	}
+
 	@Override
 	public double calcLogP(Function pX) {
 		double fLogP = 0;
