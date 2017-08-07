@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
 
 
 import beast.app.BeastMCMC;
+import beast.app.util.TreeFile;
 import beast.core.BEASTInterface;
 import beast.core.Input;
 import beast.evolution.alignment.Alignment;
@@ -25,6 +26,14 @@ public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
     /** private list of likelihoods, to notify framework of TreeLikelihoods being created in initAndValidate() **/
     final public Input<List<TreeLikelihood>> likelihoodsInput = new Input<>("*","",new ArrayList<>());
 	
+    public ThreadedTreeSetLikelihood() {}
+    
+    
+	public ThreadedTreeSetLikelihood(TreeLikelihood treeLikelihood, TreeFile treeFile, int burnin) {
+		initByName("treeSetFile", treeFile.getPath(), "treeLikelihood", treeLikelihood, "burnin", burnin);
+	}
+
+
 	class MyTreeLikelihood extends TreeLikelihood {
 		@Override
 		protected boolean requiresRecalculation() {
