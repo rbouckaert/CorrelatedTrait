@@ -122,10 +122,13 @@ public class TSAModelSelector extends Runnable {
 			countDown.await();
 		}
 
+//		ml = new double[] { -711.8 , -702.5 , -709.6 , -703.3 , -699.6 , -696.2 , -705.0 , -709.8 , -704.9 , -720.0 , -702.9 , -706.5 , -707.1 , -702.1 , -698.7 , -711.5};
+		reportStats();		
+		
 		PrintStream out = System.out;
 		if (outputInput.get() != null) {
 			out = new PrintStream(outputInput.get());
-			Log.info("Output written to " + outputInput.get().toPath());
+			Log.info("\nOutput written to " + outputInput.get().toPath() +"\n");
 		}
 		String dot = toDot(ml, df);
 		out.print(dot);
@@ -133,7 +136,6 @@ public class TSAModelSelector extends Runnable {
 		long end = System.currentTimeMillis();
 		Log.warning("Total time spent: " + (end - start) / 1000 + " seconds");
 		
-		reportStats();		
 		Log.warning("All done!");
 
 	}
@@ -145,35 +147,36 @@ public class TSAModelSelector extends Runnable {
 			Log.info((i < 10 ? " ":"") + i + ": " + indices[i] + " : " + format.format(ml[i]) + " (" + format.format(df[i]) + ")");
 		}		
 		Log.info("");
-		Log.info("rate : P(equal) P(different)");
-		odds(1);
-		odds(2);
-		odds(3);
-		odds(4);		
+		Log.info("rate    : P(equal) P(different)");
+		
+		odds(1, "?0 -> ?1");
+		odds(2, "?1 -> ?0");
+		odds(3, "0? -> 1?");
+		odds(4, "1? -> 0?");		
 	}
 
-	private void odds(int i) {
+	private void odds(int rate, String label) {
 		double max = ml[0];
 		for (int j = 0; j < 16; j++) {
-			max = Math.max(ml[i], max);
+			max = Math.max(ml[j], max);
 		}
 		int [] isOn = new int[16];
-		switch (i) {
-		case 4: isOn = new int[]{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0};
-		case 3: isOn = new int[]{1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0};
-		case 2: isOn = new int[]{1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0};
-		case 1: isOn = new int[]{1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0};
+		switch (rate) {
+		case 4: isOn = new int[]{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0};break;
+		case 3: isOn = new int[]{1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0};break;
+		case 2: isOn = new int[]{1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0};break;
+		case 1: isOn = new int[]{1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0};break;
 		}
 		double [] p = new double[2];
 		for (int j = 0; j < 16; j++) {
-			p[isOn[i]] += Math.exp(ml[i] - max);
+			p[isOn[j]] += Math.exp(ml[j] - max);
 		}
 		double sum = (p[0] + p[1]) / 100.0;
 		p[0] /= sum;
 		p[1] /= sum;
-		Log.info("rate " + i + ": " + 
-				"     ".substring(format.format(p[0]).length()) + format.format(p[0]) + "%" + 
-				"        ".substring(format.format(p[1]).length()) + format.format(p[1]) + "%");
+		Log.info(label + ": " + 
+				"      ".substring(format.format(p[0]).length()) + format.format(p[0]) + "%" + 
+				"          ".substring(format.format(p[1]).length()) + format.format(p[1]) + "%");
 	}
 
 
