@@ -1,6 +1,8 @@
 <addon name='TreeSetAnalyser' version='0.0.1'>
 	<depends on='beast2' atleast='2.4.0'/>
 	<depends on='BEASTLabs' atleast='1.7.0'/>
+	<depends on='BEAST_CLASSIC' atleast='1.3.0'/>
+	<depends on='NS' atleast='0.0.1'/>
 	
 	<addonapp description="TSASummary"
               class="tsa.TSASummary"
