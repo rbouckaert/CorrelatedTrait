@@ -15,9 +15,15 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
 import beast.app.util.Application;
 import beast.app.util.OutFile;
 import beast.app.util.TreeFile;
+import beast.app.util.XMLFile;
+import beast.core.BEASTInterface;
 import beast.core.Input;
 import beast.core.Input.Validate;
 import beast.core.Operator;
@@ -46,6 +52,8 @@ import beast.math.distributions.Gamma;
 import beast.math.distributions.LogNormalDistributionModel;
 import beast.math.distributions.Prior;
 import beast.util.TreeParser;
+import beast.util.XMLParser;
+import beast.util.XMLParserException;
 import tsa.correlatedcharacters.polycharacter.CompoundAlignment;
 import tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel;
 import tsa.parameterclone.helpers.RescaledDirichlet;
@@ -68,6 +76,8 @@ public class TSAModelSelector extends Runnable {
 			"stopping criterion: smallest change in ML estimate to accept", 1e-8);
 	public Input<OutFile> outputInput = new Input<>("output", "where to save the dot file with results",
 			new OutFile("/tmp/x.dot"));
+	public Input<XMLFile> xmlFileInput = new Input<>("xml", "XML file containing NS analysis, so you can set your own priors. "
+			+ "The IntegerParameter with id=\"indices\" will be replaced by one of the 16 possible combinations.");
 
 	public Input<TreeFile> treeSetFileInput = new Input<>("treeFile", "file containing trees used for inference");
 	
@@ -248,7 +258,10 @@ public class TSAModelSelector extends Runnable {
 		return dot;
 	}
 
-	private NS buildModel(String indexValues) throws IOException {
+	private NS buildModel(String indexValues) throws IOException, SAXException, ParserConfigurationException, XMLParserException {
+		if (xmlFileInput.get() != null && !xmlFileInput.get().equals("[[none]]")) {
+			return buildModelFromFile(indexValues);
+		}
 		if (useRelaxedClockInput.get()) {
 			return buildModelRelaxed(indexValues);
 		} else {
@@ -256,6 +269,40 @@ public class TSAModelSelector extends Runnable {
 		}
 	}
 	
+	private NS buildModelFromFile(String indexValues) throws SAXException, IOException, ParserConfigurationException, XMLParserException {
+		XMLParser parser = new XMLParser();
+		Object o = parser.parseFile(xmlFileInput.get());
+		if (!(o instanceof NS)) {
+			throw new IllegalArgumentException("Expected the run element to be of type NS");
+		}
+		NS ns = (NS) o;
+		IntegerParameter indices = getIndicesObject(ns);
+		if (indices == null) {
+			throw new IllegalArgumentException("Expected element with id=\"indices\" in XML, but could not find any");
+		}
+		indices.valuesInput.setValue(indexValues, indices);
+		indices.initAndValidate();
+		return ns;
+	}
+
+	private IntegerParameter getIndicesObject(BEASTInterface o) {
+		for (BEASTInterface bi : o.listActiveBEASTObjects()) {
+			if (bi.getID().equals("indices")) {
+				if (bi instanceof IntegerParameter) {
+					return (IntegerParameter) bi;
+				} else {
+					throw new IllegalArgumentException("Element with id=\"indices\" is not an IntegerParameter");
+				}
+			} else {
+				IntegerParameter result = getIndicesObject(bi);
+				if (result != null) {
+					return result;
+				}
+			}
+		}
+		return null;
+	}
+
 	private NS buildModelStrict(String indexValues) throws IOException {
 		TreeParser tree = new TreeParser(null, newick, 0, false);
 
