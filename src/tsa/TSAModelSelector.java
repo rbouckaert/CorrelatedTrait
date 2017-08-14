@@ -195,10 +195,10 @@ public class TSAModelSelector extends Runnable {
 		}
 		int [] isOn = new int[16];
 		switch (rate) {
-		case 4: isOn = new int[]{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0};break;
-		case 3: isOn = new int[]{1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0};break;
-		case 2: isOn = new int[]{1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0};break;
-		case 1: isOn = new int[]{1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0};break;
+		case 1: isOn = new int[]{0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1};break;
+		case 2: isOn = new int[]{0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1};break;
+		case 3: isOn = new int[]{0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1};break;
+		case 4: isOn = new int[]{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1};break;
 		}
 		double [] p = new double[2];
 		for (int j = 0; j < 16; j++) {
