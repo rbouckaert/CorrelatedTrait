@@ -629,7 +629,11 @@ public class TSAModelSelector extends Runnable {
 				String v2 = strs[v2Input];
 				v2 = normalise(v2, values2);
 				String value = v1 + v2;
-				if (map.containsKey(iso)) {
+				// make sure that ambiguities are ignored
+				if (v1.charAt(0)=='?' || v2.charAt(0)=='?') {
+					value = "??";
+				}
+ 				if (map.containsKey(iso)) {
 					String value2 = map.get(iso);
 					if (!value.equals(value2) && !value2.equals("??")) {
 						Log.warning("Ambiguous value for " + iso + " (" + value + " & " + value2
