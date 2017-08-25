@@ -40,6 +40,7 @@ import beast.evolution.branchratemodel.UCRelaxedClockModel;
 import beast.evolution.datatype.Binary;
 import beast.evolution.likelihood.AncestralStateTreeLikelihood;
 import beast.evolution.likelihood.ThreadedTreeSetLikelihood;
+import beast.evolution.likelihood.TreeLikelihood;
 import beast.evolution.operators.DeltaExchangeOperator;
 import beast.evolution.operators.IntRandomWalkOperator;
 import beast.evolution.operators.ScaleOperator;
@@ -103,7 +104,10 @@ public class TSAModelSelector extends Runnable {
 	@Override
 	public void run() throws Exception {
 		long start = System.currentTimeMillis();
-		indices = new String[16];
+        Log.warning("Do not use BEAGLE with CorrelatedSubstitutionModel: setting java.only=true");
+        System.setProperty("java.only", "true");
+
+        indices = new String[16];
 		indices[0] = "0 1 2 1 3 0 3 2";
 
 		indices[1] = "0 1 2 1 3 0 4 2";
@@ -168,16 +172,20 @@ public class TSAModelSelector extends Runnable {
 
 	private void reportStats() {
 		Log.info("");
-		Log.info("model: indices      : marginal likelihood (standard deviation)");
+		Log.info("model  : indices        : marginal likelihood (standard deviation)");
 		for (int i = 0; i < 16; i++) {
-			Log.info((i < 10 ? " ":"") + i + ": " + indices[i] + " : " + format.format(ml[i]) + " (" + format.format(df[i]) + ")");
+			String bin = Integer.toBinaryString(i);
+			while (bin.length() < 4) {
+				bin = "0" + bin;
+			}
+			Log.info((i < 10 ? " ":"") + i + " " + bin + ": " + indices[i] + " : " + format.format(ml[i]) + " (" + format.format(df[i]) + ")");
 		}		
 		Log.info("");
 		Log.info("rate    : P(equal) P(different)");
 		
 		odds(1, "?0 -> ?1");
-		odds(2, "?1 -> ?0");
-		odds(3, "0? -> 1?");
+		odds(2, "0? -> 1?");
+		odds(3, "?1 -> ?0");
 		odds(4, "1? -> 0?");		
 		
 		Log.info("");
@@ -419,9 +427,11 @@ public class TSAModelSelector extends Runnable {
 		StrictClockModel clockModel = new StrictClockModel();
 		clockModel.initByName("clock.rate", clockRate);
 		// </treeLikelihood>
-		AncestralStateTreeLikelihood ancestralStateTreeLikelihood = new AncestralStateTreeLikelihood();
-		ancestralStateTreeLikelihood.initByName("branchRateModel", clockModel, "tree", tree, "data", characters, "tag",
-				"dplace", "siteModel", siteModel);
+//		AncestralStateTreeLikelihood ancestralStateTreeLikelihood = new AncestralStateTreeLikelihood();
+//		ancestralStateTreeLikelihood.initByName("branchRateModel", clockModel, "tree", tree, "data", characters, "tag",
+//				"dplace", "siteModel", siteModel, "useJava", true);
+		TreeLikelihood ancestralStateTreeLikelihood = new TreeLikelihood();
+		ancestralStateTreeLikelihood.initByName("branchRateModel", clockModel, "tree", tree, "data", characters, "siteModel", siteModel);
 		// </distribution>
 		CompoundDistribution likelihood = new CompoundDistribution();
 		likelihood.setID("likelihood");
@@ -537,7 +547,7 @@ public class TSAModelSelector extends Runnable {
 
 		AncestralStateTreeLikelihood ancestralStateTreeLikelihood = new AncestralStateTreeLikelihood();
 		ancestralStateTreeLikelihood.initByName("branchRateModel", clockModel, "tree", tree, "data", characters, "tag",
-				"dplace", "siteModel", siteModel);
+				"dplace", "siteModel", siteModel ,"useJava", true);
 
 		CompoundDistribution likelihood = new CompoundDistribution();
 		likelihood.setID("likelihood");

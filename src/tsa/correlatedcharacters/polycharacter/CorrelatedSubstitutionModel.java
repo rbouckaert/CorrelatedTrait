@@ -27,7 +27,6 @@ import beast.core.Function;
 import beast.core.Input;
 import beast.core.Loggable;
 import beast.core.parameter.IntegerParameter;
-import beast.core.parameter.RealParameter;
 import beast.evolution.substitutionmodel.ComplexSubstitutionModel;
 import beast.evolution.substitutionmodel.Frequencies;
 import tsa.parameterclone.selector.Selector;
@@ -51,7 +50,7 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 			"corresponding compound data type");
 	public Input<CompoundAlignment> alignmentInput = new Input<CompoundAlignment>("alignment",
 			"corresponding alignment to derive parameter dimensions from");
-
+	
 	protected Integer[] shape;
 	
 	Function rates;
@@ -126,8 +125,8 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 //		}
 
 		rateMatrix = new double[nrOfStates][nrOfStates];
-		relativeRates = new double[ratesInput.get().getDimension()];
-		storedRelativeRates = new double[ratesInput.get().getDimension()];
+		relativeRates = new double[nrOfStates * (nrOfStates-1)];
+		storedRelativeRates = new double[nrOfStates * (nrOfStates-1)];
 		rates = ratesInput.get();
 	} // initAndValidate
 
@@ -135,6 +134,39 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 		return shape.clone();
 	}
 
+	
+	@Override
+	protected void setupRelativeRates() {        
+        relativeRates[0] = this.rates.getArrayValue(0);
+        relativeRates[1] = this.rates.getArrayValue(1);
+        relativeRates[2] = 0;
+        relativeRates[3] = this.rates.getArrayValue(2);
+        relativeRates[4] = 0;
+        relativeRates[5] = this.rates.getArrayValue(3);
+        relativeRates[6] = this.rates.getArrayValue(4);
+        relativeRates[7] = 0;
+        relativeRates[8] = this.rates.getArrayValue(5);
+        relativeRates[9] = 0;
+        relativeRates[10] = this.rates.getArrayValue(6);
+        relativeRates[11] = this.rates.getArrayValue(7);
+	}
+	
+	@Override
+	protected void setupRelativeRates(double[] rates) {
+        rates[0] = this.rates.getArrayValue(0);
+        rates[1] = this.rates.getArrayValue(1);
+        rates[2] = 0;
+        rates[3] = this.rates.getArrayValue(2);
+        rates[4] = 0;
+        rates[5] = this.rates.getArrayValue(3);
+        rates[6] = this.rates.getArrayValue(4);
+        rates[7] = 0;
+        rates[8] = this.rates.getArrayValue(5);
+        rates[9] = 0;
+        rates[10] = this.rates.getArrayValue(6);
+        rates[11] = this.rates.getArrayValue(7);
+	}
+	
 	/**
 	 * sets up rate matrix *
 	 */
