@@ -24,6 +24,7 @@ import beast.app.util.OutFile;
 import beast.app.util.TreeFile;
 import beast.app.util.XMLFile;
 import beast.core.BEASTInterface;
+import beast.core.Description;
 import beast.core.Input;
 import beast.core.Input.Validate;
 import beast.core.Operator;
@@ -60,6 +61,7 @@ import tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel;
 import tsa.parameterclone.helpers.RescaledDirichlet;
 import tsa.parameterclone.selector.Selector;
 
+@Description("Perform correlated character analysis on D-PLACE data")
 public class TSAModelSelector extends Runnable {
 	public Input<Integer> particleCountInput = new Input<>("particleCount", "number of particles (default 1)", 1);
 	public Input<Integer> subChainLengthInput = new Input<>("subChainLength",
