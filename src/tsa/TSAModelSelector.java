@@ -88,6 +88,8 @@ public class TSAModelSelector extends Runnable {
 	public Input<Boolean> useRelaxedClockInput = new Input<>("relaxed", "if true, a relaxed clock is used, otherwise a strict clock is used",
 			false);
 
+	public Input<String> codeInput = new Input<>("code", "column name containing the code for taxa in the tree, e.g  or 'Society id' or 'ISO code'", "Society id");
+	
 	@Override
 	public void initAndValidate() {
 	}
@@ -583,16 +585,17 @@ public class TSAModelSelector extends Runnable {
 		// determine columns containing the data
 		str = fin.readLine();
 		String[] strs = str.split(",");
-		int isoIndex = -1;
+		int socIndex = -1;
 		int v1Input = -1;
 		int v2Input = -1;
+		String code = codeInput.get();
 		for (int i = 0; i < strs.length; i++) {
-			if (strs[i].equals("ISO code")) {
-				if (isoIndex < 0) {
-					isoIndex = i;
+			if (strs[i].equals(code)) {
+				if (socIndex < 0) {
+					socIndex = i;
 				} else {
 					fin.close();
-					throw new IllegalArgumentException("more than one ISO column found");
+					throw new IllegalArgumentException("more than one " + code + " column found");
 				}
 			}
 			if (strs[i].startsWith("Code: ")) {
@@ -607,9 +610,9 @@ public class TSAModelSelector extends Runnable {
 			}
 
 		}
-		if (isoIndex < 0) {
+		if (socIndex < 0) {
 			fin.close();
-			throw new IllegalArgumentException("Could not find ISO column");
+			throw new IllegalArgumentException("Could not find " + codeInput + " column");
 		}
 		if (v1Input < 0) {
 			fin.close();
@@ -634,7 +637,7 @@ public class TSAModelSelector extends Runnable {
 			// remove qouted text
 			str = str.replaceAll("\"[^\"]+\"", "");
 			strs = str.split(",");
-			String iso = strs[isoIndex];
+			String iso = strs[socIndex];
 			if (iso.length() > 0) {
 				String v1 = strs[v1Input];
 				v1 = normalise(v1, values1);
