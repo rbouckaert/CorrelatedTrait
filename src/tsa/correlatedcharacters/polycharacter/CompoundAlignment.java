@@ -61,6 +61,7 @@ public class CompoundAlignment extends Alignment {
 
 	private void initAndValidate(Alignment alignment_) {
 		alignment = alignment_;
+		alignmentInput.setValue(alignment_, this);
 
 		// Construct or copy the appropriate data type
 		CompoundDataType cdt = new CompoundDataType();
