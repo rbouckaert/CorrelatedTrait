@@ -140,7 +140,7 @@ public class Selector extends CalculationNode implements Loggable, Function {
 	}
 
 	@Override
-	public void log(final int nSample, final PrintStream out) {
+	public void log(final long nSample, final PrintStream out) {
 		for (int i = 0; i < getDimension(); ++i) {
 			out.print(getArrayValue(i) + "\t");
 		}

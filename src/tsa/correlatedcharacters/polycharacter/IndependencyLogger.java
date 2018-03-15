@@ -33,7 +33,7 @@ public class IndependencyLogger extends BEASTObject implements Loggable {
 	}
 
 	@Override
-	public void log(int sample, PrintStream out) {
+	public void log(long sample, PrintStream out) {
 		CorrelatedSubstitutionModel csm = csmInput.get();
 		int components = csmInput.get().getShape().length;
 		for (int component1 = 0; component1 < components; ++component1) {

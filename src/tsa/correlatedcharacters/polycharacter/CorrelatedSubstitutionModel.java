@@ -288,7 +288,7 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 	}
 
 	@Override
-	public void log(int sample, PrintStream out) {
+	public void log(long sample, PrintStream out) {
 		for (int i = 0; i < 8; i++) {
 			out.print(this.rates.getArrayValue(i) + "\t");
 		}
