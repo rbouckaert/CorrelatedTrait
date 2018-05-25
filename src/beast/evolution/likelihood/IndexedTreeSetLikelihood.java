@@ -27,6 +27,10 @@ public class IndexedTreeSetLikelihood extends TreeSetLikelihood {
 	public double calculateLogP() {
         logP = 0;
     	Tree tree0 = (Tree) treelikelihood.treeInput.get();
+    	if (index.getValue() < 0 || index.getValue() >= trees.size()) {
+    		logP = Double.NEGATIVE_INFINITY;
+    		return logP;
+    	}
         tree0.assignFrom(trees.get(index.getValue()));
         logP += treelikelihood.calculateLogP();
         return logP;
