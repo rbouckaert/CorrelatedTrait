@@ -1,4 +1,4 @@
-package beast.evolution;
+package beast.evolution.operators;
 
 import beast.core.Description;
 import beast.evolution.operators.UniformOperator;
