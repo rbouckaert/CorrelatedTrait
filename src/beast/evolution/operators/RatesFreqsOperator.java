@@ -1,11 +1,15 @@
 package beast.evolution.operators;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import beast.core.Description;
 import beast.core.Input;
 import beast.core.Operator;
+import beast.core.StateNode;
 import beast.core.Input.Validate;
+import beast.core.parameter.BooleanParameter;
 import beast.core.parameter.RealParameter;
 import beast.util.Randomizer;
 
@@ -20,11 +24,14 @@ public class RatesFreqsOperator extends Operator {
 
     public final Input<Double> scaleFactorInput = new Input<>("scaleFactor", "scaling factor: larger means more bold proposals", 1.0);
     final public Input<Boolean> optimiseInput = new Input<>("optimise", "flag to indicate that the scale factor is automatically changed in order to achieve a good acceptance rate (default true)", true);
-
+    final public Input<BooleanParameter> rateIndicatorInput = new Input<>("rateIndicator", "if specified, only parameters with associated rateIndicator set to true will be changed");
+    
+    
     RealParameter rates;
 	double scaleFactor = 0.1;
 	int [] pair;
 	double upper, lower;
+	BooleanParameter rateIndicator;
 	
     @Override
     public void initAndValidate() {
@@ -32,6 +39,7 @@ public class RatesFreqsOperator extends Operator {
     	upper = rates.getUpper();
     	lower = Math.max(rates.getLower(), 0);
     	scaleFactor = scaleFactorInput.get();
+    	rateIndicator = rateIndicatorInput.get();
 
 		int n = (int) Math.sqrt(rates.getDimension()) + 1;
 		int [][] map = new int[n][n];
@@ -58,6 +66,11 @@ public class RatesFreqsOperator extends Operator {
     @Override
     public double proposal() {
 		int i = Randomizer.nextInt(rates.getDimension());
+		if (rateIndicator != null) {
+			while (!rateIndicator.getValue(i)) {
+				i = Randomizer.nextInt(rates.getDimension());
+			}
+		}
 		int j = pair[i];
 		double epsilon = Randomizer.nextDouble() * scaleFactor;
 		if (Randomizer.nextBoolean()) {
@@ -136,5 +149,17 @@ public class RatesFreqsOperator extends Operator {
 	    } else if (prob > 0.40) {
 	        return "Try setting scaleFactor to about " + formatter.format(sf);
 	    } else return "";
+	}
+	
+	
+	@Override
+	public List<StateNode> listStateNodes() {
+        List<StateNode> list = super.listStateNodes();
+        for (int i = list.size() - 1; i >=0; i--) {
+        	if (list.get(i).isEstimatedInput.get() == false) {
+        		list.remove(i);
+        	}
+        }
+        return list;        
 	}
 }

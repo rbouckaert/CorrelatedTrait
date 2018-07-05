@@ -1,8 +1,9 @@
 package beast.evolution.substitutionmodel;
 
+
 import java.io.PrintStream;
 
-import beast.core.BEASTObject;
+import beast.core.CalculationNode;
 import beast.core.Description;
 import beast.core.Function;
 import beast.core.Input;
@@ -11,19 +12,27 @@ import beast.core.Input.Validate;
 
 @Description("Loggable/Function returning stationary frequencies of a substitution model. "
 		+ "The model must have the getTransitionProbabilities() method implemented.")
-public class StationaryFrequenciesLogger extends BEASTObject implements Function, Loggable {
+public class StationaryFrequenciesLogger extends CalculationNode implements Function, Loggable {
 	public Input<SubstitutionModel> substModelInput = new Input<>("substModel", "substitution model for which to calculate stationary frequencies", Validate.REQUIRED);
+	public Input<Integer> dimInput = new Input<>("dim","dimension to be logged. If not specified, all dimensions are logged, otherwise only the first dim dimensions are available", -1);
 
 	SubstitutionModel substModel;
+	int dim;
 	
 	@Override
 	public void initAndValidate() {
 		substModel = substModelInput.get();
+		dim = substModel.getStateCount();
+		if (dimInput.get() > 0) {
+			dim = dimInput.get();
+			if (dim > substModel.getStateCount()) {
+				throw new IllegalArgumentException("dim-input cannot be larger than state count (=" + substModel.getStateCount() + ")");
+			}
+		}
 	}
 
 	@Override
 	public void init(PrintStream out) {
-		int dim = substModel.getStateCount();
 		for (int i = 0; i < dim; i++) {
 			out.append("statFreqs" + getID() + "." + (i+1) + "\t");
 		}
@@ -32,7 +41,7 @@ public class StationaryFrequenciesLogger extends BEASTObject implements Function
 	@Override
 	public void log(long sample, PrintStream out) {
 		double [] freqs = getStationaryFreqs();
-		for (int i = 0; i < freqs.length; i++) {
+		for (int i = 0; i < dim; i++) {
 			out.append(freqs[i] + "\t");
 		}
 	}
@@ -44,7 +53,7 @@ public class StationaryFrequenciesLogger extends BEASTObject implements Function
 
 	@Override
 	public int getDimension() {
-		return substModel.getStateCount();
+		return dim;
 	}
 
 	@Override
@@ -54,6 +63,9 @@ public class StationaryFrequenciesLogger extends BEASTObject implements Function
 
 	@Override
 	public double getArrayValue(int dim) {
+		if (dim >= this.dim) {
+			throw new IllegalArgumentException("dim-input should be larger entry (=" + dim + ")");			
+		}
 		double [] freqs = getStationaryFreqs();
 		return freqs[dim];
 	}
@@ -61,9 +73,9 @@ public class StationaryFrequenciesLogger extends BEASTObject implements Function
 	private double[] getStationaryFreqs() {
 		int n = substModel.getStateCount();
 		double [] matrix = new double[n*n];
-		double [] freqs = new double[n];
+		double [] freqs = new double[dim];
 		substModel.getTransitionProbabilities(null, 1000, 0, 1.0, matrix);
-		System.arraycopy(matrix, 0, freqs, 0, n);
+		System.arraycopy(matrix, 0, freqs, 0, dim);
 		return freqs;
 	}
 
