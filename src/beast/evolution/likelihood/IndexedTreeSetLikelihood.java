@@ -20,6 +20,7 @@ public class IndexedTreeSetLikelihood extends TreeSetLikelihood {
 		super.initAndValidate();
 		index = indexInput.get();
 		prevTree = -1;
+		index.setLower(0);
 		index.setUpper(trees.size());		
 	}
 	
@@ -32,6 +33,9 @@ public class IndexedTreeSetLikelihood extends TreeSetLikelihood {
     		return logP;
     	}
         tree0.assignFrom(trees.get(index.getValue()));
+        tree0.setEverythingDirty(true);
+        // flag as dirty to treelikelihood
+        treelikelihood.requiresRecalculation();
         logP += treelikelihood.calculateLogP();
         return logP;
 	}
