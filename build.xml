@@ -86,6 +86,7 @@
 			   source="1.8"
 		       target="1.8">
 			<include name="beast/**/**" />
+			<include name="tsa/**/**" />
 			<!-- compile JUnit test classes -->
 			<include name="test/beast/**" />
 		</javac>
@@ -141,6 +142,7 @@
 		<jar jarfile="${distlabs}/TreeSetAnalyser.src.jar">
 			<fileset dir="${srclabs}">
 				<include name="beast/**/*.java" />
+				<include name="tsa/**/*.java" />
 				<include name="test/**/*.java" />
 				<include name="beast/**/*.png" />
 				<include name="beast/**/*.xsl" />
@@ -152,6 +154,7 @@
 			</manifest>
 			<fileset dir="${buildlabs}">
 				<include name="beast/**/*.class" />
+				<include name="tsa/**/*.class" />
 				<exclude name="**/**/Sequence.class"/>
 				<exclude name="**/**/Prior.class"/>
 				<exclude name="**/**/SkyrideBlockOperator.class"/>
