@@ -11,12 +11,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import beast.core.Description;
 import beast.core.Input;
 import beast.core.Input.Validate;
 import beast.evolution.alignment.AlignmentFromTrait;
 
+@Description("As AlignmentFromTrait, but with DPLACE data encoded for two D-PLACE features")
 public class AlignmentFromTraitForDPLace extends AlignmentFromTrait {
-	final public Input<File> fileInput = new Input<>("file", "file exported from DPlace database containing two features", Validate.REQUIRED);
+	final public Input<File> fileInput = new Input<>("file", "file exported from DPLACE database containing two features", Validate.REQUIRED);
 	final public Input<String> code1Input = new Input<>("code1", "comma separated list of codes to be mapped to 1 for first feature", "1");
 	final public Input<String> code2Input = new Input<>("code2", "comma separated list of codes to be mapped to 1 for second feature", "1");
 

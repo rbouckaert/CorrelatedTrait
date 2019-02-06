@@ -16,11 +16,15 @@ import beast.app.beauti.BeautiDoc;
 import beast.app.util.Application;
 import beast.app.util.OutFile;
 import beast.app.util.XMLFile;
+import beast.core.Description;
 import beast.core.Input;
 import beast.core.Runnable;
 import beast.core.Input.Validate;
 import beast.core.util.Log;
 
+@Description("Utility to convert a file exported from DPLACE containing two features into XML. "
+		+ "Warning: this has a list of ISO codes hard coded to identify languages, so may not be "
+		+ "compatible with the latest version fo DPLACE.")
 public class DPlaceCSVtoXML extends Runnable {
 	final public Input<File> fileInput = new Input<>("file", "file exported from DPlace database containing two features", Validate.REQUIRED);
 	final public Input<String> code1Input = new Input<>("code1", "comma separated list of codes to be mapped to 1 for first feature", "1");

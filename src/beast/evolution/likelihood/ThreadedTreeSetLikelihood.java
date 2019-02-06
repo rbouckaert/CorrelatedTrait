@@ -10,11 +10,13 @@ import java.util.concurrent.Executors;
 import beast.app.BeastMCMC;
 import beast.app.util.TreeFile;
 import beast.core.BEASTInterface;
+import beast.core.Description;
 import beast.core.Input;
 import beast.evolution.alignment.Alignment;
 import beast.evolution.substitutionmodel.SubstitutionModel;
 import beast.evolution.tree.Tree;
 
+@Description("Threaded version of the TreeSetLikelihood")
 public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
 	
 	TreeLikelihood [] treelikelihoods;
@@ -34,6 +36,7 @@ public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
 	}
 
 
+	@Description("Tree likelihood that marks the whole tree filthy every time requiresRecalculation() is called")
 	class MyTreeLikelihood extends TreeLikelihood {
 		@Override
 		protected boolean requiresRecalculation() {
@@ -176,6 +179,8 @@ public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
         copy.initAndValidate();
 		return copy;
 	}
+    
+    @Description("Helper class for calculating the TreeLikelihood using threads")
     class TreeLikelihoodCaller implements Callable<Double> {
         private final TreeLikelihood likelihood;
         private final int start, end;
