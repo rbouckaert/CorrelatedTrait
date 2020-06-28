@@ -39,7 +39,6 @@
         <pathelement path="../BEASTLabs/build"/>
         <pathelement path="../nested-sampling/build"/>
         <pathelement path="../beast-classic/build"/>
-        <pathelement path="../Babel/build"/>
 	</path>
 
 	<!-- start -->
