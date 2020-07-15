@@ -33,7 +33,7 @@ public class CompoundAlignment extends Alignment {
 	// Consider inputs:
 	// stripInvariantSitesInput
 	// siteWeightsInput
-	public Input<Alignment> alignmentInput = new Input<Alignment>("alignment", "The component sites",
+	public Input<Alignment> alignmentInput = new Input<Alignment>("alignment", "Alignment forming the component sites",
 			Validate.REQUIRED);
 	protected Alignment alignment;
 
