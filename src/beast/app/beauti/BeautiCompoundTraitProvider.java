@@ -136,10 +136,8 @@ public class BeautiCompoundTraitProvider extends BeautiAlignmentProvider {
 		traitSet.initByName("value", b.toString(), "traitname", "correlated", "taxa", tree.getTaxonset());
 		
 		CompoundAlignment4 alignment = new CompoundAlignment4();
+		alignment.initByName("userDataType", dataType, "traitSet", traitSet);
 		alignment.setID(id);
-		alignment.userDataTypeInput.setValue(dataType, alignment);
-		alignment.traitInput.setValue(traitSet, alignment);
-		doc.registerPlugin(tree.getTaxonset());
 		doc.registerPlugin(dataType);
 		doc.registerPlugin(traitSet);
 		doc.registerPlugin(alignment);
