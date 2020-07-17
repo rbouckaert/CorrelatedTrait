@@ -120,9 +120,9 @@ public class BeautiCompoundTraitProvider extends BeautiAlignmentProvider {
 		for (String v1 : values1) {
 			boolean j = false;
 			for (String v2 : values2) {
-				int v = i ? j ? 3 : 1 : j ? 0 : 2; 
+				int v = i ? (j ? 3 : 1) : (j ? 2 : 0); 
 				codeMap.append(v1 + "-" + v2 +"=" + v + ",");
-				j = true;;
+				j = true;
 			}
 			i = true;
 		}

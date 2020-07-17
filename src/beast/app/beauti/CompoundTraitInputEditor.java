@@ -6,16 +6,18 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.EventObject;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -58,7 +60,6 @@ public class CompoundTraitInputEditor extends ListInputEditor {
 	TreeInterface tree;
     TraitSet traitSet;
     JTextField traitEntry;
-    JComboBox relativeToComboBox;
     List<String> sTaxa;
     Object[][] tableData;
     JTable table;
@@ -121,44 +122,14 @@ public class CompoundTraitInputEditor extends ListInputEditor {
 
             Box box = Box.createVerticalBox();
 
-            JCheckBox useTipDates = new JCheckBox("Use traits", traitSet != null);
-            useTipDates.addActionListener(new ActionListener() {
-
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    JCheckBox checkBox = (JCheckBox) e.getSource();
-                    try {
-                        Container comp = checkBox.getParent();
-                        comp.removeAll();
-                        if (checkBox.isSelected()) {
-                            if (traitSet == null) {
-                                traitSet = new TraitSet();
-                                String context = BeautiDoc.parsePartition(likelihood.getID());
-                                traitSet.setID("traitSet." + context);
-                                traitSet.initByName("traitname", "discrete",
-                                        "taxa", tree.getTaxonset(),
-                                        "value", "");
-                            }
-                            comp.add(checkBox);
-                            comp.add(createButtonBox());
-                            comp.add(createListBox());
-                            validateInput();
-                            m_input.setValue(traitSet, m_beastObject);
-                        } else {
-                            m_input.setValue(null, m_beastObject);
-                            comp.add(checkBox);
-                        }
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                    }
-
-                }
-            });
-            //box.add(useTipDates);
-
             if (traitSet != null) {
                 box.add(createButtonBox());
                 box.add(createListBox());
+
+                Box box2 = Box.createHorizontalBox();
+                box2.add(createTypeList(0));
+                box2.add(createTypeList(1));
+                box.add(box2);
             }
             add(box);
             validateInput();
@@ -169,8 +140,89 @@ public class CompoundTraitInputEditor extends ListInputEditor {
     } // init
 
 
+	Set<String> [][] type = new Set[2][2];
 
-    private Component createListBox() {
+    private Component createTypeList(final int index) {
+    	String [] strs = dataType.codeMapInput.get().split(",");
+    	type[0][0] = new HashSet<>();
+    	type[0][1] = new HashSet<>();
+    	type[1][0] = new HashSet<>();
+    	type[1][1] = new HashSet<>();
+    	
+    	for (String str: strs) {
+    		System.out.println(str);
+    		String [] strs2 = str.split("=");
+    		if (strs2[1].trim().equals("0")) {
+    			String [] strs3 = strs2[0].split("-");
+    			type[0][0].add(strs3[0]);
+    			type[1][0].add(strs3[1]);
+    		} else if (strs2[1].trim().equals("3")) {
+    			String [] strs3 = strs2[0].split("-");
+    			type[0][1].add(strs3[0]);
+    			type[1][1].add(strs3[1]);
+    		}
+    	}
+    	
+    	
+    	Set<String> all = new HashSet<>();
+    	all.addAll(type[index][0]);
+    	all.addAll(type[index][1]);
+    	String [] all_ = all.toArray(new String[]{});
+    	Arrays.sort(all_);
+
+    	Box box = Box.createVerticalBox();
+    	box.add(new JLabel("Categories for trait " + (index + 1) + " "));
+    	for (String str : all_) {
+    		final JCheckBox checkbox = new JCheckBox(str, type[index][1].contains(str));
+    		checkbox.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					toggle(index, (JCheckBox) e.getSource());
+				}
+			});
+    		box.add(checkbox);
+    	}
+    	
+		return box;
+	}
+
+	private void toggle(int index, JCheckBox value) {
+		System.out.println("Toggle " + index + " " + value);
+		String str = value.getText();
+		if (value.isSelected()) {
+			type[index][0].remove(str);
+			type[index][1].add(str);
+		} else {
+			type[index][1].remove(str);
+			type[index][0].add(str);
+		}
+		
+		StringBuilder b = new StringBuilder();
+		for(String s0 : type[0][0]) {
+			for(String s1 : type[1][0]) {
+				b.append(s0 + "-" + s1 + "=0,");
+			}			
+		}
+		for(String s0 : type[0][1]) {
+			for(String s1 : type[1][0]) {
+				b.append(s0 + "-" + s1 + "=1,");
+			}			
+		}
+		for(String s0 : type[0][0]) {
+			for(String s1 : type[1][1]) {
+				b.append(s0 + "-" + s1 + "=2,");
+			}			
+		}
+		for(String s0 : type[0][1]) {
+			for(String s1 : type[1][1]) {
+				b.append(s0 + "-" + s1 + "=3,");
+			}			
+		}
+		b.delete(b.length()-1, b.length());
+		dataType.codeMapInput.setValue(b.toString(), dataType);
+	}
+
+	private Component createListBox() {
     	try {
     		traitSet.taxaInput.get().initAndValidate();
     		
@@ -340,25 +392,6 @@ public class CompoundTraitInputEditor extends ListInputEditor {
         		values.add(tableData[i][1].toString());
         	}
         }
-        Collections.sort(values);
-        String codeMap = "";
-        int k = 0;
-        for (String value : values) {
-        	codeMap += value + "=" + k + ",";
-        	k++;
-        }
-        // add unknown/missing character
-        codeMap += "? = ";
-        for (int i = 0; i < values.size(); i++) {
-        	codeMap += i + " ";
-        }
-        // System.err.println(codeMap);
-        try {
-            dataType.codeMapInput.setValue(codeMap, dataType);
-            dataType.stateCountInput.setValue(values.size(), dataType);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         validateInput();
     }
 
@@ -403,21 +436,6 @@ public class CompoundTraitInputEditor extends ListInputEditor {
         });
         buttonBox.add(guessButton);
 
-
-        JButton clearButton = new JButton("Clear");
-        clearButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    traitSet.traitsInput.setValue("", traitSet);
-                    convertTableDataToDataType();
-                } catch (Exception ex) {
-                    // TODO: handle exception
-                }
-                refreshPanel();
-            }
-        });
-        buttonBox.add(clearButton);
 
         m_validateLabel = new SmallLabel("x", Color.orange);
         m_validateLabel.setVisible(false);
