@@ -149,7 +149,7 @@ public class BeautiCompoundTraitProvider extends BeautiAlignmentProvider {
 	protected int matches(Alignment alignment) {
 		for (BEASTInterface output : alignment.getOutputs()) {
 			if (output instanceof CompoundTreeLikelihood) {
-				return 10;
+				return 20;
 			}
 		}
 		return 0;

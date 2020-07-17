@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='FixedTreeAnalysis' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.6">
+
+
+    <data
+id="austronesia91"
+spec="Alignment"
+name="taxa">
+                <sequence id="Sequence.0" spec="Sequence" taxon="Ami_350" totalcount="4" value="?"/>
+                <sequence id="Sequence.1" spec="Sequence" taxon="Anuta_253" totalcount="4" value="?"/>
+                <sequence id="Sequence.2" spec="Sequence" taxon="Ata_Tana_Ai_124" totalcount="4" value="?"/>
+                <sequence id="Sequence.3" spec="Sequence" taxon="Atayal_255" totalcount="4" value="?"/>
+                <sequence id="Sequence.4" spec="Sequence" taxon="Atoni_42" totalcount="4" value="?"/>
+                <sequence id="Sequence.5" spec="Sequence" taxon="Berawan_45" totalcount="4" value="?"/>
+                <sequence id="Sequence.6" spec="Sequence" taxon="Biak_106" totalcount="4" value="?"/>
+                <sequence id="Sequence.7" spec="Sequence" taxon="Bidayuh_125" totalcount="4" value="?"/>
+                <sequence id="Sequence.8" spec="Sequence" taxon="Bontok_36" totalcount="4" value="?"/>
+                <sequence id="Sequence.9" spec="Sequence" taxon="Bughotu_37" totalcount="4" value="?"/>
+                <sequence id="Sequence.10" spec="Sequence" taxon="Buka_225" totalcount="4" value="?"/>
+                <sequence id="Sequence.11" spec="Sequence" taxon="Bukidnon_415" totalcount="4" value="?"/>
+                <sequence id="Sequence.12" spec="Sequence" taxon="Bunun_202" totalcount="4" value="?"/>
+                <sequence id="Sequence.13" spec="Sequence" taxon="Chamorro_18" totalcount="4" value="?"/>
+                <sequence id="Sequence.14" spec="Sequence" taxon="Cheke_Holo_209" totalcount="4" value="?"/>
+                <sequence id="Sequence.15" spec="Sequence" taxon="Choiseul_139" totalcount="4" value="?"/>
+                <sequence id="Sequence.16" spec="Sequence" taxon="Chuuk_349" totalcount="4" value="?"/>
+                <sequence id="Sequence.17" spec="Sequence" taxon="Dobu_218" totalcount="4" value="?"/>
+                <sequence id="Sequence.18" spec="Sequence" taxon="East_Sumba_330" totalcount="4" value="?"/>
+                <sequence id="Sequence.19" spec="Sequence" taxon="Eastern_Toraja_208" totalcount="4" value="?"/>
+                <sequence id="Sequence.20" spec="Sequence" taxon="Eromanga_464" totalcount="4" value="?"/>
+                <sequence id="Sequence.21" spec="Sequence" taxon="Fiji_East_11" totalcount="4" value="?"/>
+                <sequence id="Sequence.22" spec="Sequence" taxon="Futuna_East_210" totalcount="4" value="?"/>
+                <sequence id="Sequence.23" spec="Sequence" taxon="Gaddang_Pagan_418" totalcount="4" value="?"/>
+                <sequence id="Sequence.24" spec="Sequence" taxon="Hawaii_52" totalcount="4" value="?"/>
+                <sequence id="Sequence.25" spec="Sequence" taxon="Iban_28" totalcount="4" value="?"/>
+                <sequence id="Sequence.26" spec="Sequence" taxon="Ifugao_420" totalcount="4" value="?"/>
+                <sequence id="Sequence.27" spec="Sequence" taxon="Isneg_424" totalcount="4" value="?"/>
+                <sequence id="Sequence.28" spec="Sequence" taxon="Kalinga_429" totalcount="4" value="?"/>
+                <sequence id="Sequence.29" spec="Sequence" taxon="Kapingamarangi_217" totalcount="4" value="?"/>
+                <sequence id="Sequence.30" spec="Sequence" taxon="Kayan_237" totalcount="4" value="?"/>
+                <sequence id="Sequence.31" spec="Sequence" taxon="Kedang_236" totalcount="4" value="?"/>
+                <sequence id="Sequence.32" spec="Sequence" taxon="Kelabit_60" totalcount="4" value="?"/>
+                <sequence id="Sequence.33" spec="Sequence" taxon="Kiribati_346" totalcount="4" value="?"/>
+                <sequence id="Sequence.34" spec="Sequence" taxon="Kwaio_66" totalcount="4" value="?"/>
+                <sequence id="Sequence.35" spec="Sequence" taxon="Kwaraae_213" totalcount="4" value="?"/>
+                <sequence id="Sequence.36" spec="Sequence" taxon="Laboya_323" totalcount="4" value="?"/>
+                <sequence id="Sequence.37" spec="Sequence" taxon="Lakalai_281" totalcount="4" value="?"/>
+                <sequence id="Sequence.38" spec="Sequence" taxon="Lau_68" totalcount="4" value="?"/>
+                <sequence id="Sequence.39" spec="Sequence" taxon="Lifou_196" totalcount="4" value="?"/>
+                <sequence id="Sequence.40" spec="Sequence" taxon="Malagasy_Merina_92" totalcount="4" value="?"/>
+                <sequence id="Sequence.41" spec="Sequence" taxon="Malekula_South_453" totalcount="4" value="?"/>
+                <sequence id="Sequence.42" spec="Sequence" taxon="Manam_168" totalcount="4" value="?"/>
+                <sequence id="Sequence.43" spec="Sequence" taxon="Mangareva_239" totalcount="4" value="?"/>
+                <sequence id="Sequence.44" spec="Sequence" taxon="Manggarai_84" totalcount="4" value="?"/>
+                <sequence id="Sequence.45" spec="Sequence" taxon="Maori_85" totalcount="4" value="?"/>
+                <sequence id="Sequence.46" spec="Sequence" taxon="Mare_99" totalcount="4" value="?"/>
+                <sequence id="Sequence.47" spec="Sequence" taxon="Marquesas_38" totalcount="4" value="?"/>
+                <sequence id="Sequence.48" spec="Sequence" taxon="Marshall_Islands_344" totalcount="4" value="?"/>
+                <sequence id="Sequence.49" spec="Sequence" taxon="Mekeo_89" totalcount="4" value="?"/>
+                <sequence id="Sequence.50" spec="Sequence" taxon="Minahasa_137" totalcount="4" value="?"/>
+                <sequence id="Sequence.51" spec="Sequence" taxon="Moken_95" totalcount="4" value="?"/>
+                <sequence id="Sequence.52" spec="Sequence" taxon="Mota_25" totalcount="4" value="?"/>
+                <sequence id="Sequence.53" spec="Sequence" taxon="Motu_26" totalcount="4" value="?"/>
+                <sequence id="Sequence.54" spec="Sequence" taxon="Nendo_502" totalcount="4" value="?"/>
+                <sequence id="Sequence.55" spec="Sequence" taxon="Ngaju_360" totalcount="4" value="?"/>
+                <sequence id="Sequence.56" spec="Sequence" taxon="Nias_104" totalcount="4" value="?"/>
+                <sequence id="Sequence.57" spec="Sequence" taxon="Niue_247" totalcount="4" value="?"/>
+                <sequence id="Sequence.58" spec="Sequence" taxon="Ontong_Java_238" totalcount="4" value="?"/>
+                <sequence id="Sequence.59" spec="Sequence" taxon="Paiwan_177" totalcount="4" value="?"/>
+                <sequence id="Sequence.60" spec="Sequence" taxon="Palau_109" totalcount="4" value="?"/>
+                <sequence id="Sequence.61" spec="Sequence" taxon="Palawan_Batak_265" totalcount="4" value="?"/>
+                <sequence id="Sequence.62" spec="Sequence" taxon="Pohnpei_179" totalcount="4" value="?"/>
+                <sequence id="Sequence.63" spec="Sequence" taxon="Puyuma_271" totalcount="4" value="?"/>
+                <sequence id="Sequence.64" spec="Sequence" taxon="Rapa_Nui_264" totalcount="4" value="?"/>
+                <sequence id="Sequence.65" spec="Sequence" taxon="Rarotonga_58" totalcount="4" value="?"/>
+                <sequence id="Sequence.66" spec="Sequence" taxon="Rennell_and_Bellona_206" totalcount="4" value="?"/>
+                <sequence id="Sequence.67" spec="Sequence" taxon="Roti_115" totalcount="4" value="?"/>
+                <sequence id="Sequence.68" spec="Sequence" taxon="Roviana_117" totalcount="4" value="?"/>
+                <sequence id="Sequence.69" spec="Sequence" taxon="Sama_Dilaut_Tawi-Tawi_443" totalcount="4" value="?"/>
+                <sequence id="Sequence.70" spec="Sequence" taxon="Samoa_118" totalcount="4" value="?"/>
+                <sequence id="Sequence.71" spec="Sequence" taxon="Savu_119" totalcount="4" value="?"/>
+                <sequence id="Sequence.72" spec="Sequence" taxon="Simbo_473" totalcount="4" value="?"/>
+                <sequence id="Sequence.73" spec="Sequence" taxon="Southern_Toraja_226" totalcount="4" value="?"/>
+                <sequence id="Sequence.74" spec="Sequence" taxon="Subanun_448" totalcount="4" value="?"/>
+                <sequence id="Sequence.75" spec="Sequence" taxon="Tagbanwa_450" totalcount="4" value="?"/>
+                <sequence id="Sequence.76" spec="Sequence" taxon="Tahiti_173" totalcount="4" value="?"/>
+                <sequence id="Sequence.77" spec="Sequence" taxon="Tanimbar_78" totalcount="4" value="?"/>
+                <sequence id="Sequence.78" spec="Sequence" taxon="Tanna_228" totalcount="4" value="?"/>
+                <sequence id="Sequence.79" spec="Sequence" taxon="Tetum_403" totalcount="4" value="?"/>
+                <sequence id="Sequence.80" spec="Sequence" taxon="Tikopia_155" totalcount="4" value="?"/>
+                <sequence id="Sequence.81" spec="Sequence" taxon="Tinguian_426" totalcount="4" value="?"/>
+                <sequence id="Sequence.82" spec="Sequence" taxon="Toabaita_223" totalcount="4" value="?"/>
+                <sequence id="Sequence.83" spec="Sequence" taxon="Toba_Batak_188" totalcount="4" value="?"/>
+                <sequence id="Sequence.84" spec="Sequence" taxon="Tolai_382" totalcount="4" value="?"/>
+                <sequence id="Sequence.85" spec="Sequence" taxon="Tonga_136" totalcount="4" value="?"/>
+                <sequence id="Sequence.86" spec="Sequence" taxon="Trobriand_Islands_159" totalcount="4" value="?"/>
+                <sequence id="Sequence.87" spec="Sequence" taxon="Tsou_138" totalcount="4" value="?"/>
+                <sequence id="Sequence.88" spec="Sequence" taxon="Waropen_142" totalcount="4" value="?"/>
+                <sequence id="Sequence.89" spec="Sequence" taxon="Wogeo_146" totalcount="4" value="?"/>
+                <sequence id="Sequence.90" spec="Sequence" taxon="Woleai_Ifaluk_198" totalcount="4" value="?"/>
+            </data>
+
+
+    
+
+
+    
+
+
+    
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+
+<run id="mcmc" spec="MCMC" chainLength="1000000">
+    <state id="state" spec="State" storeEvery="5000">
+        <stateNode id="Tree.t:tree" spec="beast.evolution.tree.FixedTree" IsLabelledNewick="true" adjustTipHeights="false" newick="(((((((((((((((((((((Anuta_253:1.5797920000000003,(((Futuna_East_210:1.3765210000000003,Niue_247:1.3765210000000003):0.193886,Rennell_and_Bellona_206:1.5704070000000003):0.0,((((Hawaii_52:0.31682200000000016,(Maori_85:0.31682200000000016,Tahiti_173:0.31682199999999927):0.0):0.21308300000000013,Rarotonga_58:0.5299050000000003):0.9011740000000001,((Mangareva_239:0.6708460000000005,Marquesas_38:0.6708460000000005):0.0018889999999998075,Rapa_Nui_264:0.6727350000000003):0.7583440000000001):0.006910999999999667,((Kapingamarangi_217:0.22708499999999976,Ontong_Java_238:0.2270859999999999):0.8910800000000001,Tikopia_155:1.118166):0.3198240000000001):0.13241700000000023):0.009386000000000116):0.1992029999999998,(Samoa_118:1.7691030000000003,Tonga_136:1.7691030000000003):0.00989299999999993):0.6174950000000003,Fiji_East_11:2.3964899999999996):0.182906,((((Chuuk_349:0.8515409999999997,Woleai_Ifaluk_198:0.8515409999999997):0.3826749999999999,Pohnpei_179:1.2342159999999995):0.0,Marshall_Islands_344:1.2342160000000004):0.6657839999999999,Kiribati_346:1.8999999999999995):0.6793960000000001):0.668752,(((((Bughotu_37:2.6240559999999995,Tolai_382:2.6240559999999995):0.02035600000000004,(Kwaio_66:0.7950479999999995,((Kwaraae_213:0.19789499999999993,Toabaita_223:0.19789499999999993):0.5971530000000005,Lau_68:0.7950479999999995):0.0):1.849364):0.0,((Cheke_Holo_209:0.9319829999999998,((Roviana_117:0.631729,Simbo_473:0.631729):0.00912399999999991,Choiseul_139:0.640854):0.29113100000000003):0.2230430000000001,Buka_225:1.155027):1.4893840000000003):0.603736,((Lifou_196:1.7221100000000003,Mare_99:1.7221100000000003):1.1845520000000005,((Mota_25:2.2142220000000004,Malekula_South_453:2.2142220000000004):0.2187190000000001,(Tanna_228:1.8433229999999998,Eromanga_464:1.8433219999999997):0.5896179999999998):0.4737220000000004):0.34148599999999973):0.0,Nendo_502:3.2481479999999996):0.0):0.16021099999999988,((((Dobu_218:1.1594109999999995,Trobriand_Islands_159:1.1594120000000006):0.07192800000000021,(Mekeo_89:0.9920779999999998,Motu_26:0.9920779999999998):0.23926200000000009):0.7228949999999998,(Manam_168:0.17110100000000017,Wogeo_146:0.17110100000000017):1.7831329999999994):0.0,Lakalai_281:1.9542350000000006):1.454125):0.0243610000000003,(Biak_106:0.9325990000000002,Waropen_142:0.9325990000000002):2.5001220000000006):0.0251929999999998,Tanimbar_78:3.4579140000000006):0.0,((Atoni_42:1.224402,Roti_115:1.224402):1.229168,Tetum_403:2.45357):1.0043439999999997):0.08980100000000002,(((East_Sumba_330:1.8722619999999996,Laboya_323:1.8722619999999996):0.02058099999999996,Savu_119:1.8928429999999996):0.8642859999999999,((Kedang_236:2.6104560000000006,Ata_Tana_Ai_124:2.6104560000000006):0.14667399999999997,Manggarai_84:2.7571290000000004):0.0):0.7905850000000001):0.0,(Chamorro_18:3.5477150000000006,(Nias_104:3.5477150000000006,Palau_109:3.5477150000000006):0.0):0.0):3.809999999999647E-4,Eastern_Toraja_208:3.5480960000000006):0.5877159999999999,(Southern_Toraja_226:4.1358120000000005,Minahasa_137:4.1358109999999995):0.0):0.005497000000000085,((Iban_28:2.1051490000000004,Toba_Batak_188:2.1051489999999995):0.86497,Moken_95:2.9701189999999995):1.171189):0.0,((((Berawan_45:1.6741609999999998,Kelabit_60:1.6741609999999998):0.675767,Kayan_237:2.349929):0.16413900000000003,Bidayuh_125:2.514067):0.0,(Ngaju_360:2.514067,Malagasy_Merina_92:2.5140670000000007):0.0):1.6272419999999999):1.1999999999900979E-5,((((Bukidnon_415:0.41995700000000014,Subanun_448:0.41995700000000014):0.43347400000000036,(Palawan_Batak_265:0.13008299999999995,Tagbanwa_450:0.13008299999999995):0.7233460000000003):0.5537130000000001,(((Bontok_36:0.2844340000000001,Ifugao_420:0.2844330000000008):0.4067369999999997,(Tinguian_426:5.999999999950489E-6,Kalinga_429:5.999999999950489E-6):0.6911649999999998):0.004052000000000167,(Gaddang_Pagan_418:0.13973600000000008,Isneg_424:0.13973600000000008):0.5554860000000006):0.7119209999999998):2.711246,Sama_Dilaut_Tawi-Tawi_443:4.1183890000000005):0.022931999999999952):0.024078000000000266,Paiwan_177:4.165399):0.18243600000000004,(Puyuma_271:4.347834,Tsou_138:4.347834):0.0):0.0,Ami_350:4.347834):0.0,Bunun_202:4.347834):0.0,Atayal_255:4.347835):0.0">
+            <taxa idref="austronesia91"/>
+            <taxonset id="TaxonSet.1" spec="TaxonSet">
+                <taxon id="Ami_350" spec="Taxon"/>
+                <taxon id="Anuta_253" spec="Taxon"/>
+                <taxon id="Ata_Tana_Ai_124" spec="Taxon"/>
+                <taxon id="Atayal_255" spec="Taxon"/>
+                <taxon id="Atoni_42" spec="Taxon"/>
+                <taxon id="Berawan_45" spec="Taxon"/>
+                <taxon id="Biak_106" spec="Taxon"/>
+                <taxon id="Bidayuh_125" spec="Taxon"/>
+                <taxon id="Bontok_36" spec="Taxon"/>
+                <taxon id="Bughotu_37" spec="Taxon"/>
+                <taxon id="Buka_225" spec="Taxon"/>
+                <taxon id="Bukidnon_415" spec="Taxon"/>
+                <taxon id="Bunun_202" spec="Taxon"/>
+                <taxon id="Chamorro_18" spec="Taxon"/>
+                <taxon id="Cheke_Holo_209" spec="Taxon"/>
+                <taxon id="Choiseul_139" spec="Taxon"/>
+                <taxon id="Chuuk_349" spec="Taxon"/>
+                <taxon id="Dobu_218" spec="Taxon"/>
+                <taxon id="East_Sumba_330" spec="Taxon"/>
+                <taxon id="Eastern_Toraja_208" spec="Taxon"/>
+                <taxon id="Eromanga_464" spec="Taxon"/>
+                <taxon id="Fiji_East_11" spec="Taxon"/>
+                <taxon id="Futuna_East_210" spec="Taxon"/>
+                <taxon id="Gaddang_Pagan_418" spec="Taxon"/>
+                <taxon id="Hawaii_52" spec="Taxon"/>
+                <taxon id="Iban_28" spec="Taxon"/>
+                <taxon id="Ifugao_420" spec="Taxon"/>
+                <taxon id="Isneg_424" spec="Taxon"/>
+                <taxon id="Kalinga_429" spec="Taxon"/>
+                <taxon id="Kapingamarangi_217" spec="Taxon"/>
+                <taxon id="Kayan_237" spec="Taxon"/>
+                <taxon id="Kedang_236" spec="Taxon"/>
+                <taxon id="Kelabit_60" spec="Taxon"/>
+                <taxon id="Kiribati_346" spec="Taxon"/>
+                <taxon id="Kwaio_66" spec="Taxon"/>
+                <taxon id="Kwaraae_213" spec="Taxon"/>
+                <taxon id="Laboya_323" spec="Taxon"/>
+                <taxon id="Lakalai_281" spec="Taxon"/>
+                <taxon id="Lau_68" spec="Taxon"/>
+                <taxon id="Lifou_196" spec="Taxon"/>
+                <taxon id="Malagasy_Merina_92" spec="Taxon"/>
+                <taxon id="Malekula_South_453" spec="Taxon"/>
+                <taxon id="Manam_168" spec="Taxon"/>
+                <taxon id="Mangareva_239" spec="Taxon"/>
+                <taxon id="Manggarai_84" spec="Taxon"/>
+                <taxon id="Maori_85" spec="Taxon"/>
+                <taxon id="Mare_99" spec="Taxon"/>
+                <taxon id="Marquesas_38" spec="Taxon"/>
+                <taxon id="Marshall_Islands_344" spec="Taxon"/>
+                <taxon id="Mekeo_89" spec="Taxon"/>
+                <taxon id="Minahasa_137" spec="Taxon"/>
+                <taxon id="Moken_95" spec="Taxon"/>
+                <taxon id="Mota_25" spec="Taxon"/>
+                <taxon id="Motu_26" spec="Taxon"/>
+                <taxon id="Nendo_502" spec="Taxon"/>
+                <taxon id="Ngaju_360" spec="Taxon"/>
+                <taxon id="Nias_104" spec="Taxon"/>
+                <taxon id="Niue_247" spec="Taxon"/>
+                <taxon id="Ontong_Java_238" spec="Taxon"/>
+                <taxon id="Paiwan_177" spec="Taxon"/>
+                <taxon id="Palau_109" spec="Taxon"/>
+                <taxon id="Palawan_Batak_265" spec="Taxon"/>
+                <taxon id="Pohnpei_179" spec="Taxon"/>
+                <taxon id="Puyuma_271" spec="Taxon"/>
+                <taxon id="Rapa_Nui_264" spec="Taxon"/>
+                <taxon id="Rarotonga_58" spec="Taxon"/>
+                <taxon id="Rennell_and_Bellona_206" spec="Taxon"/>
+                <taxon id="Roti_115" spec="Taxon"/>
+                <taxon id="Roviana_117" spec="Taxon"/>
+                <taxon id="Sama_Dilaut_Tawi-Tawi_443" spec="Taxon"/>
+                <taxon id="Samoa_118" spec="Taxon"/>
+                <taxon id="Savu_119" spec="Taxon"/>
+                <taxon id="Simbo_473" spec="Taxon"/>
+                <taxon id="Southern_Toraja_226" spec="Taxon"/>
+                <taxon id="Subanun_448" spec="Taxon"/>
+                <taxon id="Tagbanwa_450" spec="Taxon"/>
+                <taxon id="Tahiti_173" spec="Taxon"/>
+                <taxon id="Tanimbar_78" spec="Taxon"/>
+                <taxon id="Tanna_228" spec="Taxon"/>
+                <taxon id="Tetum_403" spec="Taxon"/>
+                <taxon id="Tikopia_155" spec="Taxon"/>
+                <taxon id="Tinguian_426" spec="Taxon"/>
+                <taxon id="Toabaita_223" spec="Taxon"/>
+                <taxon id="Toba_Batak_188" spec="Taxon"/>
+                <taxon id="Tolai_382" spec="Taxon"/>
+                <taxon id="Tonga_136" spec="Taxon"/>
+                <taxon id="Trobriand_Islands_159" spec="Taxon"/>
+                <taxon id="Tsou_138" spec="Taxon"/>
+                <taxon id="Waropen_142" spec="Taxon"/>
+                <taxon id="Wogeo_146" spec="Taxon"/>
+                <taxon id="Woleai_Ifaluk_198" spec="Taxon"/>
+            </taxonset>
+        </stateNode>
+        <parameter id="clockRate.c:StratSacr" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="rateValues.s:StratSacr" spec="parameter.RealParameter" dimension="8" lower="0.0" name="stateNode">1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</parameter>
+        <stateNode id="groupings.s:StratSacr" spec="parameter.IntegerParameter" dimension="8" lower="0" upper="2">0 2 1 0 0 0 0 0</stateNode>
+        <stateNode id="sizes.s:StratSacr" spec="parameter.IntegerParameter" dimension="8">6 1 1 0 0 0 0 0</stateNode>
+    </state>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="FixedTreeModel.t:tree" spec="beast.evolution.tree.FixedTreeDistribution" tree="@Tree.t:tree"/>
+            <prior id="ClockPrior.c:StratSacr" name="distribution" x="@clockRate.c:StratSacr">
+                <Gamma id="Gamma.0" name="distr">
+                    <parameter id="RealParameter.5" spec="parameter.RealParameter" lower="0.0" name="alpha" upper="0.0">0.001</parameter>
+                    <parameter id="RealParameter.6" spec="parameter.RealParameter" lower="0.0" name="beta" upper="0.0">1000.0</parameter>
+                </Gamma>
+            </prior>
+            <prior id="correlatedRatesPrior.s:StratSacr" name="distribution" x="@rateValues.s:StratSacr">
+                <distr id="RescaledDirichlet.0" spec="tsa.parameterclone.helpers.RescaledDirichlet" sizes="@sizes.s:StratSacr"/>
+            </prior>
+        </distribution>
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.austronesia91" spec="FixedTreeLikelihood" data="@austronesia91" tree="@Tree.t:tree">
+                <siteModel id="FixedSiteModel.s:austronesia91" spec="FixedSiteModel">
+                    <parameter id="RealParameter.0" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate" upper="1.0">1.0</parameter>
+                    <parameter id="RealParameter.1" spec="parameter.RealParameter" lower="0.0" name="shape" upper="0.0">1.0</parameter>
+                    <parameter id="RealParameter.2" spec="parameter.RealParameter" lower="0.0" name="proportionInvariant" upper="0.0">0.0</parameter>
+                </siteModel>
+                <branchRateModel id="FixedClock.c:austronesia91" spec="beast.evolution.branchratemodel.FixedClockModel">
+                    <parameter id="RealParameter.3" spec="parameter.RealParameter" estimate="false" name="clock.rate">1.0</parameter>
+                </branchRateModel>
+            </distribution>
+            <distribution id="morphTreeLikelihood.StratSacr" spec="tsa.correlatedcharacters.polycharacter.CompoundTreeLikelihood" tag="correlated" tree="@Tree.t:tree">
+                <data
+id="StratSacr"
+spec="tsa.correlatedcharacters.polycharacter.CompoundAlignment4">
+                    <traitSet id="TraitSet.0" spec="beast.evolution.tree.TraitSet" taxa="@TaxonSet.1" traitname="correlated">Ami_350=MidStrat-NoHumanSacrifice,
+Anuta_253=MidStrat-NoHumanSacrifice,
+Ata_Tana_Ai_124=MidStrat-NoHumanSacrifice,
+Atayal_255=MidStrat-NoHumanSacrifice,
+Atoni_42=MidStrat-NoHumanSacrifice,
+Berawan_45=LowStrat-HumanSacrifice,
+Biak_106=MidStrat-HumanSacrifice,
+Bidayuh_125=MidStrat-NoHumanSacrifice,
+Bontok_36=HighStrat-NoHumanSacrifice,
+Bughotu_37=MidStrat-NoHumanSacrifice,
+Buka_225=MidStrat-NoHumanSacrifice,
+Bukidnon_415=MidStrat-HumanSacrifice,
+Bunun_202=LowStrat-NoHumanSacrifice,
+Chamorro_18=HighStrat-NoHumanSacrifice,
+Cheke_Holo_209=LowStrat-HumanSacrifice,
+Choiseul_139=MidStrat-HumanSacrifice,
+Chuuk_349=MidStrat-HumanSacrifice,
+Dobu_218=LowStrat-NoHumanSacrifice,
+East_Sumba_330=HighStrat-HumanSacrifice,
+Eastern_Toraja_208=HighStrat-HumanSacrifice,
+Eromanga_464=MidStrat-NoHumanSacrifice,
+Fiji_East_11=HighStrat-HumanSacrifice,
+Futuna_East_210=MidStrat-NoHumanSacrifice,
+Gaddang_Pagan_418=LowStrat-NoHumanSacrifice,
+Hawaii_52=HighStrat-HumanSacrifice,
+Iban_28=MidStrat-NoHumanSacrifice,
+Ifugao_420=MidStrat-NoHumanSacrifice,
+Isneg_424=LowStrat-NoHumanSacrifice,
+Kalinga_429=LowStrat-NoHumanSacrifice,
+Kapingamarangi_217=MidStrat-NoHumanSacrifice,
+Kayan_237=HighStrat-HumanSacrifice,
+Kedang_236=MidStrat-NoHumanSacrifice,
+Kelabit_60=MidStrat-HumanSacrifice,
+Kiribati_346=MidStrat-HumanSacrifice,
+Kwaio_66=MidStrat-HumanSacrifice,
+Kwaraae_213=LowStrat-HumanSacrifice,
+Laboya_323=HighStrat-HumanSacrifice,
+Lakalai_281=MidStrat-NoHumanSacrifice,
+Lau_68=MidStrat-HumanSacrifice,
+Lifou_196=HighStrat-NoHumanSacrifice,
+Malagasy_Merina_92=HighStrat-NoHumanSacrifice,
+Malekula_South_453=LowStrat-NoHumanSacrifice,
+Manam_168=MidStrat-NoHumanSacrifice,
+Mangareva_239=MidStrat-HumanSacrifice,
+Manggarai_84=HighStrat-NoHumanSacrifice,
+Maori_85=MidStrat-HumanSacrifice,
+Mare_99=HighStrat-HumanSacrifice,
+Marquesas_38=MidStrat-HumanSacrifice,
+Marshall_Islands_344=HighStrat-HumanSacrifice,
+Mekeo_89=MidStrat-NoHumanSacrifice,
+Minahasa_137=MidStrat-HumanSacrifice,
+Moken_95=LowStrat-NoHumanSacrifice,
+Mota_25=LowStrat-NoHumanSacrifice,
+Motu_26=LowStrat-NoHumanSacrifice,
+Nendo_502=LowStrat-NoHumanSacrifice,
+Ngaju_360=HighStrat-HumanSacrifice,
+Nias_104=HighStrat-HumanSacrifice,
+Niue_247=MidStrat-NoHumanSacrifice,
+Ontong_Java_238=MidStrat-NoHumanSacrifice,
+Paiwan_177=MidStrat-NoHumanSacrifice,
+Palau_109=HighStrat-NoHumanSacrifice,
+Palawan_Batak_265=LowStrat-NoHumanSacrifice,
+Pohnpei_179=MidStrat-NoHumanSacrifice,
+Puyuma_271=LowStrat-NoHumanSacrifice,
+Rapa_Nui_264=MidStrat-HumanSacrifice,
+Rarotonga_58=HighStrat-HumanSacrifice,
+Rennell_and_Bellona_206=MidStrat-NoHumanSacrifice,
+Roti_115=HighStrat-NoHumanSacrifice,
+Roviana_117=HighStrat-HumanSacrifice,
+Sama_Dilaut_Tawi-Tawi_443=LowStrat-NoHumanSacrifice,
+Samoa_118=HighStrat-HumanSacrifice,
+Savu_119=HighStrat-HumanSacrifice,
+Simbo_473=LowStrat-HumanSacrifice,
+Southern_Toraja_226=HighStrat-HumanSacrifice,
+Subanun_448=LowStrat-HumanSacrifice,
+Tagbanwa_450=HighStrat-NoHumanSacrifice,
+Tahiti_173=HighStrat-HumanSacrifice,
+Tanimbar_78=HighStrat-NoHumanSacrifice,
+Tanna_228=MidStrat-HumanSacrifice,
+Tetum_403=HighStrat-HumanSacrifice,
+Tikopia_155=MidStrat-NoHumanSacrifice,
+Tinguian_426=MidStrat-NoHumanSacrifice,
+Toabaita_223=LowStrat-NoHumanSacrifice,
+Toba_Batak_188=MidStrat-HumanSacrifice,
+Tolai_382=MidStrat-HumanSacrifice,
+Tonga_136=HighStrat-HumanSacrifice,
+Trobriand_Islands_159=HighStrat-NoHumanSacrifice,
+Tsou_138=LowStrat-NoHumanSacrifice,
+Waropen_142=MidStrat-NoHumanSacrifice,
+Wogeo_146=MidStrat-NoHumanSacrifice,
+Woleai_Ifaluk_198=MidStrat-NoHumanSacrifice</traitSet>
+                    <userDataType id="UserDataType.0" spec="beast.evolution.datatype.UserDataType" codeMap="LowStrat-NoHumanSacrifice=0,MidStrat-NoHumanSacrifice=0,HighStrat-NoHumanSacrifice=1,LowStrat-HumanSacrifice=2,MidStrat-HumanSacrifice=2,HighStrat-HumanSacrifice=3" codelength="-1" states="4"/>
+                </data>
+                <siteModel id="morphSiteModel.s:StratSacr" spec="SiteModel" gammaCategoryCount="1">
+                    <parameter id="mutationRate.s:StratSacr" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                    <parameter id="gammaShape.s:StratSacr" spec="parameter.RealParameter" estimate="false" name="shape">1.0</parameter>
+                    <parameter id="proportionInvariant.s:StratSacr" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="CorrelatedSubstitutionModel.s:StratSacr" spec="tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel">
+                        <shape id="IntegerParameter.0" spec="parameter.IntegerParameter" dimension="2" lower="0" upper="0">2 2</shape>
+                        <rates id="rates.s:StratSacr" spec="tsa.parameterclone.selector.Selector" groupings="@groupings.s:StratSacr" parameters="@rateValues.s:StratSacr"/>
+                        <frequencies id="frequencies.s:StratSacr" spec="Frequencies" estimate="false">
+                            <parameter id="RealParameter.4" spec="parameter.RealParameter" dimension="4" lower="0.0" name="frequencies" upper="0.0">0.25 0.25 0.25 0.25</parameter>
+                        </frequencies>
+                    </substModel>
+                </siteModel>
+                <branchRateModel id="StrictClockModel.c:StratSacr" spec="beast.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:StratSacr"/>
+            </distribution>
+        </distribution>
+    </distribution>
+
+    <operator id="Merger.t:tree" spec="tsa.parameterclone.splitandmerge.MergeOperator" groupings="@groupings.s:StratSacr" parameters="@rateValues.s:StratSacr" sizes="@sizes.s:StratSacr" weight="10.0"/>
+
+    <operator id="Splitter.t:tree" spec="tsa.parameterclone.splitandmerge.SplitOperator" groupings="@groupings.s:StratSacr" parameters="@rateValues.s:StratSacr" sizes="@sizes.s:StratSacr" weight="10.0"/>
+
+    <operator id="Exchange.t:tree" spec="DeltaExchangeOperator" weight="10.0" weightvector="@sizes.s:StratSacr">
+        <parameter idref="rateValues.s:StratSacr"/>
+    </operator>
+
+    <operator id="StrictClockRateScaler.c:StratSacr" spec="ScaleOperator" parameter="@clockRate.c:StratSacr" scaleFactor="0.75" weight="3.0"/>
+
+    <operator id="strictClockUpDownOperator.c:StratSacr" spec="UpDownOperator" scaleFactor="0.75" weight="3.0">
+        <up idref="clockRate.c:StratSacr"/>
+        <down idref="Tree.t:tree"/>
+    </operator>
+
+    <logger id="tracelog" spec="Logger" fileName="$(filebase).log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.austronesia91"/>
+        <log idref="clockRate.c:StratSacr"/>
+        <log idref="morphTreeLikelihood.StratSacr"/>
+        <log id="IndependencyLogger.s:StratSacr" spec="tsa.correlatedcharacters.polycharacter.IndependencyLogger" model="@CorrelatedSubstitutionModel.s:StratSacr"/>
+        <log idref="CorrelatedSubstitutionModel.s:StratSacr"/>
+    </logger>
+
+    <logger id="screenlog" spec="Logger" logEvery="10000">
+        <log idref="posterior"/>
+        <log id="ESS.0" spec="util.ESS" arg="@posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+    </logger>
+
+    <logger id="treelog.t:tree" spec="Logger" fileName="$(filebase).trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:tree" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:tree"/>
+    </logger>
+
+    <logger id="treeWithCorrelationLogger.StratSacr" spec="Logger" fileName="$(filebase)_tree_with_trait.trees" logEvery="1000" mode="tree">
+        <log id="TreeWithTraitLogger.0" spec="beast.evolution.tree.TreeWithTraitLogger" tree="@Tree.t:tree">
+            <metadata idref="posterior"/>
+            <metadata idref="morphTreeLikelihood.StratSacr"/>
+        </log>
+    </logger>
+
+    <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+
+</run>
+
+</beast>
