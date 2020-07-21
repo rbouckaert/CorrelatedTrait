@@ -37,6 +37,7 @@
 		<fileset dir="../beast-classic/lib" includes="mtj.jar"/>
         <pathelement path="${beast2classpath}"/>
         <pathelement path="../BEASTLabs/build"/>
+        <pathelement path="../Babel/build"/>
         <pathelement path="../nested-sampling/build"/>
         <pathelement path="../beast-classic/build"/>
 	</path>

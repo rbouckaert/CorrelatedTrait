@@ -1,0 +1,74 @@
+<svg width='1000' height='500'  xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>
+ <defs>
+    <radialGradient id='grad0' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>
+      <stop offset='0%' style='stop-color:rgb(255,255,255);
+      stop-opacity:0'></stop>
+      <stop offset='100%' style='stop-color:#f7eb00;stop-opacity:1'></stop>
+    </radialGradient>
+
+    <marker id='head0' viewBox='0 0 20 20' refX='20' refY='10' markerUnits='strokeWidth' markerWidth='8' markerHeight='6' orient='auto'>
+        <path d='M 0 0 L 20 10 L 0 20 z' fill='#f7eb00'/>
+    </marker>
+    <radialGradient id='grad1' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>
+      <stop offset='0%' style='stop-color:rgb(255,255,255);
+      stop-opacity:0'></stop>
+      <stop offset='100%' style='stop-color:#f02c25;stop-opacity:1'></stop>
+    </radialGradient>
+
+    <marker id='head1' viewBox='0 0 20 20' refX='20' refY='10' markerUnits='strokeWidth' markerWidth='8' markerHeight='6' orient='auto'>
+        <path d='M 0 0 L 20 10 L 0 20 z' fill='#f02c25'/>
+    </marker>
+    <radialGradient id='grad2' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>
+      <stop offset='0%' style='stop-color:rgb(255,255,255);
+      stop-opacity:0'></stop>
+      <stop offset='100%' style='stop-color:#175bad;stop-opacity:1'></stop>
+    </radialGradient>
+
+    <marker id='head2' viewBox='0 0 20 20' refX='20' refY='10' markerUnits='strokeWidth' markerWidth='8' markerHeight='6' orient='auto'>
+        <path d='M 0 0 L 20 10 L 0 20 z' fill='#175bad'/>
+    </marker>
+    <radialGradient id='grad3' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>
+      <stop offset='0%' style='stop-color:rgb(255,255,255);
+      stop-opacity:0'></stop>
+      <stop offset='100%' style='stop-color:#672e94;stop-opacity:1'></stop>
+    </radialGradient>
+
+    <marker id='head3' viewBox='0 0 20 20' refX='20' refY='10' markerUnits='strokeWidth' markerWidth='8' markerHeight='6' orient='auto'>
+        <path d='M 0 0 L 20 10 L 0 20 z' fill='#672e94'/>
+    </marker>
+ </defs>    
+<g transform='translate(250,0)'>
+  <path marker-end='url(#head0)' stroke-width='1.8343648596281756' fill='none' stroke='#f7eb00' d='M455.85786437626905,254.14213562373095 Q326.7157287525381,326.7157287525381 254.14213562373095,455.85786437626905'></path>  
+<text x='322.37258300203047' y='332.37258300203047' font-family='Verdana' font-size='10' fill='#f7eb00'>0.56</text>
+  <path marker-end='url(#head0)' stroke-width='0.0' fill='none' stroke='#f7eb00' d='M450.0,240.0 Q240.0,200.00000000000003 30.0,240.00000000000006'></path>  
+<text x='230.0' y='208.00000000000003' font-family='Verdana' font-size='10' fill='#f7eb00'>0</text>
+  <path marker-end='url(#head0)' stroke-width='1.5485023572183572' fill='none' stroke='#f7eb00' d='M455.85786437626905,225.85786437626905 Q383.2842712474619,96.7157287525381 254.1421356237309,24.142135623730947'></path>  
+<text x='367.62741699796953' y='102.37258300203048' font-family='Verdana' font-size='10' fill='#f7eb00'>0.47</text>
+  <path marker-end='url(#head1)' stroke-width='4.677480234161764' fill='none' stroke='#f02c25' d='M254.14213562373095,455.85786437626905 Q383.2842712474619,383.2842712474619 455.85786437626905,254.14213562373095'></path>  
+<text x='367.62741699796953' y='377.62741699796953' font-family='Verdana' font-size='10' fill='#f02c25'>1.43</text>
+  <path marker-end='url(#head1)' stroke-width='10.0' fill='none' stroke='#f02c25' d='M225.85786437626905,455.85786437626905 Q153.2842712474619,326.7157287525381 24.14213562373095,254.142135623731'></path>  
+<text x='137.62741699796953' y='332.37258300203047' font-family='Verdana' font-size='10' fill='#f02c25'>3.06</text>
+  <path marker-end='url(#head1)' stroke-width='0.0' fill='none' stroke='#f02c25' d='M240.0,450.0 Q280.0,240.0 239.99999999999994,30.0'></path>  
+<text x='262.0' y='240.0' font-family='Verdana' font-size='10' fill='#f02c25'>0</text>
+  <path marker-end='url(#head2)' stroke-width='0.0' fill='none' stroke='#175bad' d='M30.0,240.00000000000006 Q240.0,280.0 450.0,240.0'></path>  
+<text x='230.0' y='272.0' font-family='Verdana' font-size='10' fill='#175bad'>0</text>
+  <path marker-end='url(#head2)' stroke-width='1.4068658552861926' fill='none' stroke='#175bad' d='M24.14213562373095,254.142135623731 Q96.7157287525381,383.2842712474619 225.85786437626905,455.85786437626905'></path>  
+<text x='92.37258300203048' y='377.62741699796953' font-family='Verdana' font-size='10' fill='#175bad'>0.43</text>
+  <path marker-end='url(#head2)' stroke-width='3.7446485280203623' fill='none' stroke='#175bad' d='M24.142135623730944,225.8578643762691 Q153.28427124746187,153.28427124746193 225.857864376269,24.14213562373095'></path>  
+<text x='137.6274169979695' y='147.62741699796953' font-family='Verdana' font-size='10' fill='#175bad'>1.15</text>
+  <path marker-end='url(#head3)' stroke-width='1.5945996503396045' fill='none' stroke='#672e94' d='M254.1421356237309,24.142135623730947 Q326.7157287525381,153.2842712474619 455.85786437626905,225.85786437626905'></path>  
+<text x='322.37258300203047' y='147.62741699796953' font-family='Verdana' font-size='10' fill='#672e94'>0.49</text>
+  <path marker-end='url(#head3)' stroke-width='0.0' fill='none' stroke='#672e94' d='M239.99999999999994,30.0 Q199.99999999999997,240.0 240.0,450.0'></path>  
+<text x='197.99999999999997' y='240.0' font-family='Verdana' font-size='10' fill='#672e94'>0</text>
+  <path marker-end='url(#head3)' stroke-width='1.3368401741876075' fill='none' stroke='#672e94' d='M225.857864376269,24.14213562373095 Q96.71572875253807,96.71572875253814 24.142135623730944,225.8578643762691'></path>  
+<text x='92.37258300203044' y='102.37258300203051' font-family='Verdana' font-size='10' fill='#672e94'>0.41</text>
+   <circle cx='470.0' cy='240.0' r='20' stroke='#f7eb00' stroke-width='4' fill='url(#grad0)' />
+   <circle cx='240.0' cy='470.0' r='20' stroke='#f02c25' stroke-width='4' fill='url(#grad1)' />
+   <circle cx='10.0' cy='240.00000000000006' r='20' stroke='#175bad' stroke-width='4' fill='url(#grad2)' />
+   <circle cx='239.99999999999994' cy='10.0' r='20' stroke='#672e94' stroke-width='4' fill='url(#grad3)' />
+	<text x='500.0' y='250.0' font-family='Verdana' font-size='28' fill='#f7eb00'>11</text>
+	<text x='270.0' y='480.0' font-family='Verdana' font-size='28' fill='#f02c25'>10</text>
+	<text x='-55.6015625' y='250.00000000000006' font-family='Verdana' font-size='28' fill='#175bad'>00</text>
+	<text x='269.99999999999994' y='20.0' font-family='Verdana' font-size='28' fill='#672e94'>01</text>
+</g>
+</svg> 

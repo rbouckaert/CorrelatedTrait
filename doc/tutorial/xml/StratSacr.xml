@@ -216,7 +216,7 @@ name="taxa">
                 <taxon id="Woleai_Ifaluk_198" spec="Taxon"/>
             </taxonset>
         </stateNode>
-        <parameter id="clockRate.c:StratSacr" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="clockRate.c:StratSacr" spec="parameter.RealParameter" name="stateNode" upper="0.2">0.1</parameter>
         <parameter id="rateValues.s:StratSacr" spec="parameter.RealParameter" dimension="8" lower="0.0" name="stateNode">1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</parameter>
         <stateNode id="groupings.s:StratSacr" spec="parameter.IntegerParameter" dimension="8" lower="0" upper="2">0 2 1 0 0 0 0 0</stateNode>
         <stateNode id="sizes.s:StratSacr" spec="parameter.IntegerParameter" dimension="8">6 1 1 0 0 0 0 0</stateNode>
@@ -384,6 +384,7 @@ Woleai_Ifaluk_198=MidStrat-NoHumanSacrifice</traitSet>
         <log idref="morphTreeLikelihood.StratSacr"/>
         <log id="IndependencyLogger.s:StratSacr" spec="tsa.correlatedcharacters.polycharacter.IndependencyLogger" model="@CorrelatedSubstitutionModel.s:StratSacr"/>
         <log idref="CorrelatedSubstitutionModel.s:StratSacr"/>
+        <log id="TreeHeight.t:tree" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:tree"/>
     </logger>
 
     <logger id="screenlog" spec="Logger" logEvery="10000">

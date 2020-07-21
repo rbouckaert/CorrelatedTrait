@@ -104,7 +104,20 @@ This ensures values `LowStrat` and `MidStrat` are mapped to 0, and `HightStrat` 
 
 A second partition should now have been added to the partitions panel. If you double click the partition, you can bring up the trait dialog editor again.
 
-If necessary, the site model and its parameters can be changed in the site model panel, and the clock model in the clock model panel for the geography partition. For this tutorial, we will keep the site and clock model unchanged.
+If necessary, the site model and its parameters can be changed in the site model panel, and the clock model in the clock model panel for the geography partition. For this tutorial, we will keep the site and clock model unchanged. However, note that the tree has a height of about 5 (millennia), which means that if the clock rate is less more than 1/5 the tree would be saturated. So, we set an upper bound of 1/5 on the clock rate in the priors panel, like so:
+
+> * In the Priors panel, click on the `initial=...` button for the `clockRate`.
+> * A dialog pops up with properties of the parameter. Set the `Upper` value to 0.2.
+> * Now the start value (default 1.0) is out of range, so change `Value` to 0.1.
+> * Click OK. The vales in the `initial` button should reflect your changes.
+
+<figure>
+	<a id="fig:BEAUti4"></a>
+	<img style="width:30%;" src="figures/BEAUti-priors.png" alt="">
+	<figcaption>Figure 4: Set up an upper bound for the clock rate.</figcaption>
+</figure>
+
+
 
 
 Since the analysis will converge quite quickly, we do not need the default 10 million samples.
@@ -116,7 +129,7 @@ Since the analysis will converge quite quickly, we do not need the default 10 mi
 <figure>
 	<a id="fig:BEAUti5"></a>
 	<img style="width:45%;" src="figures/BEAUti-MCMC.png" alt="">
-	<figcaption>Figure 4: MCMC settings.</figcaption>
+	<figcaption>Figure 5: MCMC settings.</figcaption>
 </figure>
 
 
@@ -135,6 +148,72 @@ This should not take too long.
 	<img style="width:65%;" src="figures/tracer.png" alt="">
 	<figcaption>Figure 6: Convergence of MCMC in Tracer.</figcaption>
 </figure>
+
+Things are looking good. The two entries `IndependencyLogger.1_depends_on_0` and 
+`IndependencyLogger.0_depends_on_1` indicate whether the two traits are evolving independently or not. Both are over 98%, indicating high dependency. 
+
+## Visualising rates
+
+To visualise the rates, run the `RateMatrixVisualiser` app.
+
+> * In BEAUti, select the `File => Launch Apps` menu.
+> * Select the RateMatrixVisualiser icon and click the `launch` button.
+> * Select the trace log file `StratSacr.log` and set output to `rates.svg`.
+> * Click OK. The file `rates.svg` should have been written, which you can open in a web browser or drawing program.
+
+(If you prefer a command line interface, you can do the same in a terminal using
+`applauncher -in StarSacr.log -b 10 -out rates.svg`.)
+
+<figure>
+	<a id="fig:Tracer"></a>
+	<img style="width:45%;" src="figures/RateMatrixVisualiser.png" alt="">
+	<img style="width:45%;" src="figures/rates.svg" alt="">
+	<figcaption>Figure 7: Visualising correlated rates with `RateMatrixVisualiser`.</figcaption>
+</figure>
+
+The state 00 is for both traits being 0 (i.e. not selected when you set up the traits), so that is low-stratification and no human sacrifice.
+
+```
+Is it obvious from the rates that the traits are dependent?
+What else can you tell from the rates?
+```
+
+Be aware that rate estimates can be very sensitive to the tree, the taxa that were sampled. You might want to look at a number of random taxon sub-samples to see how sensitive rate estimates are. The simplest way to do this is by replacing the trait data with question marks, which ensures the branches without data will not have an impact on rate estimates.
+
+
+
+## Visualising the tree
+
+Note there are two tree logs. Only `StratSacr_tree_with_trait.trees` has the ancestral reconstruction logged in it, so that is what we will look at.
+
+> * run `treeannotator` (which comes with BEAST) on the file `StratSacr_tree_with_trait.trees` to create an MCC tree.
+> * run `figtree` on the MCC tree.
+> * Select `node shapes`, open the `node shapes` tab and increase the size to 7, and select `correlated` in the `Colour by` drop down box. Internal nodes should now be coloured by their reconstruction.
+
+
+<figure>
+	<a id="fig:mcc"></a>
+	<img style="width:45%;" src="figures/mcc.png" alt="">
+	<figcaption>Figure 7: Visualising the tree.
+	Purple = high stratification, no human sacrifice,
+	Green = high stratification, human sacrifice,
+	Red = low/mid stratification, human sacrifice,
+	Blue = low/mid stratification, no human sacrifice.
+	</figcaption>
+</figure>
+
+If you want indication of the probability distribution, you can use the R package ggtree to add pie charts or other fancy visualisations.
+
+
+```
+What happens if you do not enforce an upper bound on the clock rate?
+What would you consider a reasonable range for the clock rate?
+```
+
+
+```
+You can run the analysis with just a single trait using the `File/Add discrete triat` menu in BEAUti. Does such an independent analysis result in a different reconstruction?
+```
 
 
 ----
