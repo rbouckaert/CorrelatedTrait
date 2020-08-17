@@ -89,6 +89,7 @@
 			<include name="tsa/**/**" />
 			<!-- compile JUnit test classes -->
 			<include name="test/beast/**" />
+			<exclude name="tsa/TSAModelSelector.java"/>
 		</javac>
 		<echo message="Successfully compiled." />
 	</target>
@@ -228,9 +229,9 @@
 		<copy todir="${Add_on_dir}">
 			<fileset file="${distlabs}/TreeSetAnalyser.src.jar" />
 		</copy>
-		<!--copy todir="${Add_on_dir}/templates">
-			<fileset file="templates/extras.xml" />
-		</copy-->
+		<copy todir="${Add_on_dir}/templates">
+			<fileset file="templates/correlatedcharacters.xml" />
+		</copy>
 		<jar jarfile="${distlabs}/TreeSetAnalyser.addon.v${version}.zip">
 			<fileset dir="${Add_on_dir}">
 				<include name="**/*" />
