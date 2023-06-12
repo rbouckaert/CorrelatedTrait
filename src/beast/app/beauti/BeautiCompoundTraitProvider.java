@@ -146,7 +146,7 @@ public class BeautiCompoundTraitProvider extends BeautiAlignmentProvider {
 	}
 
 	@Override
-	protected int matches(Alignment alignment) {
+	public int matches(Alignment alignment) {
 		for (BEASTInterface output : alignment.getOutputs()) {
 			if (output instanceof CompoundTreeLikelihood) {
 				return 20;
@@ -157,6 +157,7 @@ public class BeautiCompoundTraitProvider extends BeautiAlignmentProvider {
 	
 	
 	@Override
+	public
 	void editAlignment(Alignment alignment, BeautiDoc doc) {
 		CompoundTraitInputEditor editor = new CompoundTraitInputEditor(doc);
 		CompoundTreeLikelihood likelihood = null;

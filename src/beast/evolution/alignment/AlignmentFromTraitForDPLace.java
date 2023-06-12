@@ -14,6 +14,7 @@ import java.util.Set;
 import beast.base.core.Description;
 import beast.base.core.Input;
 import beast.base.core.Input.Validate;
+import beast.base.evolution.alignment.Taxon;
 import beastclassic.evolution.alignment.AlignmentFromTrait;
 
 @Description("As AlignmentFromTrait, but with DPLACE data encoded for two D-PLACE features")
@@ -123,7 +124,7 @@ public class AlignmentFromTraitForDPLace extends AlignmentFromTrait {
         	throw new RuntimeException("expected user data type to be set");
         }
 
-        taxaNames = traitSet.taxaInput.get().taxaNames;
+        taxaNames = traitSet.taxaInput.get().asStringList();
         
         if (traitSet.traitsInput.get() == null || traitSet.traitsInput.get().matches("^\\s*$")) {
         	// prevent initialisation when in beauti
@@ -157,7 +158,7 @@ public class AlignmentFromTraitForDPLace extends AlignmentFromTrait {
         }
         
         traitSet.taxaInput.get().initAndValidate();
-        taxaNames = traitSet.taxaInput.get().taxaNames;
+        taxaNames = traitSet.taxaInput.get().asStringList();
         
         
         calcPatterns();

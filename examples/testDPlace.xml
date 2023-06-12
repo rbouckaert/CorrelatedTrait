@@ -1,14 +1,17 @@
 <beast version='2.4'
 	required="BEAST_CLASSIC v0.0.1:TreeSetAnalyser v0.0.1"
-       namespace='beast.evolution.alignment:beast.core:beast.evolution.tree:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood:beast.evolution.tree.coalescent:beast.core.parameter'>
+       namespace='beast.base.evolution.alignment:beast.pkgmgmt:beast.base.core:beast.base.inference:beast.base.evolution.tree:beast.pkgmgmt:beast.base.core:beast.base.inference.util:beast.evolution.nuc:beast.base.evolution.operator:beast.base.inference.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood:beast.base.evolution.tree.coalescent:beast.pkgmgmt:beast.base.core:beast.base.inference.parameter'>
 
-<map name="taxon"    >beast.evolution.alignment.Taxon</map>
-<map name="taxonset" >beast.evolution.alignment.TaxonSet</map>
+<map name="taxon"    >beast.base.evolution.alignment.Taxon</map>
+<map name="taxonset" >beast.base.evolution.alignment.TaxonSet</map>
 
        
        
 <taxonset id="taxa">
-<taxon id="aar"/><taxon id="abk"/><taxon id="abr"/><taxon id="abs"/><taxon id="abt"/><taxon id="abu"/><taxon id="acm"/><taxon id="acs"/><taxon id="acv"/><taxon id="ada"/><taxon id="adi"/><taxon id="adz"/><taxon id="aec"/><taxon id="aer"/><taxon id="aes"/><taxon id="afo"/><taxon id="afr"/><taxon id="ahg"/><taxon id="ahk"/><taxon id="ahs"/><taxon id="aim"/><taxon id="ain"/><taxon id="aiw"/><taxon id="aji"/><taxon id="ajp"/><taxon id="akl"/><taxon id="akp"/><taxon id="alc"/><taxon id="ald"/><taxon id="aln"/><taxon id="alz"/><taxon id="amc"/><taxon id="amf"/><taxon id="amh"/><taxon id="ami"/><taxon id="anc"/><taxon id="anu"/><taxon id="any"/><taxon id="aoi"/><taxon id="aol"/><taxon id="aon"/><taxon id="apb"/><taxon id="apj"/><taxon id="apk"/><taxon id="apl"/><taxon id="apm"/><taxon id="apn"/><taxon id="apq"/><taxon id="apw"/><taxon id="ari"/><taxon id="arn"/><taxon id="arp"/><taxon id="arv"/><taxon id="arw"/><taxon id="arz"/><taxon id="asa"/><taxon id="asb"/><taxon id="ati"/><taxon id="ats"/><taxon id="atw"/><taxon id="avi"/><taxon id="awe"/><taxon id="axb"/><taxon id="ayl"/><taxon id="ayn"/><taxon id="ayr"/><taxon id="bab"/><taxon id="bak"/><taxon id="bam"/><taxon id="ban"/><taxon id="bax"/><taxon id="bbc"/><taxon id="bbo"/><taxon id="bbp"/><taxon id="bca"/><taxon id="bci"/><taxon id="bcp"/><taxon id="bcy"/><taxon id="bdm"/><taxon id="bdp"/><taxon id="bdu"/><taxon id="bea"/><taxon id="bel"/><taxon id="ben"/><taxon id="bet"/><taxon id="bex"/><taxon id="bez"/><taxon id="bfd"/><taxon id="bfm"/><taxon id="bfo"/><taxon id="bfz"/><taxon id="bgo"/><taxon id="bgp"/><taxon id="bhb"/><taxon id="bho"/><taxon id="bib"/><taxon id="bif"/><taxon id="bin"/><taxon id="bip"/><taxon id="biv"/><taxon id="bja"/><taxon id="bjg"/><taxon id="bji"/><taxon id="bjw"/><taxon id="bkh"/><taxon id="bkm"/><taxon id="bko"/><taxon id="bkq"/><taxon id="bky"/><taxon id="blc"/><taxon id="ble"/><taxon id="bmi"/><taxon id="bmw"/><taxon id="bnm"/><taxon id="bnn"/><taxon id="bnp"/><taxon id="bod"/><taxon id="bol"/><taxon id="bom"/><taxon id="bor"/><taxon id="bot"/><taxon id="boz"/><taxon id="bpg"/><taxon id="bpr"/><taxon id="bqi"/><taxon id="brf"/><taxon id="bri"/><taxon id="brm"/><taxon id="brt"/><taxon id="bsc"/><taxon id="bsk"/><taxon id="bst"/><taxon id="bta"/><taxon id="bud"/><taxon id="buf"/><taxon id="buk"/><taxon id="bul"/><taxon id="bun"/><taxon id="buu"/><taxon id="bux"/><taxon id="bvb"/><taxon id="bwd"/><taxon id="bwr"/><taxon id="bwu"/><taxon id="bxk"/><taxon id="bxr"/><taxon id="byi"/><taxon id="byn"/><taxon id="byz"/><taxon id="bza"/><taxon id="bzd"/><taxon id="bze"/><taxon id="bzw"/><taxon id="caa"/><taxon id="cab"/><taxon id="cad"/><taxon id="caf"/><taxon id="cak"/><taxon id="cal"/><taxon id="cao"/><taxon id="caq"/><taxon id="car"/><taxon id="cax"/><taxon id="cbi"/><taxon id="ccg"/><taxon id="cch"/><taxon id="ccp"/><taxon id="cde"/><taxon id="cdr"/><taxon id="ceb"/><taxon id="ceg"/><taxon id="ces"/><taxon id="cgg"/><taxon id="cha"/><taxon id="chb"/><taxon id="chc"/><taxon id="chd"/><taxon id="che"/><taxon id="chh"/><taxon id="chk"/><taxon id="chl"/><taxon id="cho"/><taxon id="chp"/><taxon id="chr"/><taxon id="chv"/><taxon id="chy"/><taxon id="cic"/><taxon id="cid"/><taxon id="cjk"/><taxon id="cjm"/><taxon id="ckb"/><taxon id="ckt"/><taxon id="clc"/><taxon id="clm"/><taxon id="cmn"/><taxon id="cni"/><taxon id="coc"/><taxon id="cod"/><taxon id="com"/><taxon id="cou"/><taxon id="crd"/><taxon id="crj"/><taxon id="crk"/><taxon id="cro"/><taxon id="crq"/><taxon id="crx"/><taxon id="crz"/><taxon id="csa"/><taxon id="csm"/><taxon id="csw"/><taxon id="csz"/><taxon id="ctm"/><taxon id="cub"/><taxon id="cup"/><taxon id="cwe"/><taxon id="daf"/><taxon id="dag"/><taxon id="dak"/><taxon id="daq"/><taxon id="dav"/><taxon id="dbw"/><taxon id="dep"/><taxon id="dga"/><taxon id="dgr"/><taxon id="dhv"/><taxon id="did"/><taxon id="dif"/><taxon id="dig"/><taxon id="dik"/><taxon id="dil"/><taxon id="dim"/><taxon id="diz"/><taxon id="dje"/><taxon id="djk"/><taxon id="dnt"/><taxon id="dob"/><taxon id="dos"/><taxon id="dow"/><taxon id="doz"/><taxon id="dri"/><taxon id="drs"/><taxon id="dsh"/><taxon id="dta"/><taxon id="dtp"/><taxon id="dua"/><taxon id="dug"/><taxon id="duj"/><taxon id="dya"/><taxon id="dyo"/><taxon id="dyu"/><taxon id="dzg"/><taxon id="ebo"/><taxon id="efi"/><taxon id="egy"/><taxon id="ekg"/><taxon id="ell"/><taxon id="emp"/><taxon id="ems"/><taxon id="eng"/><taxon id="enq"/><taxon id="erg"/><taxon id="est"/><taxon id="ets"/><taxon id="etu"/><taxon id="evn"/><taxon id="eya"/><taxon id="eyo"/><taxon id="fan"/><taxon id="fip"/><taxon id="fll"/><taxon id="fmp"/><taxon id="foi"/><taxon id="fon"/><taxon id="for"/><taxon id="fra"/><taxon id="fub"/><taxon id="fuc"/><taxon id="fud"/><taxon id="fuf"/><taxon id="fuh"/><taxon id="fuj"/><taxon id="fuy"/><taxon id="fvr"/><taxon id="gaa"/><taxon id="gag"/><taxon id="gax"/><taxon id="gaz"/><taxon id="gby"/><taxon id="gde"/><taxon id="ggu"/><taxon id="giz"/><taxon id="gld"/><taxon id="gle"/><taxon id="gnc"/><taxon id="gno"/><taxon id="goa"/><taxon id="gog"/><taxon id="gol"/><taxon id="gow"/><taxon id="grh"/><taxon id="grt"/><taxon id="gta"/><taxon id="guc"/><taxon id="guh"/><taxon id="gui"/><taxon id="guj"/><taxon id="gun"/><taxon id="guu"/><taxon id="gux"/><taxon id="guz"/><taxon id="gwi"/><taxon id="gya"/><taxon id="gym"/><taxon id="haq"/><taxon id="has"/><taxon id="hat"/><taxon id="hau"/><taxon id="haw"/><taxon id="hay"/><taxon id="haz"/><taxon id="hch"/><taxon id="hdn"/><taxon id="hea"/><taxon id="heb"/><taxon id="heh"/><taxon id="her"/><taxon id="hid"/><taxon id="hke"/><taxon id="hmb"/><taxon id="hne"/><taxon id="hnn"/><taxon id="hoc"/><taxon id="hop"/><taxon id="hoz"/><taxon id="hts"/><taxon id="hun"/><taxon id="hup"/><taxon id="hus"/><taxon id="huu"/><taxon id="huv"/><taxon id="hwo"/><taxon id="hye"/><taxon id="ian"/><taxon id="iar"/><taxon id="iba"/><taxon id="ibb"/><taxon id="ibo"/><taxon id="ich"/><taxon id="ida"/><taxon id="idu"/><taxon id="ifb"/><taxon id="ife"/><taxon id="igb"/><taxon id="igl"/><taxon id="iii"/><taxon id="ijn"/><taxon id="ikt"/><taxon id="ilb"/><taxon id="ing"/><taxon id="irk"/><taxon id="isl"/><taxon id="iso"/><taxon id="itl"/><taxon id="its"/><taxon id="izh"/><taxon id="jac"/><taxon id="jav"/><taxon id="jbu"/><taxon id="jib"/><taxon id="jic"/><taxon id="jiv"/><taxon id="jle"/><taxon id="jpn"/><taxon id="kab"/><taxon id="kac"/><taxon id="kad"/><taxon id="kai"/><taxon id="kam"/><taxon id="kao"/><taxon id="kas"/><taxon id="kay"/><taxon id="kaz"/><taxon id="kbc"/><taxon id="kbd"/><taxon id="kbk"/><taxon id="kbl"/><taxon id="kbp"/><taxon id="kbr"/><taxon id="kby"/><taxon id="kca"/><taxon id="kde"/><taxon id="kdh"/><taxon id="kdn"/><taxon id="kdr"/><taxon id="ked"/><taxon id="kei"/><taxon id="kel"/><taxon id="ken"/><taxon id="keo"/><taxon id="ket"/><taxon id="kfa"/><taxon id="kff"/><taxon id="kgo"/><taxon id="kgq"/><taxon id="kha"/><taxon id="khk"/><taxon id="khu"/><taxon id="khy"/><taxon id="kib"/><taxon id="kic"/><taxon id="kig"/><taxon id="kij"/><taxon id="kik"/><taxon id="kin"/><taxon id="kio"/><taxon id="kjd"/><taxon id="kki"/><taxon id="kkz"/><taxon id="kla"/><taxon id="klb"/><taxon id="klu"/><taxon id="kmo"/><taxon id="kmw"/><taxon id="kna"/><taxon id="knb"/><taxon id="knk"/><taxon id="kns"/><taxon id="kod"/><taxon id="kog"/><taxon id="koo"/><taxon id="koq"/><taxon id="kor"/><taxon id="kos"/><taxon id="kot"/><taxon id="kpc"/><taxon id="kpg"/><taxon id="kpj"/><taxon id="kpy"/><taxon id="kpz"/><taxon id="kqi"/><taxon id="kqn"/><taxon id="kqq"/><taxon id="kqs"/><taxon id="kqy"/><taxon id="krh"/><taxon id="krn"/><taxon id="kru"/><taxon id="krw"/><taxon id="ksb"/><taxon id="ksf"/><taxon id="ksv"/><taxon id="kts"/><taxon id="ktz"/><taxon id="kui"/><taxon id="kum"/><taxon id="kun"/><taxon id="kus"/><taxon id="kut"/><taxon id="kvb"/><taxon id="kvj"/><taxon id="kvn"/><taxon id="kwd"/><taxon id="kwe"/><taxon id="kwk"/><taxon id="kwy"/><taxon id="kxc"/><taxon id="kxu"/><taxon id="kyh"/><taxon id="kzh"/><taxon id="kzy"/><taxon id="lac"/><taxon id="lag"/><taxon id="laj"/><taxon id="lak"/><taxon id="lal"/><taxon id="lam"/><taxon id="lat"/><taxon id="lav"/><taxon id="lbk"/><taxon id="lbn"/><taxon id="lch"/><taxon id="lcp"/><taxon id="lea"/><taxon id="leb"/><taxon id="led"/><taxon id="leg"/><taxon id="lel"/><taxon id="lep"/><taxon id="les"/><taxon id="lgg"/><taxon id="lgu"/><taxon id="lic"/><taxon id="lil"/><taxon id="lin"/><taxon id="lit"/><taxon id="liv"/><taxon id="lkr"/><taxon id="lkt"/><taxon id="lle"/><taxon id="llx"/><taxon id="lmi"/><taxon id="lmp"/><taxon id="lmu"/><taxon id="lmw"/><taxon id="lns"/><taxon id="lnu"/><taxon id="lob"/><taxon id="log"/><taxon id="lot"/><taxon id="loz"/><taxon id="lse"/><taxon id="lua"/><taxon id="lub"/><taxon id="lue"/><taxon id="lug"/><taxon id="lui"/><taxon id="lum"/><taxon id="lun"/><taxon id="luo"/><taxon id="lus"/><taxon id="maf"/><taxon id="mai"/><taxon id="mak"/><taxon id="mal"/><taxon id="mam"/><taxon id="mas"/><taxon id="mau"/><taxon id="mav"/><taxon id="maw"/><taxon id="mbb"/><taxon id="mbc"/><taxon id="mch"/><taxon id="mcn"/><taxon id="mcu"/><taxon id="mdd"/><taxon id="mdi"/><taxon id="mdp"/><taxon id="mdy"/><taxon id="mei"/><taxon id="mek"/><taxon id="men"/><taxon id="mer"/><taxon id="meu"/><taxon id="mey"/><taxon id="mez"/><taxon id="mfq"/><taxon id="mfz"/><taxon id="mgd"/><taxon id="mgo"/><taxon id="mgp"/><taxon id="mgr"/><taxon id="mgs"/><taxon id="mgu"/><taxon id="mgz"/><taxon id="mhi"/><taxon id="mhj"/><taxon id="mhk"/><taxon id="mhq"/><taxon id="mhr"/><taxon id="mia"/><taxon id="mic"/><taxon id="mik"/><taxon id="min"/><taxon id="miq"/><taxon id="mir"/><taxon id="mjg"/><taxon id="mji"/><taxon id="mjw"/><taxon id="mlq"/><taxon id="mmg"/><taxon id="mmk"/><taxon id="mnc"/><taxon id="mng"/><taxon id="mnr"/><taxon id="mns"/><taxon id="mnv"/><taxon id="moe"/><taxon id="mor"/><taxon id="mos"/><taxon id="mot"/><taxon id="mov"/><taxon id="mox"/><taxon id="mqu"/><taxon id="mrc"/><taxon id="mrh"/><taxon id="mri"/><taxon id="mrl"/><taxon id="mrq"/><taxon id="mrt"/><taxon id="mrv"/><taxon id="mrz"/><taxon id="mtq"/><taxon id="mtt"/><taxon id="mua"/><taxon id="mug"/><taxon id="mus"/><taxon id="mva"/><taxon id="mvb"/><taxon id="mvf"/><taxon id="mvi"/><taxon id="mvy"/><taxon id="mwf"/><taxon id="mwm"/><taxon id="mwn"/><taxon id="mwt"/><taxon id="mwv"/><taxon id="mxa"/><taxon id="mya"/><taxon id="mye"/><taxon id="myh"/><taxon id="myk"/><taxon id="mym"/><taxon id="myo"/><taxon id="myu"/><taxon id="myv"/><taxon id="myx"/><taxon id="mzb"/><taxon id="mzm"/><taxon id="mzv"/><taxon id="nab"/><taxon id="nak"/><taxon id="nan"/><taxon id="nap"/><taxon id="nar"/><taxon id="nau"/><taxon id="nav"/><taxon id="nbm"/><taxon id="ncf"/><taxon id="nci"/><taxon id="ncm"/><taxon id="ncz"/><taxon id="ndc"/><taxon id="nde"/><taxon id="ndi"/><taxon id="ndo"/><taxon id="ndr"/><taxon id="neb"/><taxon id="neg"/><taxon id="nez"/><taxon id="ngb"/><taxon id="ngi"/><taxon id="ngo"/><taxon id="ngp"/><taxon id="nhn"/><taxon id="nhr"/><taxon id="nio"/><taxon id="niq"/><taxon id="niu"/><taxon id="niv"/><taxon id="njh"/><taxon id="njm"/><taxon id="njo"/><taxon id="njy"/><taxon id="nku"/><taxon id="nld"/><taxon id="nmg"/><taxon id="nmu"/><taxon id="nnw"/><taxon id="nrb"/><taxon id="nre"/><taxon id="nsk"/><taxon id="nsm"/><taxon id="nsz"/><taxon id="ntp"/><taxon id="ntu"/><taxon id="nuk"/><taxon id="nup"/><taxon id="nus"/><taxon id="nwi"/><taxon id="nyf"/><taxon id="nyi"/><taxon id="nyk"/><taxon id="nym"/><taxon id="nyn"/><taxon id="nyo"/><taxon id="nza"/><taxon id="oaa"/><taxon id="oac"/><taxon id="ojc"/><taxon id="ojg"/><taxon id="ojv"/><taxon id="ojw"/><taxon id="oki"/><taxon id="okv"/><taxon id="old"/><taxon id="olo"/><taxon id="ona"/><taxon id="opt"/><taxon id="ori"/><taxon id="oro"/><taxon id="oss"/><taxon id="ote"/><taxon id="otr"/><taxon id="otw"/><taxon id="pab"/><taxon id="pan"/><taxon id="par"/><taxon id="pau"/><taxon id="paw"/><taxon id="pbb"/><taxon id="pbg"/><taxon id="pbh"/><taxon id="pbi"/><taxon id="pbo"/><taxon id="peb"/><taxon id="pei"/><taxon id="pej"/><taxon id="pem"/><taxon id="peq"/><taxon id="pib"/><taxon id="pid"/><taxon id="pio"/><taxon id="piw"/><taxon id="pkb"/><taxon id="pkp"/><taxon id="pll"/><taxon id="plu"/><taxon id="pmt"/><taxon id="pna"/><taxon id="pnh"/><taxon id="poc"/><taxon id="pof"/><taxon id="poi"/><taxon id="pon"/><taxon id="pot"/><taxon id="pub"/><taxon id="pwi"/><taxon id="pwn"/><taxon id="pwo"/><taxon id="pyu"/><taxon id="quc"/><taxon id="qui"/><taxon id="qun"/><taxon id="quz"/><taxon id="qxq"/><taxon id="rad"/><taxon id="ram"/><taxon id="rap"/><taxon id="rar"/><taxon id="reg"/><taxon id="res"/><taxon id="rif"/><taxon id="rim"/><taxon id="rkh"/><taxon id="rki"/><taxon id="rtm"/><taxon id="ruf"/><taxon id="run"/><taxon id="rus"/><taxon id="rwm"/><taxon id="rys"/><taxon id="ryu"/><taxon id="sac"/><taxon id="sad"/><taxon id="sah"/><taxon id="san"/><taxon id="saq"/><taxon id="sat"/><taxon id="sax"/><taxon id="sbb"/><taxon id="sbd"/><taxon id="sbk"/><taxon id="sbp"/><taxon id="scl"/><taxon id="scs"/><taxon id="sda"/><taxon id="sdj"/><taxon id="sea"/><taxon id="see"/><taxon id="sef"/><taxon id="seh"/><taxon id="sei"/><taxon id="sek"/><taxon id="sel"/><taxon id="ser"/><taxon id="sez"/><taxon id="sgc"/><taxon id="sgw"/><taxon id="shb"/><taxon id="shc"/><taxon id="she"/><taxon id="shk"/><taxon id="shp"/><taxon id="shr"/><taxon id="shs"/><taxon id="sht"/><taxon id="shy"/><taxon id="sid"/><taxon id="sil"/><taxon id="sin"/><taxon id="sis"/><taxon id="siw"/><taxon id="siz"/><taxon id="sjw"/><taxon id="skg"/><taxon id="skt"/><taxon id="slh"/><taxon id="sln"/><taxon id="slp"/><taxon id="slu"/><taxon id="smd"/><taxon id="smj"/><taxon id="smo"/><taxon id="smw"/><taxon id="sna"/><taxon id="snd"/><taxon id="sng"/><taxon id="snk"/><taxon id="snp"/><taxon id="sns"/><taxon id="sod"/><taxon id="soo"/><taxon id="sop"/><taxon id="sot"/><taxon id="soz"/><taxon id="spa"/><taxon id="squ"/><taxon id="srm"/><taxon id="srp"/><taxon id="srq"/><taxon id="srr"/><taxon id="srs"/><taxon id="ssb"/><taxon id="ssw"/><taxon id="sub"/><taxon id="suk"/><taxon id="suq"/><taxon id="sus"/><taxon id="suw"/><taxon id="sva"/><taxon id="swp"/><taxon id="syb"/><taxon id="szb"/><taxon id="taf"/><taxon id="tah"/><taxon id="tam"/><taxon id="tao"/><taxon id="tar"/><taxon id="tau"/><taxon id="tay"/><taxon id="tbi"/><taxon id="tbw"/><taxon id="tbz"/><taxon id="tca"/><taxon id="tcc"/><taxon id="tcx"/><taxon id="tcz"/><taxon id="tdx"/><taxon id="teh"/><taxon id="tel"/><taxon id="tem"/><taxon id="teo"/><taxon id="ter"/><taxon id="tet"/><taxon id="tey"/><taxon id="tfn"/><taxon id="tgu"/><taxon id="tha"/><taxon id="thp"/><taxon id="tht"/><taxon id="tia"/><taxon id="tic"/><taxon id="til"/><taxon id="tir"/><taxon id="tiv"/><taxon id="tiw"/><taxon id="tix"/><taxon id="tjm"/><taxon id="tkg"/><taxon id="tkl"/><taxon id="tkm"/><taxon id="tkp"/><taxon id="tlb"/><taxon id="tli"/><taxon id="tll"/><taxon id="tmj"/><taxon id="tmr"/><taxon id="tnq"/><taxon id="tob"/><taxon id="tod"/><taxon id="tog"/><taxon id="toi"/><taxon id="tol"/><taxon id="ton"/><taxon id="toq"/><taxon id="tos"/><taxon id="tow"/><taxon id="tpn"/><taxon id="tpy"/><taxon id="tpz"/><taxon id="tqb"/><taxon id="tqn"/><taxon id="tsb"/><taxon id="tsi"/><taxon id="tsn"/><taxon id="tso"/><taxon id="tsv"/><taxon id="tsz"/><taxon id="ttj"/><taxon id="ttr"/><taxon id="ttv"/><taxon id="tub"/><taxon id="tuf"/><taxon id="tui"/><taxon id="tuk"/><taxon id="tum"/><taxon id="tuo"/><taxon id="tuq"/><taxon id="tur"/><taxon id="tuu"/><taxon id="tuv"/><taxon id="tva"/><taxon id="tvl"/><taxon id="tvu"/><taxon id="twa"/><taxon id="twu"/><taxon id="tzh"/><taxon id="tzm"/><taxon id="ubu"/><taxon id="ude"/><taxon id="ulc"/><taxon id="uli"/><taxon id="ulk"/><taxon id="uma"/><taxon id="umb"/><taxon id="umo"/><taxon id="unr"/><taxon id="ure"/><taxon id="uzn"/><taxon id="vag"/><taxon id="vai"/><taxon id="ved"/><taxon id="ven"/><taxon id="vep"/><taxon id="ver"/><taxon id="vie"/><taxon id="vka"/><taxon id="vmw"/><taxon id="vor"/><taxon id="vot"/><taxon id="vut"/><taxon id="wac"/><taxon id="wao"/><taxon id="wap"/><taxon id="was"/><taxon id="waw"/><taxon id="way"/><taxon id="wba"/><taxon id="wbp"/><taxon id="wca"/><taxon id="wic"/><taxon id="wim"/><taxon id="win"/><taxon id="wit"/><taxon id="wiv"/><taxon id="wiy"/><taxon id="wlk"/><taxon id="wln"/><taxon id="wls"/><taxon id="wlv"/><taxon id="wnc"/><taxon id="woc"/><taxon id="wol"/><taxon id="wrp"/><taxon id="wuu"/><taxon id="wuv"/><taxon id="wya"/><taxon id="wyb"/><taxon id="xac"/><taxon id="xal"/><taxon id="xam"/><taxon id="xav"/><taxon id="xaw"/><taxon id="xbr"/><taxon id="xcw"/><taxon id="xer"/><taxon id="xnn"/><taxon id="xog"/><taxon id="xok"/><taxon id="xom"/><taxon id="xon"/><taxon id="xpe"/><taxon id="xsi"/><taxon id="xsl"/><taxon id="xsm"/><taxon id="xsr"/><taxon id="xsu"/><taxon id="xvi"/><taxon id="yad"/><taxon id="yae"/><taxon id="yaf"/><taxon id="yag"/><taxon id="yal"/><taxon id="yao"/><taxon id="yap"/><taxon id="yaq"/><taxon id="yar"/><taxon id="yaz"/><taxon id="yer"/><taxon id="ykg"/><taxon id="yle"/><taxon id="ynn"/><taxon id="yns"/><taxon id="yom"/><taxon id="yrk"/><taxon id="yua"/><taxon id="yuc"/><taxon id="yue"/><taxon id="yuk"/><taxon id="yum"/><taxon id="yup"/><taxon id="yur"/><taxon id="yyr"/><taxon id="zen"/><taxon id="zin"/><taxon id="ziw"/><taxon id="zkk"/><taxon id="zlm"/><taxon id="zmi"/><taxon id="zmp"/><taxon id="zms"/><taxon id="zmz"/><taxon id="zne"/><taxon id="zpu"/><taxon id="zul"/><taxon id="zun"/>
+<taxon id="aar"/><taxon id="abk"/><taxon id="abr"/><taxon id="abs"/><taxon id="abt"/><taxon id="abu"/><taxon id="acm"/><taxon id="acs"/><taxon id="acv"/><taxon id="ada"/><taxon id="adi"/><taxon id="adz"/><taxon id="aec"/><taxon id="aer"/><taxon id="aes"/><taxon id="afo"/><taxon id="ahg"/><taxon id="ahk"/><taxon id="ahs"/><taxon id="aim"/><taxon id="ain"/><taxon id="aiw"/><taxon id="aji"/><taxon id="ajp"/><taxon id="akl"/><taxon id="akp"/><taxon id="alc"/><taxon id="ald"/><taxon id="aln"/><taxon id="alz"/><taxon id="amc"/><taxon id="amf"/><taxon id="amh"/><taxon id="ami"/><taxon id="anc"/><taxon id="anu"/><taxon id="any"/><taxon id="aoi"/><taxon id="aol"/><taxon id="aon"/><taxon id="apb"/><taxon id="apj"/><taxon id="apk"/><taxon id="apl"/><taxon id="apm"/><taxon id="apn"/><taxon id="apq"/><taxon id="apw"/><taxon id="ari"/><taxon id="arn"/><taxon id="arp"/><taxon id="arv"/><taxon id="arw"/><taxon id="arz"/><taxon id="asa"/><taxon id="asb"/><taxon id="ati"/><taxon id="ats"/><taxon id="atw"/><taxon id="avi"/><taxon id="awe"/><taxon id="axb"/><taxon id="ayl"/><taxon id="ayn"/><taxon id="ayr"/><taxon id="bab"/><taxon id="bak"/><taxon id="bam"/><taxon id="ban"/><taxon id="bax"/><taxon id="bbc"/><taxon id="bbo"/><taxon id="bbp"/><taxon id="bca"/><taxon id="bci"/><taxon id="bcp"/><taxon id="bcy"/><taxon id="bdm"/><taxon id="bdp"/><taxon id="bdu"/><taxon id="bea"/><taxon id="bel"/><taxon id="ben"/><taxon id="bet"/><taxon id="bex"/><taxon id="bez"/><taxon id="bfd"/><taxon id="bfm"/><taxon id="bfo"/><taxon id="bfz"/><taxon id="bgo"/><taxon id="bgp"/><taxon id="bhb"/><taxon id="bho"/><taxon id="bib"/><taxon id="bif"/><taxon id="bin"/><taxon id="bip"/><taxon id="biv"/><taxon id="bja"/><taxon id="bjg"/><taxon id="bji"/><taxon id="bjw"/><taxon id="bkh"/><taxon id="bkm"/><taxon id="bko"/><taxon id="bkq"/><taxon id="bky"/><taxon id="blc"/><taxon id="ble"/><taxon id="bmi"/><taxon id="bmw"/><taxon id="bnm"/><taxon id="bnn"/><taxon id="bnp"/><taxon id="bod"/><taxon id="bol"/><taxon id="bom"/><taxon id="bor"/><taxon id="bot"/><taxon id="boz"/><taxon id="bpg"/><taxon id="bpr"/><taxon id="bqi"/><taxon id="brf"/><taxon id="bri"/><taxon id="brm"/><taxon id="brt"/><taxon id="bsc"/><taxon id="bsk"/><taxon id="bst"/><taxon id="bta"/><taxon id="bud"/><taxon id="buf"/><taxon id="buk"/><taxon id="bul"/><taxon id="bun"/><taxon id="buu"/><taxon id="bux"/><taxon id="bvb"/><taxon id="bwd"/><taxon id="bwr"/><taxon id="bwu"/><taxon id="bxk"/><taxon id="bxr"/><taxon id="byi"/><taxon id="byn"/><taxon id="byz"/><taxon id="bza"/><taxon id="bzd"/><taxon id="bze"/><taxon id="bzw"/><taxon id="caa"/><taxon id="cab"/><taxon id="cad"/><taxon id="caf"/><taxon id="cak"/><taxon id="cal"/><taxon id="cao"/><taxon id="caq"/><taxon id="car"/><taxon id="cax"/><taxon id="cbi"/><taxon id="ccg"/><taxon id="cch"/><taxon id="ccp"/><taxon id="cde"/><taxon id="cdr"/><taxon id="ceb"/><taxon id="ceg"/><taxon id="ces"/><taxon id="cgg"/><taxon id="cha"/><taxon id="chb"/><taxon id="chc"/><taxon id="chd"/><taxon id="che"/><taxon id="chh"/><taxon id="chk"/><taxon id="chl"/><taxon id="cho"/><taxon id="chp"/><taxon id="chr"/><taxon id="chv"/><taxon id="chy"/><taxon id="cic"/><taxon id="cid"/><taxon id="cjk"/><taxon id="cjm"/><taxon id="ckb"/><taxon id="ckt"/><taxon id="clc"/><taxon id="clm"/><taxon id="cmn"/><taxon id="cni"/><taxon id="coc"/><taxon id="cod"/><taxon id="com"/><taxon id="cou"/><taxon id="crd"/><taxon id="crj"/><taxon id="crk"/><taxon id="cro"/><taxon id="crq"/><taxon id="crx"/><taxon id="crz"/><taxon id="csa"/><taxon id="csm"/><taxon id="csw"/><taxon id="csz"/><taxon id="ctm"/><taxon id="cub"/><taxon id="cup"/><taxon id="cwe"/><taxon id="dag"/><taxon id="dak"/><taxon id="daq"/><taxon id="dav"/><taxon id="dbw"/><taxon id="dga"/><taxon id="dgr"/><taxon id="dhv"/><taxon id="did"/><taxon id="dif"/><taxon id="dig"/><taxon id="dik"/><taxon id="dil"/><taxon id="dim"/><taxon id="diz"/><taxon id="dje"/><taxon id="dnt"/><taxon id="dob"/><taxon id="dos"/><taxon id="dow"/><taxon id="doz"/><taxon id="dri"/><taxon id="drs"/><taxon id="dsh"/><taxon id="dta"/><taxon id="dtp"/><taxon id="dua"/><taxon id="dug"/><taxon id="duj"/><taxon id="dya"/><taxon id="dyo"/><taxon id="dyu"/><taxon id="dzg"/><taxon id="ebo"/><taxon id="efi"/><taxon id="ekg"/><taxon id="ell"/><taxon id="emp"/><taxon id="ems"/><taxon id="eng"/><taxon id="enq"/><taxon id="erg"/><taxon id="est"/><taxon id="ets"/><taxon id="etu"/><taxon id="evn"/><taxon id="eya"/><taxon id="eyo"/><taxon id="fan"/><taxon id="fip"/><taxon id="fll"/><taxon id="fmp"/><taxon id="foi"/><taxon id="fon"/><taxon id="for"/><taxon id="fra"/><taxon id="fub"/><taxon id="fuc"/><taxon id="fud"/><taxon id="fuf"/><taxon id="fuh"/><taxon id="fuj"/><taxon id="fuy"/><taxon id="fvr"/><taxon id="gaa"/><taxon id="gag"/><taxon id="gax"/><taxon id="gaz"/><taxon id="gby"/><taxon id="gde"/><taxon id="ggu"/><taxon id="giz"/><taxon id="gld"/><taxon id="gle"/><taxon id="gnc"/><taxon id="gno"/><taxon id="goa"/><taxon id="gog"/><taxon id="gol"/><taxon id="gow"/><taxon id="grh"/><taxon id="grt"/><taxon id="gta"/><taxon id="guc"/><taxon id="guh"/><taxon id="gui"/><taxon id="guj"/><taxon id="gun"/><taxon id="guu"/><taxon id="gux"/><taxon id="guz"/><taxon id="gwi"/><taxon id="gya"/><taxon id="gym"/><taxon id="haq"/><taxon id="has"/><taxon id="hau"/><taxon id="haw"/><taxon id="hay"/><taxon id="haz"/><taxon id="hch"/><taxon id="hdn"/><taxon id="hea"/><taxon id="heb"/><taxon id="heh"/><taxon id="her"/><taxon id="hid"/><taxon id="hke"/><taxon id="hmb"/><taxon id="hne"/><taxon id="hnn"/><taxon id="hoc"/><taxon id="hop"/><taxon id="hoz"/><taxon id="hts"/><taxon id="hun"/><taxon id="hup"/><taxon id="hus"/><taxon id="huu"/><taxon id="huv"/><taxon id="hwo"/><taxon id="hye"/><taxon id="ian"/><taxon id="iar"/><taxon id="iba"/><taxon id="ibb"/><taxon id="ibo"/><taxon id="ich"/><taxon id="ida"/><taxon id="idu"/><taxon id="ifb"/><taxon id="ife"/><taxon id="igb"/><taxon id="igl"/><taxon id="iii"/><taxon id="ijn"/><taxon id="ikt"/><taxon id="ilb"/><taxon id="ing"/><taxon id="irk"/><taxon id="isl"/><taxon id="iso"/><taxon id="itl"/><taxon id="its"/><taxon id="izh"/><taxon id="jac"/><taxon id="jav"/><taxon id="jbu"/><taxon id="jib"/><taxon id="jic"/><taxon id="jiv"/><taxon id="jle"/><taxon id="jpn"/><taxon id="kab"/><taxon id="kac"/><taxon id="kad"/><taxon id="kai"/><taxon id="kam"/><taxon id="kao"/><taxon id="kas"/><taxon id="kay"/><taxon id="kaz"/><taxon id="kbc"/><taxon id="kbd"/><taxon id="kbk"/><taxon id="kbl"/><taxon id="kbp"/><taxon id="kbr"/><taxon id="kby"/><taxon id="kca"/><taxon id="kde"/><taxon id="kdh"/><taxon id="kdn"/><taxon id="kdr"/><taxon id="ked"/><taxon id="kei"/><taxon id="kel"/><taxon id="ken"/><taxon id="keo"/><taxon id="ket"/><taxon id="kfa"/><taxon id="kff"/><taxon id="kgo"/><taxon id="kgq"/><taxon id="kha"/><taxon id="khk"/><taxon id="khu"/><taxon id="khy"/><taxon id="kib"/><taxon id="kic"/><taxon id="kig"/><taxon id="kij"/><taxon id="kik"/><taxon id="kin"/><taxon id="kio"/><taxon id="kjd"/><taxon id="kki"/><taxon id="kkz"/><taxon id="kla"/><taxon id="klb"/><taxon id="klu"/><taxon id="kmo"/><taxon id="kmw"/><taxon id="kna"/><taxon id="knb"/><taxon id="knk"/><taxon id="kns"/><taxon id="kod"/><taxon id="kog"/><taxon id="koo"/><taxon id="koq"/><taxon id="kor"/><taxon id="kos"/><taxon id="kot"/><taxon id="kpc"/><taxon id="kpg"/><taxon id="kpj"/><taxon id="kpy"/><taxon id="kpz"/><taxon id="kqi"/><taxon id="kqn"/><taxon id="kqq"/><taxon id="kqs"/><taxon id="kqy"/><taxon id="krh"/><taxon id="krn"/><taxon id="kru"/><taxon id="krw"/><taxon id="ksb"/><taxon id="ksf"/><taxon id="ksv"/><taxon id="kts"/><taxon id="ktz"/><taxon id="kui"/><taxon id="kum"/><taxon id="kun"/><taxon id="kus"/><taxon id="kut"/><taxon id="kvb"/><taxon id="kvj"/><taxon id="kvn"/><taxon id="kwd"/><taxon id="kwe"/><taxon id="kwk"/><taxon id="kwy"/><taxon id="kxc"/><taxon id="kxu"/><taxon id="kyh"/><taxon id="kzy"/><taxon id="lac"/><taxon id="lag"/><taxon id="laj"/><taxon id="lak"/><taxon id="lal"/><taxon id="lam"/><taxon id="lav"/><taxon id="lbk"/><taxon id="lbn"/><taxon id="lch"/><taxon id="lcp"/><taxon id="lea"/><taxon id="leb"/><taxon id="led"/><taxon id="leg"/><taxon id="lel"/><taxon id="lep"/><taxon id="les"/><taxon id="lgg"/><taxon id="lgu"/><taxon id="lic"/><taxon id="lil"/><taxon id="lin"/><taxon id="lit"/><taxon id="liv"/><taxon id="lkr"/><taxon id="lkt"/><taxon id="lle"/><taxon id="llx"/><taxon id="lmi"/><taxon id="lmp"/><taxon id="lmu"/><taxon id="lmw"/><taxon id="lns"/><taxon id="lnu"/><taxon id="lob"/><taxon id="log"/><taxon id="lot"/><taxon id="loz"/><taxon id="lse"/><taxon id="lua"/><taxon id="lub"/><taxon id="lue"/><taxon id="lug"/><taxon id="lui"/><taxon id="lum"/><taxon id="lun"/><taxon id="luo"/><taxon id="lus"/><taxon id="maf"/><taxon id="mai"/><taxon id="mak"/><taxon id="mal"/><taxon id="mam"/><taxon id="mas"/><taxon id="mau"/><taxon id="mav"/><taxon id="maw"/><taxon id="mbb"/><taxon id="mbc"/><taxon id="mch"/><taxon id="mcn"/><taxon id="mcu"/><taxon id="mdd"/><taxon id="mdi"/><taxon id="mdp"/><taxon id="mdy"/><taxon id="mei"/><taxon id="mek"/><taxon id="men"/><taxon id="mer"/><taxon id="meu"/><taxon id="mey"/><taxon id="mez"/><taxon id="mfq"/><taxon id="mfz"/><taxon id="mgd"/><taxon id="mgo"/><taxon id="mgp"/><taxon id="mgr"/><taxon id="mgs"/><taxon id="mgu"/><taxon id="mgz"/><taxon id="mhi"/><taxon id="mhj"/><taxon id="mhk"/><taxon id="mhq"/><taxon id="mhr"/><taxon id="mia"/><taxon id="mic"/><taxon id="mik"/><taxon id="min"/><taxon id="miq"/><taxon id="mir"/><taxon id="mjg"/><taxon id="mji"/><taxon id="mjw"/><taxon id="mlq"/><taxon id="mmg"/><taxon id="mmk"/><taxon id="mnc"/><taxon id="mng"/><taxon id="mnr"/><taxon id="mns"/><taxon id="mnv"/><taxon id="moe"/><taxon id="mor"/><taxon id="mos"/><taxon id="mot"/><taxon id="mov"/><taxon id="mox"/><taxon id="mqu"/><taxon id="mrc"/><taxon id="mrh"/><taxon id="mri"/><taxon id="mrl"/><taxon id="mrq"/><taxon id="mrt"/><taxon id="mrv"/><taxon id="mrz"/><taxon id="mtq"/><taxon id="mtt"/><taxon id="mua"/><taxon id="mug"/><taxon id="mus"/><taxon id="mva"/><taxon id="mvb"/><taxon id="mvf"/><taxon id="mvi"/><taxon id="mvy"/><taxon id="mwf"/><taxon id="mwm"/><taxon id="mwn"/><taxon id="mwt"/><taxon id="mwv"/><taxon id="mxa"/><taxon id="mya"/><taxon id="mye"/><taxon id="myh"/><taxon id="myk"/><taxon id="mym"/><taxon id="myo"/><taxon id="myu"/><taxon id="myv"/><taxon id="myx"/><taxon id="mzb"/><taxon id="mzm"/><taxon id="mzv"/><taxon id="nab"/><taxon id="nak"/><taxon id="nan"/><taxon id="nap"/><taxon id="nar"/><taxon id="nau"/><taxon id="nav"/><taxon id="nbm"/><taxon id="ncf"/><taxon id="nci"/><taxon id="ncm"/><taxon id="ncz"/><taxon id="ndc"/><taxon id="nde"/><taxon id="ndi"/><taxon id="ndo"/><taxon id="ndr"/><taxon id="neb"/><taxon id="neg"/><taxon id="nez"/><taxon id="ngb"/><taxon id="ngi"/><taxon id="ngo"/><taxon id="ngp"/><taxon id="nhn"/><taxon id="nhr"/><taxon id="nio"/><taxon id="niq"/><taxon id="niu"/><taxon id="niv"/><taxon id="njh"/><taxon id="njm"/><taxon id="njo"/><taxon id="njy"/><taxon id="nku"/><taxon id="nld"/><taxon id="nmg"/><taxon id="nmu"/><taxon id="nnw"/><taxon id="nrb"/><taxon id="nre"/><taxon id="nsk"/><taxon id="nsm"/><taxon id="nsz"/><taxon id="ntp"/><taxon id="ntu"/><taxon id="nuk"/><taxon id="nup"/><taxon id="nus"/><taxon id="nwi"/><taxon id="nyf"/><taxon id="nyi"/><taxon id="nyk"/><taxon id="nym"/><taxon id="nyn"/><taxon id="nyo"/><taxon id="nza"/><taxon id="oaa"/><taxon id="oac"/><taxon id="ojc"/><taxon id="ojg"/><taxon id="ojv"/><taxon id="ojw"/><taxon id="oki"/><taxon id="okv"/><taxon id="old"/><taxon id="olo"/><taxon id="ona"/><taxon id="opt"/><taxon id="ori"/><taxon id="oro"/><taxon id="oss"/><taxon id="ote"/><taxon id="otr"/><taxon id="otw"/><taxon id="pab"/><taxon id="pan"/><taxon id="par"/><taxon id="pau"/><taxon id="paw"/><taxon id="pbb"/><taxon id="pbg"/><taxon id="pbh"/><taxon id="pbi"/><taxon id="pbo"/><taxon id="peb"/><taxon id="pei"/><taxon id="pej"/><taxon id="pem"/><taxon id="peq"/><taxon id="pib"/><taxon id="pid"/><taxon id="pio"/><taxon id="piw"/><taxon id="pkb"/><taxon id="pkp"/><taxon id="pll"/><taxon id="plu"/><taxon id="pmt"/><taxon id="pna"/><taxon id="pnh"/><taxon id="poc"/><taxon id="pof"/><taxon id="poi"/><taxon id="pon"/><taxon id="pot"/><taxon id="pub"/><taxon id="pwi"/><taxon id="pwn"/><taxon id="pwo"/><taxon id="pyu"/><taxon id="quc"/><taxon id="qui"/><taxon id="qun"/><taxon id="quz"/><taxon id="qxq"/><taxon id="rad"/><taxon id="ram"/><taxon id="rap"/><taxon id="rar"/><taxon id="reg"/><taxon id="res"/><taxon id="rif"/><taxon id="rim"/><taxon id="rkh"/><taxon id="rki"/><taxon id="rtm"/><taxon id="ruf"/><taxon id="run"/><taxon id="rus"/><taxon id="rwm"/><taxon id="rys"/><taxon id="ryu"/><taxon id="sac"/><taxon id="sad"/><taxon id="sah"/><taxon id="saq"/><taxon id="sat"/><taxon id="sax"/><taxon id="sbb"/><taxon id="sbd"/><taxon id="sbk"/><taxon id="sbp"/><taxon id="scl"/><taxon id="scs"/><taxon id="sda"/><taxon id="sdj"/><taxon id="sea"/><taxon id="see"/><taxon id="sef"/><taxon id="seh"/><taxon id="sei"/><taxon id="sek"/><taxon id="sel"/><taxon id="ser"/><taxon id="sez"/><taxon id="sgc"/><taxon id="sgw"/><taxon id="shb"/><taxon id="shc"/><taxon id="she"/><taxon id="shk"/><taxon id="shp"/><taxon id="shr"/><taxon id="shs"/><taxon id="sht"/><taxon id="shy"/><taxon id="sid"/><taxon id="sil"/><taxon id="sin"/><taxon id="sis"/><taxon id="siw"/><taxon id="siz"/><taxon id="sjw"/><taxon id="skg"/><taxon id="skt"/><taxon id="slh"/><taxon id="sln"/><taxon id="slp"/><taxon id="slu"/><taxon id="smd"/><taxon id="smj"/><taxon id="smo"/><taxon id="smw"/><taxon id="sna"/><taxon id="snd"/><taxon id="sng"/><taxon id="snk"/><taxon id="snp"/><taxon id="sns"/><taxon id="sod"/><taxon id="soo"/><taxon id="sop"/><taxon id="sot"/><taxon id="soz"/><taxon id="spa"/><taxon id="squ"/><taxon id="srp"/><taxon id="srq"/><taxon id="srr"/><taxon id="srs"/><taxon id="ssb"/><taxon id="ssw"/><taxon id="sub"/><taxon id="suk"/><taxon id="suq"/><taxon id="sus"/><taxon id="suw"/><taxon id="sva"/><taxon id="swp"/><taxon id="syb"/><taxon id="szb"/><taxon id="taf"/><taxon id="tah"/><taxon id="tam"/><taxon id="tao"/><taxon id="tar"/><taxon id="tau"/><taxon id="tay"/><taxon id="tbi"/><taxon id="tbw"/><taxon id="tbz"/><taxon id="tca"/><taxon id="tcc"/><taxon id="tcx"/><taxon id="tcz"/><taxon id="tdx"/><taxon id="teh"/><taxon id="tel"/><taxon id="tem"/><taxon id="teo"/><taxon id="ter"/><taxon id="tet"/><taxon id="tey"/><taxon id="tfn"/><taxon id="tha"/><taxon id="thp"/><taxon id="tht"/><taxon id="tia"/><taxon id="tic"/><taxon id="til"/><taxon id="tir"/><taxon id="tiv"/><taxon id="tiw"/><taxon id="tix"/><taxon id="tjm"/><taxon id="tkg"/><taxon id="tkl"/><taxon id="tkm"/><taxon id="tkp"/><taxon id="tlb"/><taxon id="tli"/><taxon id="tll"/><taxon id="tmj"/><taxon id="tnq"/><taxon id="tob"/><taxon id="tod"/><taxon id="tog"/><taxon id="toi"/><taxon id="tol"/><taxon id="ton"/><taxon id="toq"/><taxon id="tos"/><taxon id="tow"/><taxon id="tpn"/><taxon id="tpy"/><taxon id="tpz"/><taxon id="tqb"/><taxon id="tqn"/><taxon id="tsb"/><taxon id="tsi"/><taxon id="tsn"/><taxon id="tso"/><taxon id="tsv"/><taxon id="tsz"/><taxon id="ttj"/><taxon id="ttr"/><taxon id="ttv"/><taxon id="tub"/><taxon id="tuf"/><taxon id="tui"/><taxon id="tuk"/><taxon id="tum"/><taxon id="tuo"/><taxon id="tuq"/><taxon id="tur"/><taxon id="tuu"/><taxon id="tuv"/><taxon id="tva"/><taxon id="tvl"/><taxon id="tvu"/><taxon id="twa"/><taxon id="twu"/><taxon id="tzh"/><taxon id="tzm"/><taxon id="ubu"/><taxon id="ude"/><taxon id="ulc"/><taxon id="uli"/><taxon id="ulk"/><taxon id="uma"/><taxon id="umb"/><taxon id="umo"/><taxon id="unr"/><taxon id="ure"/><taxon id="uzn"/><taxon id="vag"/><taxon id="vai"/><taxon id="ved"/><taxon id="ven"/><taxon id="vep"/><taxon id="ver"/><taxon id="vie"/><taxon id="vka"/><taxon id="vmw"/><taxon id="vor"/><taxon id="vot"/><taxon id="vut"/><taxon id="wac"/><taxon id="wao"/><taxon id="wap"/><taxon id="was"/><taxon id="waw"/><taxon id="way"/><taxon id="wba"/><taxon id="wbp"/><taxon id="wca"/><taxon id="wic"/><taxon id="wim"/><taxon id="win"/><taxon id="wiv"/><taxon id="wiy"/><taxon id="wlk"/><taxon id="wln"/><taxon id="wls"/><taxon id="wlv"/><taxon id="wnc"/><taxon id="woc"/><taxon id="wol"/><taxon id="wrp"/><taxon id="wuu"/><taxon id="wuv"/><taxon id="wya"/><taxon id="wyb"/><taxon id="xac"/><taxon id="xal"/><taxon id="xam"/><taxon id="xav"/><taxon id="xaw"/><taxon id="xbr"/><taxon id="xcw"/><taxon id="xer"/><taxon id="xnn"/><taxon id="xog"/><taxon id="xok"/><taxon id="xom"/><taxon id="xon"/><taxon id="xpe"/><taxon id="xsi"/><taxon id="xsl"/><taxon id="xsm"/><taxon id="xsr"/><taxon id="xsu"/><taxon id="xvi"/><taxon id="yad"/><taxon id="yae"/><taxon id="yaf"/><taxon id="yag"/><taxon id="yal"/><taxon id="yao"/><taxon id="yap"/><taxon id="yaq"/><taxon id="yar"/><taxon id="yaz"/><taxon id="yer"/><taxon id="ykg"/><taxon id="yle"/><taxon id="ynn"/><taxon id="yns"/><taxon id="yom"/><taxon id="yrk"/><taxon id="yua"/><taxon id="yuc"/><taxon id="yue"/><taxon id="yuk"/><taxon id="yum"/><taxon id="yup"/><taxon id="yur"/><taxon id="yyr"/><taxon id="zen"/><taxon id="zin"/><taxon id="ziw"/><taxon id="zkk"/><taxon id="zlm"/><taxon id="zmi"/><taxon id="zmp"/><taxon id="zms"/><taxon id="zmz"/><taxon id="zne"/><taxon id="zpu"/><taxon id="zul"/><taxon id="zun"/>
+<!--
+<taxon id="san"/><taxon id="tgu"/><taxon id="wit"/><taxon id="djk"/><taxon id="daf"/><taxon id="afr"/><taxon id="dep"/><taxon id="srm"/><taxon id="egy"/><taxon id="kzh"/><taxon id="tmr"/><taxon id="hat"/><taxon id="lat"/>
+-->
 </taxonset>
 
 <!--
@@ -36,26 +39,6 @@ ISO code = Code: EA029 Agriculture: major crop type-Code: EA090 Political integr
 -->
 
 <!--
-0 = rest & rest
-1 = rest & (little) states
-2 = roots & rest
-3 = roots & (little) states
-
-     0 1 2 3
-0    - 0 X 0
-1    0 - X X
-2    X X - 0
-3    0 X 0 -
-
-
--->
-
-    <distribution spec='AncestralStateTreeLikelihood' id="geoTreeLikelihood" tag='dplace' useJava="true">
-                <data spec='AlignmentFromTraitForDPLace'>
-                        <userDataType spec='beast.evolution.datatype.UserDataType' id='dplace-data' 
-                states='4'
-                codelength='-1'
-                codeMap='
 1-1=0,
 1-2=0,
 1-3=0,
@@ -89,12 +72,130 @@ ISO code = Code: EA029 Agriculture: major crop type-Code: EA090 Political integr
 5-5=3,
 5-6=3,
 
+0 = rest & rest
+1 = rest & (little) states
+2 = roots & rest
+3 = roots & (little) states
+
+     0 1 2 3
+0    - 0 x 0
+1    0 - X 0
+2    0 0 - X
+3    X 0 x -
+
+     0 1 2 3
+0    - 0 0 X
+1    0 - X 0
+2    X 0 - 0
+3    0 X 0 -
+
+
+
+0 = rest & rest
+1 = rest & (little) states
+2 = cerial & rest
+3 = cerial & (little) states
+
+     false  true  false 
+true        false false 
+false false       true 
+true true true
+
+     true true false 
+true      true true 
+false false    true 
+true false true 
+
+                0              1              0             
+ 1                             0              0              
+ 0              0                             1              
+ 0              1              0
+
+0 =0.1=> 2 =0.6=> 3 =1.5=> 1 =1.6=> 0
+
+			   0               1              0              
+1              				   1              1              
+0              1                              1              
+1              0               1   
+ 
+
+      true false false 
+false      false true 
+true false       false 
+false true true
+-->
+                
+<!-- 
+count state
+ 131  0
+   6  1
+  91  2
+  48  3
+-->
+
+<!--
+	<distribution spec='AncestralStateTreeLikelihood' id="geoTreeLikelihood" tag='dplace'>
+	-->
+    <distribution spec='TreeLikelihood' id="geoTreeLikelihood">
+                <data spec='AlignmentFromTraitForDPLace' file="examples/dplace-societies-2016-08-09.csv" code1="6" code2="5,6">
+                        <userDataType spec='beast.base.evolution.datatype.UserDataType' id='dplace-data' 
+                states='4'
+                codelength='-1'
+                codeMap='
+1-1=0,
+1-2=0,
+1-3=0,
+1-4=0,
+2-4=0,
+
+3-2=0,
+
+4-1=0,
+4-2=0,
+4-3=0,
+4-4=0,
+4-8=0,
+
+5-1=0,
+5-2=0,
+5-3=0,
+5-4=0,
+5-8=0,
+
+4-6=1,
+6-5=3,
+6-6=3,
+
+6-1=2,
+6-2=2,
+6-3=2,
+6-4=2,
+6-8=2,
+
+5-5=0,
+5-6=1,
+
                 1-NA = 0 1 2 3, 2-NA = 0 1 2 3, 3-NA = 0 1 2 3, 4-NA = 0 1 2 3, 5-NA = 0 1 2 3, 6-NA = 0 1 2 3, 
                 NA-1 = 0 1 2 3, NA-2 = 0 1 2 3, NA-3 = 0 1 2 3, NA-4 = 0 1 2 3, NA-5 = 0 1 2 3, NA-6 = 0 1 2 3, NA-8 = 0 1 2 3, 
                 NA-NA = 0 1 2 3,
                 - = 0 1 2 3'
                 />
                     <traitSet id='traitset' spec='TraitSet' traitname='discrete' taxa="@taxa">
+<!--
+afr = 6-5,
+san = NA-6,
+tgu = 5-NA,
+wit = 1-2,
+djk = 5-NA,
+daf = 6-NA,
+dep = 6-2,
+srm = 5-4,
+egy = 6-NA,
+kzh = 4-8,
+tmr = 6-NA,
+hat = 6-NA,
+lat = 6-6,
+-->
 aar = 6-NA,
 abk = 6-NA,
 abr = 6-NA,
@@ -111,7 +212,6 @@ aec = 6-NA,
 aer = 1-2,
 aes = 1-NA,
 afo = 6-NA,
-afr = 6-5,
 ahg = 6-NA,
 ahk = 6-2,
 ahs = NA-NA,
@@ -310,13 +410,11 @@ ctm = NA-NA,
 cub = 5-2,
 cup = 1-NA,
 cwe = 6-NA,
-daf = 6-NA,
 dag = 6-NA,
 dak = 6-NA,
 daq = 6-4,
 dav = 6-NA,
 dbw = 6-2,
-dep = 6-2,
 dga = 6-NA,
 dgr = 1-NA,
 dhv = 5-4,
@@ -328,7 +426,6 @@ dil = 6-4,
 dim = 6-NA,
 diz = 5-NA,
 dje = 6-NA,
-djk = 5-NA,
 dnt = 5-NA,
 dob = 5-1,
 dos = 6-NA,
@@ -348,7 +445,6 @@ dyu = 5-NA,
 dzg = 6-NA,
 ebo = 5-NA,
 efi = 5-NA,
-egy = 6-NA,
 ekg = 5-3,
 ell = 6-NA,
 emp = 4-NA,
@@ -410,7 +506,6 @@ gya = 5-2,
 gym = NA-NA,
 haq = 6-NA,
 has = 1-NA,
-hat = 6-NA,
 hau = 6-NA,
 haw = 5-5,
 hay = 4-NA,
@@ -563,7 +658,6 @@ kwy = 5-NA,
 kxc = 6-4,
 kxu = NA-NA,
 kyh = 1-NA,
-kzh = 4-8,
 kzy = 1-2,
 lac = 6-NA,
 lag = 6-NA,
@@ -571,7 +665,6 @@ laj = 6-2,
 lak = 6-NA,
 lal = NA-NA,
 lam = 6-4,
-lat = 6-6,
 lav = 6-NA,
 lbk = 6-NA,
 lbn = 6-2,
@@ -850,7 +943,6 @@ ryu = 5-4,
 sac = 6-4,
 sad = 6-2,
 sah = 6-5,
-san = NA-6,
 saq = 1-NA,
 sat = 6-4,
 sax = 5-NA,
@@ -912,7 +1004,6 @@ sot = 6-6,
 soz = 6-NA,
 spa = 6-NA,
 squ = 1-NA,
-srm = 5-4,
 srp = 6-6,
 srq = 6-2,
 srr = 6-NA,
@@ -951,7 +1042,6 @@ ter = 5-2,
 tet = 6-4,
 tey = 6-NA,
 tfn = 1-NA,
-tgu = 5-NA,
 tha = 6-6,
 thp = 1-NA,
 tht = 1-NA,
@@ -971,7 +1061,6 @@ tlb = 6-NA,
 tli = 1-NA,
 tll = NA-NA,
 tmj = NA-NA,
-tmr = 6-NA,
 tnq = 5-NA,
 tob = 5-NA,
 tod = 6-NA,
@@ -1048,7 +1137,6 @@ wca = 4-2,
 wic = 6-4,
 wim = 1-NA,
 win = 6-4,
-wit = 1-2,
 wiv = NA-NA,
 wiy = 1-NA,
 wlk = 1-NA,
@@ -1125,21 +1213,23 @@ zun = 6-2
 		</data>
         <tree id="tree" taxonset="@taxa"/>
         <siteModel spec='SiteModel' id="geoSiteModel" gammaCategoryCount='1'>
-            <substModel spec="SVSGeneralSubstitutionModel" id="svs" eigenSystem="beast.evolution.substitutionmodel.RobustEigenSystem" symmetric="true">        
+            <substModel spec="SVSGeneralSubstitutionModel" id="svs" symmetric="true" eigenSystem="beast.evolution.substitutionmodel.RobustEigenSystem">     
                 <frequencies id='freqs' spec='Frequencies'>
-                        <frequencies id='frequencies' spec='parameter.RealParameter' value='0.25 0.25 0.25 0.25'/>
+                        <frequencies id='frequencies' spec='parameter.RealParameter' lower="0.05" upper="1.0" value="0.4746376812 0.3297101449 0.0217391304 0.1739130435"/>
+                        <!--value='0.25 0.25 0.25 0.25'/-->
+                        <!--0.4746376812 0.0217391304 0.3297101449 0.1739130435'/-->
                 </frequencies>
-                <rates id='relativeGeoRates' spec='parameter.RealParameter' value='1.' dimension='6'/>
-                <rateIndicator id='rateIndicator' spec='parameter.BooleanParameter' value='true'  dimension='6'/>
+                <rates id='relativeGeoRates' spec='parameter.RealParameter' value='1.' lower="0.1" upper="2.0" dimension='6'/>
+                <rateIndicator id='rateIndicator' spec='parameter.BooleanParameter' value='true true false true false true '  dimension='6'/>
             </substModel>
             <mutationRate idref="geoMutationRate"/>
         </siteModel>
     </distribution>
     
-	<ParameterCumSum spec="beast.core.util.Sum" id="nonZeroRates" arg="@rateIndicator"/> 
+	<ParameterCumSum spec="beast.base.evolution.Sum" id="nonZeroRates" arg="@rateIndicator"/> 
 
 	<!-- b/(d+s) -->
-	<RPNcalculator spec="beast.math.statistic.RPNcalculator" id="actualGeoRates" expression="relativeGeoRates rateIndicator *"> 
+	<RPNcalculator spec="beast.base.inference.util.RPNcalculator" id="actualGeoRates" expression="relativeGeoRates rateIndicator *"> 
 		<parameter idref="relativeGeoRates"/>
 		<parameter idref="rateIndicator"/>
     </RPNcalculator>
@@ -1149,24 +1239,31 @@ zun = 6-2
             <stateNode idref="rateIndicator"/>
             <stateNode idref="relativeGeoRates"/>
         	<stateNode spec='parameter.RealParameter' id="geoMutationRate" value="0.1" lower="0." upper="10."/>
+        	<stateNode idref='frequencies'/>
  		</state>
 
 		<distribution spec='CompoundDistribution' id='posterior'>
 			<distribution spec='CompoundDistribution' id='prior'>
-				<distribution  id='discreteTraitPrior' x="@relativeGeoRates" spec='beast.math.distributions.Prior'>
-					<distr spec='beast.math.distributions.Gamma' alpha="1." beta="1." offset="0.0"/>
+				<!--
+				<distribution  id='rateIndicatorPrior' spec='beast.base.inference.distribution.Prior'>
+					<x spec="beast.util.Script" expression="rateIndicator[2]+rateIndicator[4]+rateIndicator[7]+rateIndicator[9]" x="@rateIndicator"/>
+					<distr spec='beast.base.inference.distribution.Uniform' lower="-0.5" upper="0.5"/>
 				</distribution>
-				<distribution  x="@geoMutationRate" id="geoMuPrior" spec='beast.math.distributions.Prior'>
-					<distr spec='beast.math.distributions.Exponential' id='geoMuPrior_Exp' mean="1." offset="0.0"/>
+				-->
+				<distribution  id='discreteTraitPrior' x="@relativeGeoRates" spec='beast.base.inference.distribution.Prior'>
+					<distr spec='beast.base.inference.distribution.Gamma' alpha="1." beta="1." offset="0.0"/>
+				</distribution>
+				<distribution  x="@geoMutationRate" id="geoMuPrior" spec='beast.base.inference.distribution.Prior'>
+					<distr spec='beast.base.inference.distribution.Exponential' id='geoMuPrior_Exp' mean="1." offset="0.0"/>
 				</distribution>
 
-				<distribution  x="@nonZeroRates" id="nonZeroRatePrior" spec='beast.math.distributions.Prior'>
-					<distr spec='beast.math.distributions.Poisson' id='nonZeroRatePrior_Poi' lambda="0.693" offset="3.0"/>
+				<distribution  x="@nonZeroRates" id="nonZeroRatePrior" spec='beast.base.inference.distribution.Prior'>
+					<distr spec='beast.base.inference.distribution.Poisson' id='nonZeroRatePrior_Poi' lambda="1.693" offset="3.0"/>
 				</distribution>
 
 			</distribution>
 			<distribution spec='CompoundDistribution' id='likelihood'>
-				<distribution id="treeSetLikelihood.dplace" spec="TreeSetLikelihood" treeSetFile="/tmp/x.trees">
+				<distribution id="treeSetLikelihood.dplace" spec="beast.evolution.likelihood.TreeSetLikelihood" treeSetFile="examples/v2/x.tree" burnin="0">
 					<treeLikelihood idref="geoTreeLikelihood"/>
 				</distribution>
 			</distribution>
@@ -1176,27 +1273,33 @@ zun = 6-2
         <operator id='georateScaler' spec='ScaleOperator' scaleFactor="0.75" weight="30" parameter="@relativeGeoRates" scaleAllIndependently='true'/>
 		<operator spec="BitFlipOperator" id="indicatorFlip" parameter="@rateIndicator" weight="30"/>
 		<operator spec="BitFlipBSSVSOperator" id="BSSVSoperator" indicator="@rateIndicator" mu="@geoMutationRate" weight="30"/>
+        <!--
+		<operator autoOptimize="true" delta="0.01" id="FrequenciesExchanger" integer="false" spec="DeltaExchangeOperator" weight="10">
+			<parameter idref="frequencies"/>
+		</operator>
+		-->
 
-		
-        <logger logEvery="100" fileName="DPlace.log">
+
+        <logger logEvery="100" fileName="DPlaceAssym.log">
 	        <model idref='posterior'/>
 
 			<log idref="posterior"/>
 			<log idref="prior"/>
 			<log idref="likelihood"/>
             <log idref="geoMutationRate"/>
+			<log idref="geoTreeLikelihood"/>
             <log idref="nonZeroRates"/>
-            <log idref="actualGeoRates"/>            
+            <log idref="actualGeoRates"/>
             <log idref="rateIndicator"/>
+            <log idref="nonZeroRatePrior"/>
+            <log idref="frequencies"/>
         </logger>
                 
         <logger logEvery="10">
             <log idref="posterior"/>
             <log idref="prior"/>
             <log idref="likelihood"/>
-            <log idref="nonZeroRatePrior"/>
-            <log idref="discreteTraitPrior"/>
-            <log idref="geoMutationRate"/>
+            <log idref="frequencies"/>
             <log idref="nonZeroRates"/>
         </logger>
     </run>
