@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Input.Validate;
-import beast.evolution.alignment.AlignmentFromTrait;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.core.Input.Validate;
+import beastclassic.evolution.alignment.AlignmentFromTrait;
 
 @Description("As AlignmentFromTrait, but with DPLACE data encoded for two D-PLACE features")
 public class AlignmentFromTraitForDPLace extends AlignmentFromTrait {

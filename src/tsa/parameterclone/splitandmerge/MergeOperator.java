@@ -21,15 +21,15 @@ package tsa.parameterclone.splitandmerge;
 
 import java.util.HashSet;
 
-import beast.core.Citation;
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Input.Validate;
-import beast.core.Operator;
-import beast.core.parameter.IntegerParameter;
-import beast.core.parameter.RealParameter;
-import beast.math.Binomial;
-import beast.util.Randomizer;
+import beast.base.core.Citation;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.core.Input.Validate;
+import beast.base.inference.Operator;
+import beast.base.inference.parameter.IntegerParameter;
+import beast.base.inference.parameter.RealParameter;
+import beast.base.util.Binomial;
+import beast.base.util.Randomizer;
 
 @Description("Randomly merge two groups of parameters")
 @Citation("Huelsenbeck, J.P., Larget, B., Alfaro, M.E., 2004. "
@@ -82,7 +82,7 @@ public class MergeOperator extends Operator {
 		int groupsOfSizeAtLeastTwo = 0;
 		int[] trueGroupIndices = new int[parametersInput.get().getDimension()];
 		int i = 0;
-		for (int size : sizesInput.get(this).getValues()) {
+		for (int size : sizesInput.get().getValues()) {
 			if (size > 0) {
 				trueGroupIndices[nGroups] = i;
 				++nGroups;
@@ -110,7 +110,7 @@ public class MergeOperator extends Operator {
 		HashSet<Integer> mergeGroup = new HashSet<Integer>();
 		HashSet<Integer> removeGroup = new HashSet<Integer>();
 		i = 0;
-		for (int index : groupingsInput.get(this).getValues()) {
+		for (int index : groupingsInput.get().getValues()) {
 			if (index == mergeIndex) {
 				mergeGroup.add(i);
 			}
@@ -126,7 +126,7 @@ public class MergeOperator extends Operator {
 
 		for (Integer toBeMerged : removeGroup) {
 			// groupings[toBeMerged] = mergeIndex
-			groupingsInput.get(this).setValue(toBeMerged, mergeIndex);
+			groupingsInput.get().setValue(toBeMerged, mergeIndex);
 		}
 
 		Double logJacobian = Math.log(mergeGroupSize)
@@ -134,12 +134,12 @@ public class MergeOperator extends Operator {
 				- Math.log(mergeGroupSize + removeGroupSize);
 
 		// The merge takes a weighted mean, to conserve the sum of rates.
-		double mergedRates = (parametersInput.get(this).getValue(mergeIndex)
-				* mergeGroupSize + parametersInput.get(this).getValue(
+		double mergedRates = (parametersInput.get().getValue(mergeIndex)
+				* mergeGroupSize + parametersInput.get().getValue(
 				removeIndex)
 				* removeGroupSize)
 				/ (mergeGroupSize + removeGroupSize);
-		parametersInput.get(this).setValue(mergeIndex, mergedRates);
+		parametersInput.get().setValue(mergeIndex, mergedRates);
 		// In order to keep dimensions matched (cf. Green 1995, p. 716), there
 		// needs to be a bijection between the pre-image and the image of this
 		// operator and its inverse. This is mitigated by a random variable in
@@ -148,8 +148,8 @@ public class MergeOperator extends Operator {
 				* (mergeGroupSize + removeGroupSize));
 
 		// Update the group size caches
-		sizesInput.get(this).setValue(removeIndex, 0);
-		sizesInput.get(this).setValue(mergeIndex,
+		sizesInput.get().setValue(removeIndex, 0);
+		sizesInput.get().setValue(mergeIndex,
 				(mergeGroupSize + removeGroupSize));
 
 		// System.out.printf("Merge %d into %d\n", removeIndex, mergeIndex);

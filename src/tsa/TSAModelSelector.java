@@ -20,46 +20,46 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-import beast.app.util.Application;
-import beast.app.util.OutFile;
-import beast.app.util.TreeFile;
-import beast.app.util.XMLFile;
-import beast.core.BEASTInterface;
-import beast.core.BEASTObject;
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Input.Validate;
-import beast.core.Logger;
-import beast.core.Operator;
-import beast.core.Runnable;
-import beast.core.State;
-import beast.core.parameter.IntegerParameter;
-import beast.core.parameter.RealParameter;
-import beast.core.util.CompoundDistribution;
-import beast.core.util.Log;
-import beast.evolution.alignment.Alignment;
-import beast.evolution.alignment.Sequence;
-import beast.evolution.branchratemodel.StrictClockModel;
-import beast.evolution.branchratemodel.UCRelaxedClockModel;
-import beast.evolution.datatype.Binary;
-import beast.evolution.likelihood.AncestralStateTreeLikelihood;
+import beastfx.app.tools.Application;
+import beastfx.app.util.OutFile;
+import beastfx.app.util.TreeFile;
+import beastfx.app.util.XMLFile;
+import beast.base.core.BEASTInterface;
+import beast.base.core.BEASTObject;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.core.Input.Validate;
+import beast.base.inference.Logger;
+import beast.base.inference.Operator;
+import beast.base.inference.Runnable;
+import beast.base.inference.State;
+import beast.base.inference.parameter.IntegerParameter;
+import beast.base.inference.parameter.RealParameter;
+import beast.base.inference.CompoundDistribution;
+import beast.base.core.Log;
+import beast.base.evolution.alignment.Alignment;
+import beast.base.evolution.alignment.Sequence;
+import beast.base.evolution.branchratemodel.StrictClockModel;
+import beast.base.evolution.branchratemodel.UCRelaxedClockModel;
+import beast.base.evolution.datatype.Binary;
+import beastclassic.evolution.likelihood.AncestralStateTreeLikelihood;
 import beast.evolution.likelihood.ThreadedTreeSetLikelihood;
-import beast.evolution.likelihood.TreeLikelihood;
-import beast.evolution.operators.DeltaExchangeOperator;
-import beast.evolution.operators.IntRandomWalkOperator;
-import beast.evolution.operators.ScaleOperator;
-import beast.evolution.operators.SwapOperator;
-import beast.evolution.operators.UniformOperator;
-import beast.evolution.sitemodel.SiteModel;
-import beast.evolution.substitutionmodel.Frequencies;
-import beast.gss.NS;
-import beast.math.distributions.Gamma;
-import beast.math.distributions.LogNormalDistributionModel;
-import beast.math.distributions.Prior;
-import beast.util.TreeParser;
-import beast.util.XMLParser;
-import beast.util.XMLParserException;
-import beast.util.XMLProducer;
+import beast.base.evolution.likelihood.TreeLikelihood;
+import beast.base.inference.operator.DeltaExchangeOperator;
+import beast.base.inference.operator.IntRandomWalkOperator;
+import beast.base.evolution.operator.ScaleOperator;
+import beast.base.inference.operator.SwapOperator;
+import beast.base.inference.operator.UniformOperator;
+import beast.base.evolution.sitemodel.SiteModel;
+import beast.base.evolution.substitutionmodel.Frequencies;
+import nestedsampling.gss.NS;
+import beast.base.inference.distribution.Gamma;
+import beast.base.inference.distribution.LogNormalDistributionModel;
+import beast.base.inference.distribution.Prior;
+import beast.base.evolution.tree.TreeParser;
+import beast.base.parser.XMLParser;
+import beast.base.parser.XMLParserException;
+import beast.base.parser.XMLProducer;
 import tsa.correlatedcharacters.polycharacter.CompoundAlignment;
 import tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel;
 import tsa.parameterclone.helpers.RescaledDirichlet;
@@ -357,20 +357,20 @@ public class TSAModelSelector extends Runnable {
 
 		// <state id="state" storeEvery="100">
 		//
-		// <stateNode spec="beast.core.parameter.RealParameter" id="parameters"
+		// <stateNode spec="beast.base.inference.parameter.RealParameter" id="parameters"
 		// lower="0.05">
 		// 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
 		// </stateNode>
 		RealParameter parameters = new RealParameter();
 		parameters.initByName("value", "1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0", "lower", 0.05, "upper", 8.0);
 		parameters.setID("parameters");
-		// <stateNode spec="beast.core.parameter.IntegerParameter" id="indices"
+		// <stateNode spec="beast.base.inference.parameter.IntegerParameter" id="indices"
 		// lower="0" upper="2">
 		// 0 1 2 3 4 5 6 7
 		// </stateNode>
 		IntegerParameter indices = new IntegerParameter(indexValues);
 		indices.setID("indices");
-		// <stateNode spec="beast.core.parameter.IntegerParameter" id="sizes">
+		// <stateNode spec="beast.base.inference.parameter.IntegerParameter" id="sizes">
 		// 1 1 1 1 1 1 1 1
 		// </stateNode>
 		IntegerParameter sizes = new IntegerParameter("1 1 1 1 1 1 1 1");
@@ -412,7 +412,7 @@ public class TSAModelSelector extends Runnable {
 		//
 		// <distribution id="posterior" spec="CompoundDistribution">
 		// <distribution id="prior" spec="CompoundDistribution">
-		// <distribution id="rates_prior" spec="beast.math.distributions.Prior"
+		// <distribution id="rates_prior" spec="beast.base.inference.distribution.Prior"
 		// x="@parameters">
 		// <distr spec="tsa.parameterclone.helpers.RescaledDirichlet">
 		// <!-- Use a flat distribution -->
@@ -440,7 +440,7 @@ public class TSAModelSelector extends Runnable {
 		// <rates id="actual_rates" spec="tsa.parameterclone.selector.Selector">
 		// <groupings idref="indices" />
 		// <parameters idref="parameters" />
-		// <entry spec="beast.core.parameter.IntegerParameter">0 1 2 3 4 5 6 7
+		// <entry spec="beast.base.inference.parameter.IntegerParameter">0 1 2 3 4 5 6 7
 		// </entry>
 		// </rates>
 		Selector rates = new Selector(indices, parameters, new IntegerParameter("0 1 2 3 4 5 6 7"));
@@ -455,7 +455,7 @@ public class TSAModelSelector extends Runnable {
 		SiteModel siteModel = new SiteModel();
 		siteModel.initByName("substModel", substModel);
 		// <branchRateModel id="StrictClockModel.c:dplace"
-		// spec="beast.evolution.branchratemodel.StrictClockModel">
+		// spec="beast.base.evolution.branchratemodel.StrictClockModel">
 		// <parameter id="clockRate.c:dplace" estimate="true" name="clock.rate"
 		// upper="1.0">0.5</parameter>
 		// </branchRateModel>

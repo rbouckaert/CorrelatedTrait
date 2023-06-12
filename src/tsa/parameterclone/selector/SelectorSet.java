@@ -1,10 +1,10 @@
 package tsa.parameterclone.selector;
 
-import beast.core.Citation;
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Input.Validate;
-import beast.core.parameter.IntegerParameter;
+import beast.base.core.Citation;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.core.Input.Validate;
+import beast.base.inference.parameter.IntegerParameter;
 
 @Description("A calculation node that propagates the used values from a vector of parameters. As opposed to Selector, this class aggregates values into some kind of multiset, useful for analyses where only different values matter.")
 @Citation("Huelsenbeck, J.P., Larget, B., Alfaro, M.E., 2004. "

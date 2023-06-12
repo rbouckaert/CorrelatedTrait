@@ -21,15 +21,15 @@ package tsa.parameterclone.splitandmerge;
 
 import java.util.HashSet;
 
-import beast.core.Citation;
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Input.Validate;
-import beast.core.Operator;
-import beast.core.parameter.IntegerParameter;
-import beast.core.parameter.RealParameter;
-import beast.math.Binomial;
-import beast.util.Randomizer;
+import beast.base.core.Citation;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.core.Input.Validate;
+import beast.base.inference.Operator;
+import beast.base.inference.parameter.IntegerParameter;
+import beast.base.inference.parameter.RealParameter;
+import beast.base.util.Binomial;
+import beast.base.util.Randomizer;
 
 @Description("Randomly split a group of parameters in two")
 @Citation("Huelsenbeck, J.P., Larget, B., Alfaro, M.E., 2004. "
@@ -80,7 +80,7 @@ public class SplitOperator extends Operator {
 		int[] trueGroupIndices = new int[parametersInput.get().getDimension()];
 		int i = 0;
 		Integer newIndex = null;
-		for (int size : sizesInput.get(this).getValues()) {
+		for (int size : sizesInput.get().getValues()) {
 			if (size > 0) {
 				++nGroups;
 				if (size > 1) {
@@ -110,7 +110,7 @@ public class SplitOperator extends Operator {
 
 		HashSet<Integer> splitGroup = new HashSet<Integer>();
 		i = 0;
-		for (int index : groupingsInput.get(this).getValues()) {
+		for (int index : groupingsInput.get().getValues()) {
 			if (index == splitIndex) {
 				splitGroup.add(i);
 			}
@@ -130,13 +130,13 @@ public class SplitOperator extends Operator {
 			// group, so we only iterate while index > 0.
 			for (int j : splitGroup) {
 				if (Randomizer.nextBoolean()) {
-					groupingsInput.get(this).setValue(j, newIndex);
+					groupingsInput.get().setValue(j, newIndex);
 					++newGroupSize;
 					--oldGroupSize;
 				} else {
 					// In case we run into this twice, make sure to reset the
 					// split index
-					groupingsInput.get(this).setValue(j, splitIndex);
+					groupingsInput.get().setValue(j, splitIndex);
 				}
 			}
 
@@ -155,19 +155,19 @@ public class SplitOperator extends Operator {
 		// operator and its inverse. This is mitigated by a random distortion of
 		// the rates, keeping the sum of rates constant.
 		// The proposal ration needs to take that into account.
-		double rate = parametersInput.get(this).getValue(splitIndex);
+		double rate = parametersInput.get().getValue(splitIndex);
 		double mu = Randomizer.uniform(-oldGroupSize * rate, newGroupSize
 				* rate);
 		// parametersInput.get().log(0, System.out); System.out.println(mu);
-		parametersInput.get(this)
+		parametersInput.get()
 				.setValue(splitIndex, rate + mu / oldGroupSize);
-		parametersInput.get(this).setValue(newIndex, rate - mu / newGroupSize);
+		parametersInput.get().setValue(newIndex, rate - mu / newGroupSize);
 		double bijectionDensity = Math
 				.log(rate * (oldGroupSize + newGroupSize));
 
 		// Update the group size caches
-		sizesInput.get(this).setValue(newIndex, newGroupSize);
-		sizesInput.get(this).setValue(splitIndex, oldGroupSize);
+		sizesInput.get().setValue(newIndex, newGroupSize);
+		sizesInput.get().setValue(splitIndex, oldGroupSize);
 
 		// System.out.printf("Split %d into %d\n", splitIndex, newIndex);
 		// Now we calculate the Hastings ratio.

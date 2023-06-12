@@ -28,18 +28,18 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 
-import beast.app.beauti.BeautiDoc;
-import beast.app.beauti.GuessPatternDialog;
-import beast.app.draw.ListInputEditor;
-import beast.app.draw.SmallLabel;
-import beast.core.BEASTInterface;
-import beast.core.Input;
-import beast.evolution.alignment.Alignment;
-import beast.evolution.alignment.AlignmentFromTrait;
-import beast.evolution.alignment.TaxonSet;
-import beast.evolution.datatype.UserDataType;
-import beast.evolution.tree.TraitSet;
-import beast.evolution.tree.TreeInterface;
+import beastfx.app.inputeditor.BeautiDoc;
+import beastfx.app.inputeditor.GuessPatternDialog;
+import beastfx.app.inputeditor.ListInputEditor;
+import beastfx.app.inputeditor.SmallLabel;
+import beast.base.core.BEASTInterface;
+import beast.base.core.Input;
+import beast.base.evolution.alignment.Alignment;
+import beast.base.evolution.alignment.TaxonSet;
+import beast.base.evolution.datatype.UserDataType;
+import beast.base.evolution.tree.TraitSet;
+import beast.base.evolution.tree.TreeInterface;
+import beastclassic.evolution.alignment.AlignmentFromTrait;
 import tsa.correlatedcharacters.polycharacter.CompoundTreeLikelihood;
 
 

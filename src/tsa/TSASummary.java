@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-import beast.app.util.Application;
-import beast.app.util.LogFile;
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Runnable;
-import beast.core.Input.Validate;
-import beast.util.LogAnalyser;
+import beastfx.app.tools.Application;
+import beastfx.app.util.LogFile;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.inference.Runnable;
+import beast.base.core.Input.Validate;
+import beastfx.app.tools.LogAnalyser;
 
 @Description("Produces a summary for an analysis using the Correlated-character substitution model")
 public class TSASummary extends Runnable {

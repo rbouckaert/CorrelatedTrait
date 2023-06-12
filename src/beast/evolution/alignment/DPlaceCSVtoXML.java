@@ -12,15 +12,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import beast.app.beauti.BeautiDoc;
-import beast.app.util.Application;
-import beast.app.util.OutFile;
-import beast.app.util.XMLFile;
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Runnable;
-import beast.core.Input.Validate;
-import beast.core.util.Log;
+import beastfx.app.inputeditor.BeautiDoc;
+import beastfx.app.tools.Application;
+import beastfx.app.util.OutFile;
+import beastfx.app.util.XMLFile;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.inference.Runnable;
+import beast.base.core.Input.Validate;
+import beast.base.core.Log;
 
 @Description("Utility to convert a file exported from DPLACE containing two features into XML. "
 		+ "Warning: this has a list of ISO codes hard coded to identify languages, so may not be "

@@ -7,11 +7,11 @@ import java.io.PrintStream;
 import java.util.Arrays;
 
 import babel.tools.MatrixVisualiserBase;
-import beast.app.util.Application;
-import beast.app.util.OutFile;
-import beast.core.Description;
-import beast.core.Input;
-import beast.util.LogAnalyser;
+import beastfx.app.tools.Application;
+import beastfx.app.util.OutFile;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beastfx.app.tools.LogAnalyser;
 
 @Description("Visualises correlated subsitutition model rates matrix")
 public class RateMatrixVisualiser extends MatrixVisualiserBase {

@@ -10,22 +10,22 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import beast.app.beauti.BeautiDoc;
-import beast.app.treeannotator.TreeAnnotator;
-import beast.app.treeannotator.TreeAnnotator.MemoryFriendlyTreeSet;
-import beast.app.util.Application;
-import beast.app.util.OutFile;
-import beast.app.util.TreeFile;
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.util.Log;
-import beast.evolution.tree.Node;
-import beast.evolution.tree.Tree;
-//import beast.util.TreeParser;
+import beastfx.app.inputeditor.BeautiDoc;
+import beastfx.app.treeannotator.TreeAnnotator;
+import beastfx.app.treeannotator.TreeAnnotator.MemoryFriendlyTreeSet;
+import beastfx.app.tools.Application;
+import beastfx.app.util.OutFile;
+import beastfx.app.util.TreeFile;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.core.Log;
+import beast.base.evolution.tree.Node;
+import beast.base.evolution.tree.Tree;
+//import beast.base.evolution.tree.TreeParser;
 
 @Description("Grafts nodes into a tree at specified clades with zero branch lengths in order to fossilise clade values "
 		+ "in ancestral reconstruction analyses using the TreeSetLikelihood.")
-public class TreeFossiliser extends beast.core.Runnable {
+public class TreeFossiliser extends beast.base.inference.Runnable {
 	final public Input<File> cfgFileInput = new Input<>("cfg", "tab separated configuration file containing two columns: "
 			+ "column 1: name of taxon\n"
 			+ "column 2: a comma separated list of taxa determining MRCA to graft above in source tree (if no constraints have been specified).");

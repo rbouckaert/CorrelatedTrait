@@ -4,14 +4,14 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Operator;
-import beast.core.StateNode;
-import beast.core.Input.Validate;
-import beast.core.parameter.BooleanParameter;
-import beast.core.parameter.RealParameter;
-import beast.util.Randomizer;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.inference.Operator;
+import beast.base.inference.StateNode;
+import beast.base.core.Input.Validate;
+import beast.base.inference.parameter.BooleanParameter;
+import beast.base.inference.parameter.RealParameter;
+import beast.base.util.Randomizer;
 
 @Description("Operator on rates of a asymetric substition model that proposes changes such that frequencies remain the same")
 public class RatesFreqsOperator extends Operator {

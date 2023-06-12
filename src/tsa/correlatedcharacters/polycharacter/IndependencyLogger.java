@@ -4,13 +4,13 @@ import java.io.PrintStream;
 import java.util.List;
 import java.util.Random;
 
-import beast.core.BEASTObject;
-import beast.core.Description;
-import beast.core.Distribution;
-import beast.core.Input;
-import beast.core.Loggable;
-import beast.core.State;
-import beast.core.parameter.RealParameter;
+import beast.base.core.BEASTObject;
+import beast.base.core.Description;
+import beast.base.inference.Distribution;
+import beast.base.core.Input;
+import beast.base.core.Loggable;
+import beast.base.inference.State;
+import beast.base.inference.parameter.RealParameter;
 
 @Description("A prior reporting on whether two traits are evolving dependently or independently"
 		+ " in a CorrelatedSubstitutionModel.")

@@ -7,17 +7,17 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import beast.evolution.alignment.Alignment;
-import beast.evolution.alignment.Sequence;
-import beast.core.Citation;
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Input.Validate;
-import beast.core.parameter.IntegerParameter;
-import beast.core.util.Log;
-import beast.evolution.datatype.DataType;
-import beast.evolution.datatype.Nucleotide;
-import beast.evolution.datatype.StandardData;
+import beast.base.evolution.alignment.Alignment;
+import beast.base.evolution.alignment.Sequence;
+import beast.base.core.Citation;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.core.Input.Validate;
+import beast.base.inference.parameter.IntegerParameter;
+import beast.base.core.Log;
+import beast.base.evolution.datatype.DataType;
+import beast.base.evolution.datatype.Nucleotide;
+import beast.base.evolution.datatype.StandardData;
 
 /**
  * @author gereon

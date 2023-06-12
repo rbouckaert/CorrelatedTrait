@@ -2,9 +2,11 @@ package beast.evolution.substitutionmodel;
 
 import java.util.Arrays;
 
-import beast.core.Description;
-import beast.evolution.datatype.DataType;
-import beast.evolution.tree.Node;
+import beast.base.core.Description;
+import beast.base.evolution.datatype.DataType;
+import beast.base.evolution.substitutionmodel.EigenDecomposition;
+import beast.base.evolution.substitutionmodel.SubstitutionModel;
+import beast.base.evolution.tree.Node;
 
 @Description("substitution model that allows no change of state, so a state (distribution) at "
 		+ "the top of a branch will be exactly the same at the bottom of the branch.")

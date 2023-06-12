@@ -1,15 +1,7 @@
 package tsa.correlatedcharacters.polycharacter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Input.Validate;
-import beast.evolution.alignment.Alignment;
-import beast.evolution.alignment.AlignmentFromTrait;
-import beast.evolution.datatype.ContinuousDataType;
-import beast.evolution.tree.TreeTraitMap;
+import beast.base.core.Description;
+import beastclassic.evolution.alignment.AlignmentFromTrait;
 
 
 

@@ -19,12 +19,12 @@ import javax.swing.JPanel;
 
 import org.junit.Test;
 
-import beast.core.parameter.BooleanParameter;
-import beast.core.parameter.RealParameter;
+import beast.base.inference.parameter.BooleanParameter;
+import beast.base.inference.parameter.RealParameter;
 import beast.evolution.operators.RatesFreqsOperator;
-import beast.evolution.substitutionmodel.EpochSubstitutionModel;
-import beast.evolution.substitutionmodel.Frequencies;
-import beast.evolution.substitutionmodel.SVSGeneralSubstitutionModel;
+import beastclassic.evolution.substitutionmodel.SVSGeneralSubstitutionModel;
+import beastlabs.evolution.substitutionmodel.EpochSubstitutionModel;
+import beast.base.evolution.substitutionmodel.Frequencies;
 import junit.framework.TestCase;
 
 public class RatesFreqsOperatorTest extends TestCase {

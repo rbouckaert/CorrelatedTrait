@@ -1,11 +1,12 @@
 package beast.evolution.substitutionmodel;
 
-import beast.evolution.substitutionmodel.EigenDecomposition;
+import beast.base.evolution.substitutionmodel.EigenDecomposition;
+import beast.base.evolution.substitutionmodel.EigenSystem;
 import no.uib.cipr.matrix.DenseMatrix;
 import no.uib.cipr.matrix.EVD;
 import no.uib.cipr.matrix.NotConvergedException;
 
-public class MTJEigenSystem implements EigenSystem{
+public class MTJEigenSystem implements EigenSystem {
 
     private final int stateCount;
 

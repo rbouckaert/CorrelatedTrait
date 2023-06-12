@@ -3,12 +3,13 @@ package beast.evolution.substitutionmodel;
 
 import java.io.PrintStream;
 
-import beast.core.CalculationNode;
-import beast.core.Description;
-import beast.core.Function;
-import beast.core.Input;
-import beast.core.Loggable;
-import beast.core.Input.Validate;
+import beast.base.inference.CalculationNode;
+import beast.base.core.Description;
+import beast.base.core.Function;
+import beast.base.core.Input;
+import beast.base.core.Loggable;
+import beast.base.evolution.substitutionmodel.SubstitutionModel;
+import beast.base.core.Input.Validate;
 
 @Description("Loggable/Function returning stationary frequencies of a substitution model. "
 		+ "The model must have the getTransitionProbabilities() method implemented.")

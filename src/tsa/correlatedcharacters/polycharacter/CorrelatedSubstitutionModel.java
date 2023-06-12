@@ -21,14 +21,14 @@ package tsa.correlatedcharacters.polycharacter;
 
 import java.io.PrintStream;
 
-import beast.core.Citation;
-import beast.core.Description;
-import beast.core.Function;
-import beast.core.Input;
-import beast.core.Loggable;
-import beast.core.parameter.IntegerParameter;
-import beast.evolution.substitutionmodel.ComplexSubstitutionModel;
-import beast.evolution.substitutionmodel.Frequencies;
+import beast.base.core.Citation;
+import beast.base.core.Description;
+import beast.base.core.Function;
+import beast.base.core.Input;
+import beast.base.core.Loggable;
+import beast.base.inference.parameter.IntegerParameter;
+import beast.base.evolution.substitutionmodel.ComplexSubstitutionModel;
+import beast.base.evolution.substitutionmodel.Frequencies;
 import tsa.parameterclone.selector.Selector;
 
 @Description("Specifies transition probability matrix for a collection of multiple characters."
@@ -136,7 +136,7 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 
 	
 	@Override
-	protected void setupRelativeRates() {        
+	public void setupRelativeRates() {        
         relativeRates[0] = this.rates.getArrayValue(0);
         relativeRates[1] = this.rates.getArrayValue(1);
         relativeRates[2] = 0;
@@ -170,7 +170,7 @@ public class CorrelatedSubstitutionModel extends ComplexSubstitutionModel implem
 	/**
 	 * sets up rate matrix *
 	 */
-	protected void setupRateMatrix() {
+	public void setupRateMatrix() {
 		// Reset the rate matrix to zero. This is important, because
 		// DefaultEigenSystem overwrites it, and sets some zero entries to
 		// non-zero.

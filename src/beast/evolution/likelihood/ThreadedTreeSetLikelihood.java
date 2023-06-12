@@ -7,14 +7,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-import beast.app.BeastMCMC;
-import beast.app.util.TreeFile;
-import beast.core.BEASTInterface;
-import beast.core.Description;
-import beast.core.Input;
-import beast.evolution.alignment.Alignment;
-import beast.evolution.substitutionmodel.SubstitutionModel;
-import beast.evolution.tree.Tree;
+import beastfx.app.beast.BeastMCMC;
+import beastfx.app.util.TreeFile;
+import beast.base.core.BEASTInterface;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.core.ProgramStatus;
+import beast.base.evolution.alignment.Alignment;
+import beast.base.evolution.likelihood.TreeLikelihood;
+import beast.base.evolution.substitutionmodel.SubstitutionModel;
+import beast.base.evolution.tree.Tree;
 
 @Description("Threaded version of the TreeSetLikelihood")
 public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
@@ -57,7 +59,7 @@ public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
 		Tree tree0 = (Tree) treelikelihood0.treeInput.get();
         
         // set up threading specific stuff
-		threadCount = BeastMCMC.m_nThreads;
+		threadCount = ProgramStatus.m_nThreads;
 
 		treelikelihoods = new TreeLikelihood[threadCount];
     	pool = Executors.newFixedThreadPool(threadCount);

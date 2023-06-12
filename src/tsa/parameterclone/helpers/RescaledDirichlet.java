@@ -1,13 +1,14 @@
 package tsa.parameterclone.helpers;
 
+
 import org.apache.commons.math.distribution.Distribution;
 
-import beast.core.Citation;
-import beast.core.Description;
-import beast.core.Function;
-import beast.core.Input;
-import beast.core.parameter.IntegerParameter;
-import beast.math.distributions.ParametricDistribution;
+import beast.base.core.Citation;
+import beast.base.core.Description;
+import beast.base.core.Function;
+import beast.base.core.Input;
+import beast.base.inference.parameter.IntegerParameter;
+import beast.base.inference.distribution.ParametricDistribution;
 
 @Citation("Huelsenbeck, J.P., Larget, B., Alfaro, M.E., 2004. "
 		+ "Bayesian Phylogenetic Model Selection Using Reversible Jump Markov Chain Monte Carlo. "

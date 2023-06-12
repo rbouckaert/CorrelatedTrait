@@ -3,11 +3,11 @@ package tsa.correlatedcharacters.polycharacter;
 import java.util.List;
 import java.util.Random;
 
-import beast.core.Description;
-import beast.core.Distribution;
-import beast.core.Input;
-import beast.core.State;
-import beast.core.parameter.RealParameter;
+import beast.base.core.Description;
+import beast.base.inference.Distribution;
+import beast.base.core.Input;
+import beast.base.inference.State;
+import beast.base.inference.parameter.RealParameter;
 
 @Description("A distribution on correlated substitution models,"
 		+ " assuming a prior probability distribution on independent vs." + " dependent evolution models.")
