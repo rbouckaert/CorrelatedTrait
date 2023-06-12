@@ -43,7 +43,6 @@ import beast.base.evolution.branchratemodel.StrictClockModel;
 import beast.base.evolution.branchratemodel.UCRelaxedClockModel;
 import beast.base.evolution.datatype.Binary;
 import beastclassic.evolution.likelihood.AncestralStateTreeLikelihood;
-import beast.evolution.likelihood.ThreadedTreeSetLikelihood;
 import beast.base.evolution.likelihood.TreeLikelihood;
 import beast.base.inference.operator.DeltaExchangeOperator;
 import beast.base.inference.operator.IntRandomWalkOperator;
@@ -62,6 +61,7 @@ import beast.base.parser.XMLParserException;
 import beast.base.parser.XMLProducer;
 import tsa.correlatedcharacters.polycharacter.CompoundAlignment;
 import tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel;
+import tsa.evolution.likelihood.ThreadedTreeSetLikelihood;
 import tsa.parameterclone.helpers.RescaledDirichlet;
 import tsa.parameterclone.selector.Selector;
 

@@ -1,4 +1,4 @@
-package beast.evolution.tree;
+package tsa.evolution.tree;
 
 import java.io.File;
 import java.io.IOException;

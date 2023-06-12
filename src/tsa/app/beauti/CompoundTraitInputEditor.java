@@ -1,4 +1,4 @@
-package beast.app.beauti;
+package tsa.app.beauti;
 
 import java.awt.Color;
 import java.awt.Component;

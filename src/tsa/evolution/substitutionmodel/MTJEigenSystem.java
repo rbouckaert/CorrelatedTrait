@@ -1,4 +1,4 @@
-package beast.evolution.substitutionmodel;
+package tsa.evolution.substitutionmodel;
 
 import beast.base.evolution.substitutionmodel.EigenDecomposition;
 import beast.base.evolution.substitutionmodel.EigenSystem;

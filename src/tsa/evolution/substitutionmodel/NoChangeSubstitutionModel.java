@@ -1,4 +1,4 @@
-package beast.evolution.substitutionmodel;
+package tsa.evolution.substitutionmodel;
 
 import java.util.Arrays;
 

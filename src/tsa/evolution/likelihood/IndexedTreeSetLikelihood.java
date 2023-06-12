@@ -1,4 +1,4 @@
-package beast.evolution.likelihood;
+package tsa.evolution.likelihood;
 
 import beast.base.core.Description;
 import beast.base.core.Input;
@@ -35,7 +35,7 @@ public class IndexedTreeSetLikelihood extends TreeSetLikelihood {
         tree0.assignFrom(trees.get(index.getValue()));
         tree0.setEverythingDirty(true);
         // flag as dirty to treelikelihood
-        treelikelihood.requiresRecalculation();
+        // treelikelihood.requiresRecalculation();
         logP += treelikelihood.calculateLogP();
         return logP;
 	}

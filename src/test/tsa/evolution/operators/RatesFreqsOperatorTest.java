@@ -1,4 +1,4 @@
-package test.beast.evolution.operators;
+package test.tsa.evolution.operators;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -21,11 +21,11 @@ import org.junit.Test;
 
 import beast.base.inference.parameter.BooleanParameter;
 import beast.base.inference.parameter.RealParameter;
-import beast.evolution.operators.RatesFreqsOperator;
 import beastclassic.evolution.substitutionmodel.SVSGeneralSubstitutionModel;
 import beastlabs.evolution.substitutionmodel.EpochSubstitutionModel;
 import beast.base.evolution.substitutionmodel.Frequencies;
 import junit.framework.TestCase;
+import tsa.evolution.operators.RatesFreqsOperator;
 
 public class RatesFreqsOperatorTest extends TestCase {
 

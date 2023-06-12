@@ -1,4 +1,4 @@
-package beast.evolution.alignment;
+package tsa.evolution.alignment;
 
 import java.io.BufferedReader;
 import java.io.File;

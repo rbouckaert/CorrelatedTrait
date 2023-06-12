@@ -1,4 +1,4 @@
-package test.beast.evolution.substitutionmodel;
+package test.tsa.evolution.substitutionmodel;
 
 
 
@@ -9,9 +9,9 @@ import org.junit.Test;
 import beast.base.evolution.substitutionmodel.DefaultEigenSystem;
 import beast.base.evolution.substitutionmodel.EigenDecomposition;
 import beast.base.evolution.substitutionmodel.EigenSystem;
-import beast.evolution.substitutionmodel.MTJEigenSystem;
 import beast.base.util.Randomizer;
 import junit.framework.TestCase;
+import tsa.evolution.substitutionmodel.MTJEigenSystem;
 
 public class MTJEigenSystemTest extends TestCase {
 	

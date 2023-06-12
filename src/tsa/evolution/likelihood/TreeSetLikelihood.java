@@ -1,4 +1,4 @@
-package beast.evolution.likelihood;
+package tsa.evolution.likelihood;
 
 import java.io.File;
 import java.io.IOException;
@@ -186,7 +186,7 @@ public class TreeSetLikelihood extends Distribution {
 	
 	@Override
 	protected boolean requiresRecalculation() {
-		treelikelihood.requiresRecalculation();
+		// treelikelihood.requiresRecalculation();
 		return true;
 	}
 	

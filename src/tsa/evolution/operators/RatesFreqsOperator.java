@@ -1,4 +1,4 @@
-package beast.evolution.operators;
+package tsa.evolution.operators;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package beast.evolution.likelihood;
+package tsa.evolution.likelihood;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -133,9 +133,9 @@ public class ThreadedTreeSetLikelihood extends TreeSetLikelihood {
 	
 	@Override
 	protected boolean requiresRecalculation() {
-		for (TreeLikelihood t : treelikelihoods) {
-			t.requiresRecalculation();
-		}
+//		for (TreeLikelihood t : treelikelihoods) {
+//			t.requiresRecalculation();
+//		}
 		return true;
 	}
 	

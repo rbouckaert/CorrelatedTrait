@@ -1,4 +1,4 @@
-package beast.evolution.operators;
+package tsa.evolution.operators;
 
 import beast.base.core.Description;
 import beast.base.inference.operator.UniformOperator;
