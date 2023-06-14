@@ -1,4 +1,4 @@
-package tsa.correlatedcharacters.polycharacter;
+package correlatedtrait.evolution.likelihood;
 
 import beastclassic.evolution.likelihood.AncestralStateTreeLikelihood;
 

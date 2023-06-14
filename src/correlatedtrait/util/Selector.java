@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package tsa.parameterclone.selector;
+package correlatedtrait.util;
 
 import java.io.PrintStream;
 

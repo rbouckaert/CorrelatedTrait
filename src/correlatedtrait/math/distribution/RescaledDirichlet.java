@@ -1,4 +1,4 @@
-package tsa.parameterclone.helpers;
+package correlatedtrait.math.distribution;
 
 
 import org.apache.commons.math.distribution.Distribution;

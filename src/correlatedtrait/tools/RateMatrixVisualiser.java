@@ -1,4 +1,4 @@
-package tsa.correlatedcharacters.polycharacter;
+package correlatedtrait.tools;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -9,6 +9,7 @@ import java.util.Arrays;
 import babel.tools.MatrixVisualiserBase;
 import beastfx.app.tools.Application;
 import beastfx.app.util.OutFile;
+import correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel;
 import beast.base.core.Description;
 import beast.base.core.Input;
 import beastfx.app.tools.LogAnalyser;
@@ -23,11 +24,6 @@ public class RateMatrixVisualiser extends MatrixVisualiserBase {
 	@Override
 	public void initAndValidate() {
 	}
-
-//	@Override
-//	public void run() throws Exception {
-// all the work is done in the base class
-//	}
 
 	@Override
 	public double [][] getMatrix() {
@@ -78,7 +74,6 @@ public class RateMatrixVisualiser extends MatrixVisualiserBase {
 	@Override
 	public String[] getLabels(double[][] rates) {
 		return new String[] {"11", "10", "00","01"};
-		// return new String[] {"00","01","11", "10"};
 	}
 
 	

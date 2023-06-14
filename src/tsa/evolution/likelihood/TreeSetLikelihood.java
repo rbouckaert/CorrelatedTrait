@@ -27,7 +27,7 @@ public class TreeSetLikelihood extends Distribution {
 	final public Input<Integer> burninInput = new Input<>("burnin", "percentage of the log file to disregard as burn-in (default 10)" , 10);
 	
 	List<Tree> trees;
-	TreeLikelihood treelikelihood;
+	GenericTreeLikelihood treelikelihood;
 	
 	
 	public TreeSetLikelihood() {
@@ -61,7 +61,7 @@ public class TreeSetLikelihood extends Distribution {
 		}
 		
 		// sanity check: make sure all taxa in tree are in tree set
-		treelikelihood = (TreeLikelihood) treeLikelihoodInput.get();
+		treelikelihood = treeLikelihoodInput.get();
 		Tree tree0 = (Tree) treelikelihood.treeInput.get();
 		String [] names = tree0.getTaxaNames();
 		String [] setNames = trees.get(0).getTaxaNames();

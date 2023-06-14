@@ -1,4 +1,4 @@
-package tsa.correlatedcharacters.polycharacter;
+package correlatedtrait.evolution.distribution;
 
 import java.util.List;
 import java.util.Random;
@@ -8,6 +8,7 @@ import beast.base.inference.Distribution;
 import beast.base.core.Input;
 import beast.base.inference.State;
 import beast.base.inference.parameter.RealParameter;
+import correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel;
 
 @Description("A distribution on correlated substitution models,"
 		+ " assuming a prior probability distribution on independent vs." + " dependent evolution models.")

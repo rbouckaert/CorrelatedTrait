@@ -59,7 +59,7 @@ Same as testTreeSetAnalysis2.xml, except sequences are reordered
             </prior>
         </distribution>
         <distribution id="likelihood" spec="beast.base.inference.CompoundDistribution" useThreads="true">
-          <distribution id="treeSetLikelihood.dna" spec="TreeSetLikelihood" treeSetFile="examples/dna.trees">
+          <distribution id="treeSetLikelihood.dna" spec="tsa.evolution.likelihood.TreeSetLikelihood" treeSetFile="examples/dna.trees">
             <treeLikelihood id="treeLikelihood.dna" spec="TreeLikelihood" data="@dna" tree="@Tree.t:dna">
                 <siteModel id="SiteModel.s:dna" spec="SiteModel">
                     <parameter id="mutationRate.s:dna" estimate="false" name="mutationRate">1.0</parameter>

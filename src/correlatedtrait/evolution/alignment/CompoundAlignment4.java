@@ -1,4 +1,4 @@
-package tsa.correlatedcharacters.polycharacter;
+package correlatedtrait.evolution.alignment;
 
 import beast.base.core.Description;
 import beastclassic.evolution.alignment.AlignmentFromTrait;

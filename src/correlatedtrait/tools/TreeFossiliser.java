@@ -1,4 +1,4 @@
-package tsa.tools;
+package correlatedtrait.tools;
 
 
 import java.io.File;
@@ -21,7 +21,6 @@ import beast.base.core.Input;
 import beast.base.core.Log;
 import beast.base.evolution.tree.Node;
 import beast.base.evolution.tree.Tree;
-//import beast.base.evolution.tree.TreeParser;
 
 @Description("Grafts nodes into a tree at specified clades with zero branch lengths in order to fossilise clade values "
 		+ "in ancestral reconstruction analyses using the TreeSetLikelihood.")

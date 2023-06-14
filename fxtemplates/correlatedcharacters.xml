@@ -2,7 +2,7 @@
 
 	<mergewith point='aux-partitions-panels'>
 		<alignmentProvider id="Add Correlated Morphological Data"
-			spec='beast.app.beauti.BeautiCompoundTraitProvider'
+			spec='tsa.app.beauti.BeautiCompoundTraitProvider'
 			template='@CorrelatedTrait' />
 
 		<subtemplate id='CorrelatedTrait'

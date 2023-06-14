@@ -212,7 +212,8 @@ What would you consider a reasonable range for the clock rate?
 
 
 ```
-You can run the analysis with just a single trait using the `File/Add discrete triat` menu in BEAUti. Does such an independent analysis result in a different reconstruction?
+You can run the analysis with just a single trait using the `File/Add discrete triat` menu in BEAUti. 
+Does such an independent analysis result in a different reconstruction?
 ```
 
 

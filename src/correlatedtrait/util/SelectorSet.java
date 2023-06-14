@@ -1,4 +1,4 @@
-package tsa.parameterclone.selector;
+package correlatedtrait.util;
 
 import beast.base.core.Citation;
 import beast.base.core.Description;

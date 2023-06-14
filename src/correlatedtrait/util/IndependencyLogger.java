@@ -1,4 +1,4 @@
-package tsa.correlatedcharacters.polycharacter;
+package correlatedtrait.util;
 
 import java.io.PrintStream;
 import java.util.List;
@@ -11,6 +11,7 @@ import beast.base.core.Input;
 import beast.base.core.Loggable;
 import beast.base.inference.State;
 import beast.base.inference.parameter.RealParameter;
+import correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel;
 
 @Description("A prior reporting on whether two traits are evolving dependently or independently"
 		+ " in a CorrelatedSubstitutionModel.")

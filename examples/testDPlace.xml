@@ -134,10 +134,10 @@ count state
 -->
 
 <!--
-	<distribution spec='AncestralStateTreeLikelihood' id="geoTreeLikelihood" tag='dplace'>
+	<distribution spec='beastclassic.evolution.likelihood.AncestralStateTreeLikelihood' id="geoTreeLikelihood" tag='dplace'>
 	-->
     <distribution spec='TreeLikelihood' id="geoTreeLikelihood">
-                <data spec='AlignmentFromTraitForDPLace' file="examples/dplace-societies-2016-08-09.csv" code1="6" code2="5,6">
+                <data spec='tsa.evolution.alignment.AlignmentFromTraitForDPLace' file="examples/dplace-societies-2016-08-09.csv" code1="6" code2="5,6">
                         <userDataType spec='beast.base.evolution.datatype.UserDataType' id='dplace-data' 
                 states='4'
                 codelength='-1'
@@ -1213,7 +1213,7 @@ zun = 6-2
 		</data>
         <tree id="tree" taxonset="@taxa"/>
         <siteModel spec='SiteModel' id="geoSiteModel" gammaCategoryCount='1'>
-            <substModel spec="SVSGeneralSubstitutionModel" id="svs" symmetric="true" eigenSystem="beast.evolution.substitutionmodel.RobustEigenSystem">     
+            <substModel spec="beastclassic.evolution.substitutionmodel.SVSGeneralSubstitutionModel" id="svs" symmetric="true" eigenSystem="beast.evolution.substitutionmodel.RobustEigenSystem">     
                 <frequencies id='freqs' spec='Frequencies'>
                         <frequencies id='frequencies' spec='parameter.RealParameter' lower="0.05" upper="1.0" value="0.4746376812 0.3297101449 0.0217391304 0.1739130435"/>
                         <!--value='0.25 0.25 0.25 0.25'/-->
@@ -1263,7 +1263,7 @@ zun = 6-2
 
 			</distribution>
 			<distribution spec='CompoundDistribution' id='likelihood'>
-				<distribution id="treeSetLikelihood.dplace" spec="beast.evolution.likelihood.TreeSetLikelihood" treeSetFile="examples/v2/x.tree" burnin="0">
+				<distribution id="treeSetLikelihood.dplace" spec="tsa.evolution.likelihood.TreeSetLikelihood" treeSetFile="examples/v2/x.tree" burnin="0">
 					<treeLikelihood idref="geoTreeLikelihood"/>
 				</distribution>
 			</distribution>
@@ -1272,7 +1272,7 @@ zun = 6-2
 	 	<operator id='geoMuScaler' spec='ScaleOperator' scaleFactor="0.75" weight="10" parameter="@geoMutationRate"/>  
         <operator id='georateScaler' spec='ScaleOperator' scaleFactor="0.75" weight="30" parameter="@relativeGeoRates" scaleAllIndependently='true'/>
 		<operator spec="BitFlipOperator" id="indicatorFlip" parameter="@rateIndicator" weight="30"/>
-		<operator spec="BitFlipBSSVSOperator" id="BSSVSoperator" indicator="@rateIndicator" mu="@geoMutationRate" weight="30"/>
+		<operator spec="beastclassic.evolution.operators.BitFlipBSSVSOperator" id="BSSVSoperator" indicator="@rateIndicator" mu="@geoMutationRate" weight="30"/>
         <!--
 		<operator autoOptimize="true" delta="0.01" id="FrequenciesExchanger" integer="false" spec="DeltaExchangeOperator" weight="10">
 			<parameter idref="frequencies"/>

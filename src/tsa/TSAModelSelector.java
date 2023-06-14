@@ -24,8 +24,11 @@ import beastfx.app.tools.Application;
 import beastfx.app.util.OutFile;
 import beastfx.app.util.TreeFile;
 import beastfx.app.util.XMLFile;
+import correlatedtrait.evolution.alignment.CompoundAlignment;
+import correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel;
+import correlatedtrait.math.distribution.RescaledDirichlet;
+import correlatedtrait.util.Selector;
 import beast.base.core.BEASTInterface;
-import beast.base.core.BEASTObject;
 import beast.base.core.Description;
 import beast.base.core.Input;
 import beast.base.core.Input.Validate;
@@ -59,11 +62,7 @@ import beast.base.evolution.tree.TreeParser;
 import beast.base.parser.XMLParser;
 import beast.base.parser.XMLParserException;
 import beast.base.parser.XMLProducer;
-import tsa.correlatedcharacters.polycharacter.CompoundAlignment;
-import tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel;
 import tsa.evolution.likelihood.ThreadedTreeSetLikelihood;
-import tsa.parameterclone.helpers.RescaledDirichlet;
-import tsa.parameterclone.selector.Selector;
 
 @Description("Perform correlated character analysis on D-PLACE data")
 public class TSAModelSelector extends Runnable {

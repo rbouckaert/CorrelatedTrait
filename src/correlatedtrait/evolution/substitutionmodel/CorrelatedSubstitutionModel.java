@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package tsa.correlatedcharacters.polycharacter;
+package correlatedtrait.evolution.substitutionmodel;
 
 
 import java.io.PrintStream;
@@ -27,9 +27,11 @@ import beast.base.core.Function;
 import beast.base.core.Input;
 import beast.base.core.Loggable;
 import beast.base.inference.parameter.IntegerParameter;
+import correlatedtrait.evolution.alignment.CompoundAlignment;
+import correlatedtrait.evolution.alignment.CompoundDataType;
+import correlatedtrait.util.Selector;
 import beast.base.evolution.substitutionmodel.ComplexSubstitutionModel;
 import beast.base.evolution.substitutionmodel.Frequencies;
-import tsa.parameterclone.selector.Selector;
 
 @Description("Specifies transition probability matrix for a collection of multiple characters."
 		+ " At every infinitesimal time step, only one component can change values, so some transition rates are 0, the others arbitrary"

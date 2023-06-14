@@ -1,7 +1,7 @@
 /**
  * 
  */
-package tsa.correlatedcharacters.polycharacter;
+package correlatedtrait.evolution.alignment;
 
 import java.util.ArrayList;
 import java.util.Collection;
