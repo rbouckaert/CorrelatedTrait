@@ -1,20 +1,17 @@
-# TreeSetAnalyser
+# Correlated Trait
 
-[![Build Status](https://travis-ci.org/rbouckaert/asc.svg?branch=master)](https://travis-ci.org/rbouckaert/TreeSetAnalyser)
+[![Build Status](https://travis-ci.org/rbouckaert/asc.svg?branch=master)](https://travis-ci.org/rbouckaert/CorrelatedTrait)
 
-BEAST 2 package for tree sets
-This assumes that the data consists of a set of trees and provides a likelihood for which parameters can be estimated.
-This can be useful as post processing tool, where a tree set is provided through a separated independent analysis.
-
+BEAST 2 package for correlated trait evolution
 
 To install TreeSetAnalyser through BEAUti, first add the extra repositories to the package manager like so:
 - start BEAUti, 
 - choose File/Manage packages
 - click ‘Package repositories’
-- Add URL https://raw.githubusercontent.com/CompEvol/CBAN/master/packages-extra.xml, click DONE
+- Add URL https://raw.githubusercontent.com/CompEvol/CBAN/master/packages-extra-2.7.xml, click DONE
 
-TreeSetAnalyser now appears in the list of packages
-- Select TreeSetAnalyser
+CorrelatedTrait now appears in the list of packages
+- Select CorrelatedTrait
 - Click install
 - restart BEAUti
 
