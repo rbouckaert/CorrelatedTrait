@@ -1,9 +1,9 @@
 ---
 author: Remco Bouckaert
 level: Intermediate
-title: Correlated Evolution Tutorial
+title: Correlated Trait Evolution Tutorial
 subtitle: morphological trait evolution
-beastversion: 2.6.3
+beastversion: 2.7.4
 ---
 
 
@@ -19,7 +19,7 @@ In this tutorial, we will look at the correlation between stratification of soci
 
 ### BEAST2 - Bayesian Evolutionary Analysis Sampling Trees 2
 
-BEAST2 is a free software package for Bayesian evolutionary analysis of molecular sequences using MCMC and strictly oriented toward inference using rooted, time-measured phylogenetic trees {% cite Bouckaert2014,bouckaert2019beast --file master-refs.bib %}. This tutorial uses the BEAST2 version 2.6.3.
+BEAST2 is a free software package for Bayesian evolutionary analysis of molecular sequences using MCMC and strictly oriented toward inference using rooted, time-measured phylogenetic trees {% cite Bouckaert2014,bouckaert2019beast --file master-refs.bib %}. This tutorial uses the BEAST2 version 2.7.4.
 
 ### BEAUti2 - Bayesian Evolutionary Analysis Utility
 
@@ -35,13 +35,12 @@ Tracer is used to summarise the posterior estimates of the various parameters sa
 
 # Practical: Correlated Evolution
 
-We will set up an analysis in BEAUti using a fixed tree partition. We add two traits: one for stratification of society and the other for having human sacrifice or not. We will be using the FixedTreeAnalysis and TreeSetAnalysis packages. For post-processing, we will use the Babel package.
+We will set up an analysis in BEAUti using a fixed tree partition. We add two traits: one for stratification of society and the other for having human sacrifice or not. We will be using the FixedTreeAnalysis and CorrelateTrait packages. For post-processing, we will use the Babel package.
 
 > * Start BEAUti
 > * Click to the `File => Manage packages` menu item.
 > * Select `FixedTreeAnalysis` in the list of packages and the click `Install` button.
-> * Select `TreeSetAnalysis` and the click `Install` button.
-> * Select `Babel` and the click `Install` button.
+> * Select `CorrelateTrait` and the click `Install` button (this installs the BEASTLabs, BEAST-classic and Babel packages as well if not already installed).
 > * Close BEAUti -- it needs to restart to pick up the new packages.
 
 
@@ -55,7 +54,7 @@ BEAUti should change to show it uses the Fixed Tree Analysis template.
 	<a id="fig:BEAUti1"></a>
 	<img style="width:45%;" src="figures/BEAUti-fixedtreetemplate.png" alt="">
 	<img style="width:45%;" src="figures/BEAUti-partition0.png" alt="">
-	<figcaption>Figure 1: Select the Tree Set Analysis template, and BEAUti changes its appearance.</figcaption>
+	<figcaption>Figure 1: Select the Fixed Tree Analysis template, and BEAUti changes its appearance.</figcaption>
 </figure>
 
 
@@ -123,7 +122,7 @@ If necessary, the site model and its parameters can be changed in the site model
 Since the analysis will converge quite quickly, we do not need the default 10 million samples.
 
 > * In the MCMC panel, set the chainLength to 1 million samples.
-> * Optionally, you might want to reduce the log frequency of the screen logger to 100000.
+> * Optionally, you might want to reduce the log frequency of the screen logger to 10000.
 > * Safe the file to `StratSacr.xml`
 
 <figure>

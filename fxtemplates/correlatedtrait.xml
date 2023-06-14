@@ -2,17 +2,17 @@
 
 	<mergewith point='aux-partitions-panels'>
 		<alignmentProvider id="Add Correlated Morphological Data"
-			spec='tsa.app.beauti.BeautiCompoundTraitProvider'
+			spec='correlatedtrait.app.beauti.BeautiCompoundTraitProvider'
 			template='@CorrelatedTrait' />
 
 		<subtemplate id='CorrelatedTrait'
-			class='tsa.correlatedcharacters.polycharacter.CompoundAlignment4' mainid='$(n)'
-			suppressInputs="tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel.shape,
-							tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel.datatype,
-							tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel.rates,
-							tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel.eigenSystem,
-							tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel.frequencies,
-							tsa.correlatedcharacters.polycharacter.CompoundTreeLikelihood.data,
+			class='correlatedtrait.evolution.alignment.CompoundAlignment4' mainid='$(n)'
+			suppressInputs="correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel.shape,
+							correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel.datatype,
+							correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel.rates,
+							correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel.eigenSystem,
+							correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel.frequencies,
+							correlatedtrait.evolution.likelihood.CompoundTreeLikelihood.data,
 							">
 			<![CDATA[
 				<!-- tree and its properties -->
@@ -31,10 +31,10 @@
                         <stateNode spec="beast.base.inference.parameter.IntegerParameter" id="sizes.s:$(n)">
                                 6 1 1 0 0 0 0 0
                         </stateNode>				
-				<parameter spec='tsa.parameterclone.selector.Selector' id='rates.s:$(n)' parameters='@rateValues.s:$(n)' groupings='@groupings.s:$(n)'/>
+				<parameter spec='correlatedtrait.util.Selector' id='rates.s:$(n)' parameters='@rateValues.s:$(n)' groupings='@groupings.s:$(n)'/>
 				<frequencies id='frequencies.s:$(n)' spec='beast.base.evolution.substitutionmodel.Frequencies' estimate="false" frequencies="0.25 0.25 0.25 0.25"/>
 
-				<distribution id="morphTreeLikelihood.$(n)" spec='tsa.correlatedcharacters.polycharacter.CompoundTreeLikelihood' data='@$(n)'
+				<distribution id="morphTreeLikelihood.$(n)" spec='correlatedtrait.evolution.likelihood.CompoundTreeLikelihood' data='@$(n)'
 					tree='@Tree.t:$(n)' tag="correlated">
 					<siteModel spec='SiteModel' id="morphSiteModel.s:$(n)"
 						gammaCategoryCount='1'>
@@ -46,7 +46,7 @@
 						<shape spec='parameter.RealParameter' id='gammaShape.s:$(n)'
 							value='1.0' estimate='false' />
 						<!-- Correlated subst model -->
-						<substModel spec="tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel"
+						<substModel spec="correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel"
 							id="CorrelatedSubstitutionModel.s:$(n)"
 							frequencies='@frequencies.s:$(n)'
 							rates="@rates.s:$(n)"
@@ -76,7 +76,7 @@
 
                 <!-- Use a flat distribution -->
 				<distribution id="correlatedRatesPrior.s:$(n)" spec="beast.base.inference.distribution.Prior" x="@rateValues.s:$(n)">
-                	<distr spec="tsa.parameterclone.helpers.RescaledDirichlet" sizes="@sizes.s:$(n)" />
+                	<distr spec="correlatedtrait.math.distribution.RescaledDirichlet" sizes="@sizes.s:$(n)" />
                 </distribution>
                 
 				<operator id='proportionInvariantScaler.s:$(n)' spec='ScaleOperator'
@@ -86,20 +86,40 @@
 				<operator id='gammaShapeScaler.s:$(n)' spec='ScaleOperator'
 					scaleFactor="0.5" weight="0.1" parameter="@gammaShape.s:$(n)" />
 
-    			<operator groupings="@groupings.s:$(n)" id="Merger.t:$(n)" parameters="@rateValues.s:$(n)" sizes="@sizes.s:$(n)" spec="tsa.parameterclone.splitandmerge.MergeOperator" weight="10.0" />
-    			<operator groupings="@groupings.s:$(n)" id="Splitter.t:$(n)" parameters="@rateValues.s:$(n)" sizes="@sizes.s:$(n)" spec="tsa.parameterclone.splitandmerge.SplitOperator" weight="10.0" />
+    			<operator groupings="@groupings.s:$(n)" id="Merger.t:$(n)" parameters="@rateValues.s:$(n)" sizes="@sizes.s:$(n)" spec="correlatedtrait.evolution.operators.MergeOperator" weight="10.0" />
+    			<operator groupings="@groupings.s:$(n)" id="Splitter.t:$(n)" parameters="@rateValues.s:$(n)" sizes="@sizes.s:$(n)" spec="correlatedtrait.evolution.operators.SplitOperator" weight="10.0" />
 				<operator id="Exchange.t:$(n)" spec="DeltaExchangeOperator" parameter="@rateValues.s:$(n)" delta="1.0" weightvector="@sizes.s:$(n)" weight="10.0" />
 				
 				<!-- logging useful information -->
-				<log id="IndependencyLogger.s:$(n)" spec="tsa.correlatedcharacters.polycharacter.IndependencyLogger" model="@CorrelatedSubstitutionModel.s:$(n)"/>
+				<log id="IndependencyLogger.s:$(n)" spec="correlatedtrait.util.IndependencyLogger" model="@CorrelatedSubstitutionModel.s:$(n)"/>
 				
 				<logger id='treeWithCorrelationLogger.$(n)' logEvery="1000" fileName="$(filebase)_tree_with_trait.trees" mode="tree">
-                        <log spec='beast.base.evolution.tree.TreeWithTraitLogger' tree='@Tree.t:$(n)'>
+                        <log spec='beastclassic.evolution.tree.TreeWithTraitLogger' tree='@Tree.t:$(n)'>
                                 <metadata idref="posterior"/>
                                 <metadata idref="morphTreeLikelihood.$(n)"/>
                         </log>
                 </logger>
-				]]>
+                
+                
+                
+                <operator id="AVMNOperator.$(n)" spec="beast.base.evolution.operator.kernel.AdaptableVarianceMultivariateNormalOperator" weight="0.1" 
+                	coefficient="1.0"
+	                scaleFactor="1"
+    	            beta="0.05"
+        	        initial="800"
+            	    burnin="400"
+                	every="1" allowNonsense="true">
+	                <transformations id="AVMNSumTransform.$(n)" spec="beast.base.inference.operator.kernel.Transform$LogConstrainedSumTransform" sum="1.0">
+    	                    <!-- frequencies -->
+        	        </transformations>
+            	    <transformations id="AVMNLogTransform.$(n)" spec="beast.base.inference.operator.kernel.Transform$LogTransform">
+                	        <!-- site and substitution model parameters -->
+	                </transformations>
+    	            <transformations id="AVMNNoTransform.$(n)" spec="beast.base.inference.operator.kernel.Transform$NoTransform">
+        	                <!-- tree -->
+            	    </transformations>
+	            </operator>
+			]]>
 				
 				
 
@@ -197,10 +217,10 @@
 
 		<!-- CorrelatedSubstitution substitution model -->
 		<subtemplate id='CorrelatedSubstitution'
-			class='tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel'
+			class='correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel'
 			mainid='CorrelatedSubstitution.s:$(n)'>
 <![CDATA[
-    <!--<plugin spec='tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel' id='CorrelatedSubstitution.s:$(n)'/>-->
+    <!--<plugin spec='correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel' id='CorrelatedSubstitution.s:$(n)'/>-->
 ]]>
 		</subtemplate>
 	</mergewith>

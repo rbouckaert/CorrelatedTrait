@@ -1,56 +1,45 @@
-<package name='TreeSetAnalyser' version='0.0.5'>
+<package name='CorrelatedTrait' version='0.0.5'>
 	<depends on='BEAST.base' atleast='2.7.4'/>
 	<depends on='BEAST.app' atleast='2.7.4'/>
 	<depends on='BEASTLabs' atleast='2.0.0'/>
 	<depends on='BEAST_CLASSIC' atleast='1.6.1'/>
-	<depends on='NS' atleast='1.1.0'/>
+<!-- depends on='NS' atleast='1.1.0'/-->
 	<depends on='Babel' atleast='0.4.1'/>
 
     <service type="beast.base.core.BEASTInterface">
-        <provider classname="tsa.app.beauti.BeautiCompoundTraitProvider"/>
-        <provider classname="tsa.correlatedcharacters.polycharacter.CompoundAlignment"/>
-        <provider classname="tsa.correlatedcharacters.polycharacter.CompoundAlignment4"/>
-        <provider classname="tsa.correlatedcharacters.polycharacter.CompoundDataType"/>
-        <provider classname="tsa.correlatedcharacters.polycharacter.CompoundTreeLikelihood"/>
-        <provider classname="tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel"/>
-        <provider classname="tsa.correlatedcharacters.polycharacter.CorrelatedSubstitutionModel2"/>
-        <provider classname="tsa.correlatedcharacters.polycharacter.IndependencyLogger"/>
-        <provider classname="tsa.correlatedcharacters.polycharacter.IndependentEvolutionPrior"/>
-        <provider classname="tsa.correlatedcharacters.polycharacter.RateMatrixVisualiser"/>
-        <provider classname="tsa.evolution.alignment.AlignmentFromTraitForDPLace"/>
-        <provider classname="tsa.evolution.alignment.DPlaceCSVtoXML"/>
-        <provider classname="tsa.evolution.likelihood.IndexedTreeSetLikelihood"/>
-        <provider classname="tsa.evolution.likelihood.ThreadedTreeSetLikelihood"/>
-        <provider classname="tsa.evolution.likelihood.TreeSetLikelihood"/>
-        <provider classname="tsa.evolution.operators.RatesFreqsOperator"/>
-        <provider classname="tsa.evolution.operators.UniformGibbsOperator"/>
-        <provider classname="tsa.evolution.substitutionmodel.NoChangeSubstitutionModel"/>
-        <provider classname="tsa.evolution.substitutionmodel.StationaryFrequenciesLogger"/>
-        <provider classname="tsa.evolution.tree.IndexedTreeFromSet"/>
-        <provider classname="tsa.parameterclone.helpers.RescaledDirichlet"/>
-        <provider classname="tsa.parameterclone.selector.Selector"/>
-        <provider classname="tsa.parameterclone.selector.SelectorSet"/>
-        <provider classname="tsa.parameterclone.splitandmerge.MergeOperator"/>
-        <provider classname="tsa.parameterclone.splitandmerge.SplitOperator"/>
-        <provider classname="tsa.tools.TreeFossiliser"/>
-        <provider classname="tsa.TSASummary"/>
+        <provider classname="correlatedtrait.app.beauti.BeautiCompoundTraitProvider"/>
+        <provider classname="correlatedtrait.evolution.alignment.CompoundAlignment"/>
+        <provider classname="correlatedtrait.evolution.alignment.CompoundAlignment4"/>
+        <provider classname="correlatedtrait.evolution.alignment.CompoundDataType"/>
+        <provider classname="correlatedtrait.evolution.distribution.IndependentEvolutionPrior"/>
+        <provider classname="correlatedtrait.evolution.likelihood.CompoundTreeLikelihood"/>
+        <provider classname="correlatedtrait.evolution.operators.MergeOperator"/>
+        <provider classname="correlatedtrait.evolution.operators.SplitOperator"/>
+        <provider classname="correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel"/>
+        <provider classname="correlatedtrait.evolution.substitutionmodel.CorrelatedSubstitutionModel2"/>
+        <provider classname="correlatedtrait.math.distribution.RescaledDirichlet"/>
+        <provider classname="correlatedtrait.tools.RateMatrixVisualiser"/>
+        <provider classname="correlatedtrait.tools.TreeFossiliser"/>
+        <provider classname="correlatedtrait.util.IndependencyLogger"/>
+        <provider classname="correlatedtrait.util.Selector"/>
+        <provider classname="correlatedtrait.util.SelectorSet"/>
     </service>
 
     <service type="beast.base.evolution.datatype.DataType">
-        <provider classname="tsa.correlatedcharacters.polycharacter.CompoundDataType"/>
+        <provider classname="correlatedtrait.evolution.alignment.CompoundDataType"/>
     </service>
 
     <service type="beastfx.app.inputeditor.InputEditor">
-        <provider classname="tsa.app.beauti.CompoundTraitInputEditor"/>
+        <provider classname="correlatedtrait.app.beauti.CompoundTraitInputEditor"/>
     </service>
 
-
-	<packageapp description="TSASummary"
-              class="tsa.TSASummary"
-              args=""
-            />
 	<packageapp description="CorrelatedRateMatrixVisualiser"
-		              class="tsa.correlatedcharacters.polycharacter.RateMatrixVisualiser"
+		              class="correlatedtrait.tools.RateMatrixVisualiser"
 		              args=""
 		            />
+
+    <packageapp description="Grafts nodes into a tree at specified clades with zero branch lengths in order to fossilise clade values in ancestral reconstruction analyses using the TreeSetLikelihood."
+        class="correlatedtrait.tools.TreeFossiliser"
+        args=""/>
+
 </package>

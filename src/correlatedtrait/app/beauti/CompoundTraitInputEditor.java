@@ -56,7 +56,7 @@ public class CompoundTraitInputEditor extends ListInputEditor {
     TraitSet traitSet;
     TextField traitEntry;
     List<String> sTaxa;
-    Object[][] tableData;
+    // Object[][] tableData;
 
     public class LocationMap {
 		String taxon;
@@ -323,10 +323,10 @@ public class CompoundTraitInputEditor extends ListInputEditor {
 
     /* synchronise table with data from traitSet Plugin */
     private void convertTraitToTableData() {
-        for (int i = 0; i < tableData.length; i++) {
-            tableData[i][0] = sTaxa.get(i);
-            tableData[i][1] = "";
-        }
+//        for (int i = 0; i < taxonMapping.size(); i++) {
+//            tableData[i][0] = sTaxa.get(i);
+//            tableData[i][1] = "";
+//        }
         String trait = traitSet.traitsInput.get();
         if (trait.trim().length() == 0) {
         	return;
@@ -348,8 +348,8 @@ public class CompoundTraitInputEditor extends ListInputEditor {
             	System.err.println(sTaxonID);
 //                throw new Exception("Trait (" + sTaxonID + ") is not a known taxon. Spelling error perhaps?");
             } else {
-	            tableData[iTaxon][0] = sTaxonID;
-	            tableData[iTaxon][1] = value;
+	            taxonMapping.get(iTaxon).setTrait(value);
+	            taxonMapping.get(iTaxon).setTaxon(sTaxonID);
             }
         }
 
@@ -364,9 +364,9 @@ public class CompoundTraitInputEditor extends ListInputEditor {
     private void convertTableDataToTrait() {
         String sTrait = "";
         //Set<String> values = new HashSet<String>(); 
-        for (int i = 0; i < tableData.length; i++) {
-            sTrait += sTaxa.get(i) + "=" + tableData[i][1];
-            if (i < tableData.length - 1) {
+        for (int i = 0; i < taxonMapping.size(); i++) {
+            sTrait += taxonMapping.get(i).taxon + "=" + taxonMapping.get(i).trait;
+            if (i < taxonMapping.size() - 1) {
                 sTrait += ",\n";
             }
         }
@@ -380,9 +380,10 @@ public class CompoundTraitInputEditor extends ListInputEditor {
 
     private void convertTableDataToDataType() {
         List<String> values = new ArrayList<String>(); 
-        for (int i = 0; i < tableData.length; i++) {
-        	if (tableData[i][1].toString().trim().length() > 0 && !values.contains(tableData[i][1].toString())) {
-        		values.add(tableData[i][1].toString());
+        for (int i = 0; i < taxonMapping.size(); i++) {
+        	if (taxonMapping.get(i).trait.trim().length() > 0 && 
+        		!values.contains(taxonMapping.get(i).trait.trim())) {
+        		values.add(taxonMapping.get(i).trait.trim());
         	}
         }
         validateInput();
@@ -466,13 +467,13 @@ public class CompoundTraitInputEditor extends ListInputEditor {
 	@Override
 	public void validateInput() {
 		// check all values are specified
-		if (tableData == null) {
+		if (taxonMapping == null) {
 			return;
 		}
-        for (int i = 0; i < tableData.length; i++) {
-        	if (tableData[i][1].toString().trim().length() == 0) {
+        for (int i = 0; i < taxonMapping.size(); i++) {
+        	if (taxonMapping.get(i).trait.trim().length() == 0) {
         		m_validateLabel.setVisible(true);
-        		m_validateLabel.setTooltip(new Tooltip("trait for " + tableData[i][0] + " needs to be specified"));
+        		m_validateLabel.setTooltip(new Tooltip("trait for " + taxonMapping.get(i).taxon + " needs to be specified"));
         		// m_validateLabel.repaint();
         		return;
         	}
